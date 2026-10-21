@@ -1,0 +1,45 @@
+/* Motion — 공통 모션 값과 재사용 클래스. 손으로 관리하는 파일.
+ * 피그마 변수로는 시간·곡선을 만들 수 없어 여기가 원본이다 (피그마 0 Overview 에 같은 표를 적어 둔다).
+ * 원칙: CSS 우선(transition · keyframes). 사용자가 "동작 줄이기"를 켜면 모두 끈다. */
+
+:root {
+  --motion-fast: 150ms;      /* hover · 색 변화 */
+  --motion-base: 250ms;      /* 버튼 · 카드 떠오름 */
+  --motion-slow: 500ms;      /* 섹션 등장 */
+  --motion-stagger: 80ms;    /* 연속 등장 간격 */
+  --motion-ease: cubic-bezier(.2, .8, .2, 1);   /* 빠르게 시작해 부드럽게 멈춤 */
+  --motion-ease-in-out: cubic-bezier(.4, 0, .2, 1);
+  --motion-rise: 16px;       /* 등장 시 올라오는 거리 */
+}
+
+/* 스크롤 등장: <div class="reveal" data-reveal> → 보이면 .is-visible 추가 (사이트 useReveal 훅 · 갤러리 스크립트) */
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--motion-rise));
+  transition: opacity var(--motion-slow) var(--motion-ease) var(--reveal-delay, 0ms),
+              transform var(--motion-slow) var(--motion-ease) var(--reveal-delay, 0ms);
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* 마우스 올리면 살짝 떠오름 (카드 · 링크 타일) */
+.hover-lift { transition: transform var(--motion-base) var(--motion-ease), box-shadow var(--motion-base) var(--motion-ease); }
+@media (hover: hover) {
+  .hover-lift:hover { transform: translateY(-4px); }
+}
+
+/* 아래에서 올라오며 나타나는 키프레임 (히어로 문구 등 로드 시 1회) */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(var(--motion-rise)); }
+  to   { opacity: 1; transform: none; }
+}
+.rise { animation: rise var(--motion-slow) var(--motion-ease) both; }
+.rise-1 { animation-delay: calc(var(--motion-stagger) * 1); }
+.rise-2 { animation-delay: calc(var(--motion-stagger) * 2); }
+.rise-3 { animation-delay: calc(var(--motion-stagger) * 3); }
+
+/* 동작 줄이기 설정: 모션 전부 끔 */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .rise { animation: none; }
+  .hover-lift, .hover-lift:hover { transition: none; transform: none; }
+}

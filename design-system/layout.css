@@ -1,0 +1,35 @@
+/* Layout — 피그마 "0 Overview › P9 홈페이지" 규칙. 손으로 관리하는 파일.
+ *
+ * 화면 폭        | 내용 폭                 | 좌우 여백
+ * ≥1600         | 1560 고정, 가운데 정렬   | 자동
+ * 1200 ~ 1599   | 늘어남                  | 20px
+ * 1025 ~ 1199   | (미정 — 태블릿 규칙 적용) | 16px
+ * 721 ~ 1024    | 태블릿, 늘어남           | 16px
+ * 280 ~ 720     | 모바일, 늘어남           | 16px (720 에서 내용 688)
+ * 목록 화면 최대 1200 · 폼 화면 최대 688. GNB·푸터는 화면 전체 폭, 안쪽 내용만 셸.
+ * 브레이크포인트 숫자는 CSS 변수에 넣을 수 없어 여기와 tokens.css(--layout-*)에 같은 값이 적혀 있다. */
+
+.wf-shell {
+  width: 100%;
+  max-width: var(--layout-max-width-content);
+  margin-inline: auto;
+  padding-inline: var(--layout-margin-mobile);
+}
+.wf-shell--list { max-width: var(--layout-max-width-list); }
+.wf-shell--form { max-width: var(--layout-max-width-form); }
+@media (min-width: 721px)  { .wf-shell { padding-inline: var(--layout-margin-tablet); } }
+@media (min-width: 1200px) { .wf-shell { padding-inline: var(--layout-margin-desktop); } }
+
+/* 전체 폭 띠 (GNB · 푸터 · 어두운 섹션). 안에 .wf-shell 을 넣어 내용만 가운데로 */
+.wf-band { width: 100%; background: var(--color-bg-dark); color: var(--color-text-inverse); }
+
+/* 페이지 섹션 간격 */
+.wf-section { padding-block: var(--spacing-3xl); }
+@media (max-width: 720px) { .wf-section { padding-block: var(--spacing-2xl); } }
+
+/* 반응형 표시 토글 */
+.wf-only-mobile { display: none; }
+@media (max-width: 720px) {
+  .wf-only-mobile { display: initial; }
+  .wf-only-desktop { display: none; }
+}

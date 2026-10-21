@@ -1,0 +1,2430 @@
+{
+ "$description": "피그마 2. Element › Icon 프레임의 아이콘 목록. 피그마에서 내보낸 생성물이다 — 손으로 고치지 않는다. 아이콘을 바꾸려면 피그마에서 바꾼 뒤 다시 내보낸다(Claude: \"피그마 아이콘 다시 내보내줘\"). SVG 는 이 폴더의 <크기>/<이름>_<크기>.svg",
+ "$source": {
+  "fileKey": "tXPHUuCgrV3o1STFl7kcvI",
+  "page": "2. Element",
+  "pageId": "399:83",
+  "node": "180:1242",
+  "exported": "2026-10-18"
+ },
+ "namingRule": "네이밍 : Icon/크기/ic_16_고유명사_ 방향(up,down,right,left)_컬러(g=gray, b=black, c=color, 그외 특정 컬러값 영문 풀네임 표기(ex.yellow))",
+ "sections": [
+  {
+   "size": 16,
+   "label": "16px 마이크로 아이콘",
+   "count": 35
+  },
+  {
+   "size": 20,
+   "label": "20px 보조 아이콘",
+   "count": 22
+  },
+  {
+   "size": 24,
+   "label": "24px UI 아이콘",
+   "count": 19
+  },
+  {
+   "size": 32,
+   "label": "32px 아이콘",
+   "count": 3
+  },
+  {
+   "size": 36,
+   "label": "36px 아이콘",
+   "count": 1
+  },
+  {
+   "size": 55,
+   "label": "55px 아이콘(블로그 사용)",
+   "count": 32
+  },
+  {
+   "size": 64,
+   "label": "64px 중형 아이콘",
+   "count": 3
+  },
+  {
+   "size": 72,
+   "label": "72px 아이콘",
+   "count": 40
+  },
+  {
+   "size": 80,
+   "label": "80px 아이콘",
+   "count": 9
+  },
+  {
+   "size": 110,
+   "label": "110px 아이콘",
+   "count": 4
+  },
+  {
+   "size": 120,
+   "label": "120px 아이콘",
+   "count": 3
+  }
+ ],
+ "icons": [
+  {
+   "id": "51:16154",
+   "size": 16,
+   "name": "ic_plus_c",
+   "figma": "Icon/16/ic_plus · 컬러=c",
+   "set": "Icon/16/ic_plus",
+   "variant": {
+    "크기": "16",
+    "컬러": "c"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_plus_c_16.svg"
+  },
+  {
+   "id": "51:16157",
+   "size": 16,
+   "name": "ic_plus_w",
+   "figma": "Icon/16/ic_plus · 컬러=w",
+   "set": "Icon/16/ic_plus",
+   "variant": {
+    "크기": "16",
+    "컬러": "w"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_plus_w_16.svg"
+  },
+  {
+   "id": "51:16160",
+   "size": 16,
+   "name": "ic_plus_g",
+   "figma": "Icon/16/ic_plus · 컬러=g",
+   "set": "Icon/16/ic_plus",
+   "variant": {
+    "크기": "16",
+    "컬러": "g"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_plus_g_16.svg"
+  },
+  {
+   "id": "51:16163",
+   "size": 16,
+   "name": "ic_plus_disabled",
+   "figma": "Icon/16/ic_plus · 컬러=disabled",
+   "set": "Icon/16/ic_plus",
+   "variant": {
+    "크기": "16",
+    "컬러": "disabled"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_plus_disabled_16.svg"
+  },
+  {
+   "id": "51:16167",
+   "size": 16,
+   "name": "ic_rotation_c",
+   "figma": "Icon/16/ic_rotation · 컬러=c",
+   "set": "Icon/16/ic_rotation",
+   "variant": {
+    "크기": "16",
+    "컬러": "c"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_rotation_c_16.svg"
+  },
+  {
+   "id": "51:16171",
+   "size": 16,
+   "name": "ic_rotation_w",
+   "figma": "Icon/16/ic_rotation · 컬러=w",
+   "set": "Icon/16/ic_rotation",
+   "variant": {
+    "크기": "16",
+    "컬러": "w"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_rotation_w_16.svg"
+  },
+  {
+   "id": "51:16175",
+   "size": 16,
+   "name": "ic_rotation_g",
+   "figma": "Icon/16/ic_rotation · 컬러=g",
+   "set": "Icon/16/ic_rotation",
+   "variant": {
+    "크기": "16",
+    "컬러": "g"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_rotation_g_16.svg"
+  },
+  {
+   "id": "51:16179",
+   "size": 16,
+   "name": "ic_rotation_disabled",
+   "figma": "Icon/16/ic_rotation · 컬러=disabled",
+   "set": "Icon/16/ic_rotation",
+   "variant": {
+    "크기": "16",
+    "컬러": "disabled"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_rotation_disabled_16.svg"
+  },
+  {
+   "id": "51:19939",
+   "size": 16,
+   "name": "ic_check_w",
+   "figma": "Icon/16/ic_check · 컬러=w",
+   "set": "Icon/16/ic_check",
+   "variant": {
+    "크기": "16",
+    "컬러": "w"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_check_w_16.svg"
+  },
+  {
+   "id": "84:22591",
+   "size": 16,
+   "name": "ic_check_c",
+   "figma": "Icon/16/ic_check · 컬러=c",
+   "set": "Icon/16/ic_check",
+   "variant": {
+    "크기": "16",
+    "컬러": "c"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_check_c_16.svg"
+  },
+  {
+   "id": "51:19942",
+   "size": 16,
+   "name": "ic_check_g",
+   "figma": "Icon/16/ic_check · 컬러=g",
+   "set": "Icon/16/ic_check",
+   "variant": {
+    "크기": "16",
+    "컬러": "g"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_check_g_16.svg"
+  },
+  {
+   "id": "51:19945",
+   "size": 16,
+   "name": "ic_check_b",
+   "figma": "Icon/16/ic_check · 컬러=b",
+   "set": "Icon/16/ic_check",
+   "variant": {
+    "크기": "16",
+    "컬러": "b"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_check_b_16.svg"
+  },
+  {
+   "id": "773:4",
+   "size": 16,
+   "name": "ic_check_navy",
+   "figma": "Icon/16/ic_check · 컬러=navy",
+   "set": "Icon/16/ic_check",
+   "variant": {
+    "크기": "16",
+    "컬러": "navy"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_check_navy_16.svg"
+  },
+  {
+   "id": "84:22600",
+   "size": 16,
+   "name": "ic_check_disabled",
+   "figma": "Icon/16/ic_check · 컬러=disabled",
+   "set": "Icon/16/ic_check",
+   "variant": {
+    "크기": "16",
+    "컬러": "disabled"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_check_disabled_16.svg"
+  },
+  {
+   "id": "51:19996",
+   "size": 16,
+   "name": "ic_arrow_right_c",
+   "figma": "Icon/16/ic_arrow_right · 컬러=c",
+   "set": "Icon/16/ic_arrow_right",
+   "variant": {
+    "크기": "16",
+    "컬러": "c"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_arrow_right_c_16.svg"
+  },
+  {
+   "id": "51:20000",
+   "size": 16,
+   "name": "ic_arrow_right_w",
+   "figma": "Icon/16/ic_arrow_right · 컬러=w",
+   "set": "Icon/16/ic_arrow_right",
+   "variant": {
+    "크기": "16",
+    "컬러": "w"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_arrow_right_w_16.svg"
+  },
+  {
+   "id": "51:20004",
+   "size": 16,
+   "name": "ic_arrow_right_g",
+   "figma": "Icon/16/ic_arrow_right · 컬러=g",
+   "set": "Icon/16/ic_arrow_right",
+   "variant": {
+    "크기": "16",
+    "컬러": "g"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_arrow_right_g_16.svg"
+  },
+  {
+   "id": "774:19",
+   "size": 16,
+   "name": "ic_arrow_right_navy",
+   "figma": "Icon/16/ic_arrow_right · 컬러=navy",
+   "set": "Icon/16/ic_arrow_right",
+   "variant": {
+    "크기": "16",
+    "컬러": "navy"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_arrow_right_navy_16.svg"
+  },
+  {
+   "id": "51:20035",
+   "size": 16,
+   "name": "ic_star_c",
+   "figma": "Icon/16/ic_star_c",
+   "set": null,
+   "variant": {},
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_star_c_16.svg"
+  },
+  {
+   "id": "51:20426",
+   "size": 16,
+   "name": "ic_kakao_w",
+   "figma": "Icon/16/ic_kakao · 컬러=w",
+   "set": "Icon/16/ic_kakao",
+   "variant": {
+    "크기": "16",
+    "컬러": "w"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_kakao_w_16.svg"
+  },
+  {
+   "id": "51:20430",
+   "size": 16,
+   "name": "ic_kakao_c",
+   "figma": "Icon/16/ic_kakao · 컬러=c",
+   "set": "Icon/16/ic_kakao",
+   "variant": {
+    "크기": "16",
+    "컬러": "c"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_kakao_c_16.svg"
+  },
+  {
+   "id": "84:22603",
+   "size": 16,
+   "name": "ic_pencil_w",
+   "figma": "Icon/16/ic_pencil · 컬러=w",
+   "set": "Icon/16/ic_pencil",
+   "variant": {
+    "크기": "16",
+    "컬러": "w"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_pencil_w_16.svg"
+  },
+  {
+   "id": "51:20578",
+   "size": 16,
+   "name": "ic_pencil_b",
+   "figma": "Icon/16/ic_pencil · 컬러=b",
+   "set": "Icon/16/ic_pencil",
+   "variant": {
+    "크기": "16",
+    "컬러": "b"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_pencil_b_16.svg"
+  },
+  {
+   "id": "51:20584",
+   "size": 16,
+   "name": "ic_pencil_c",
+   "figma": "Icon/16/ic_pencil · 컬러=c",
+   "set": "Icon/16/ic_pencil",
+   "variant": {
+    "크기": "16",
+    "컬러": "c"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_pencil_c_16.svg"
+  },
+  {
+   "id": "51:20608",
+   "size": 16,
+   "name": "ic_false_c",
+   "figma": "Icon/16/ic_false_c",
+   "set": null,
+   "variant": {},
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_false_c_16.svg"
+  },
+  {
+   "id": "51:20853",
+   "size": 16,
+   "name": "ic_correct_c_yellow",
+   "figma": "Icon/16/ic_correct · 컬러=c_yellow",
+   "set": "Icon/16/ic_correct",
+   "variant": {
+    "크기": "16",
+    "컬러": "c_yellow"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_correct_c_yellow_16.svg"
+  },
+  {
+   "id": "51:20856",
+   "size": 16,
+   "name": "ic_correct_w",
+   "figma": "Icon/16/ic_correct · 컬러=w",
+   "set": "Icon/16/ic_correct",
+   "variant": {
+    "크기": "16",
+    "컬러": "w"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_correct_w_16.svg"
+  },
+  {
+   "id": "51:20859",
+   "size": 16,
+   "name": "ic_correct_c_green",
+   "figma": "Icon/16/ic_correct · 컬러=c_green",
+   "set": "Icon/16/ic_correct",
+   "variant": {
+    "크기": "16",
+    "컬러": "c_green"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_correct_c_green_16.svg"
+  },
+  {
+   "id": "231:17044",
+   "size": 16,
+   "name": "ic_phone_c",
+   "figma": "Icon/16/ic_phone_c",
+   "set": null,
+   "variant": {},
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_phone_c_16.svg"
+  },
+  {
+   "id": "231:17050",
+   "size": 16,
+   "name": "ic_list_c",
+   "figma": "Icon/16/ic_list_c",
+   "set": null,
+   "variant": {},
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_list_c_16.svg"
+  },
+  {
+   "id": "231:17049",
+   "size": 16,
+   "name": "ic_human_c",
+   "figma": "Icon/16/ic_human_c",
+   "set": null,
+   "variant": {},
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_human_c_16.svg"
+  },
+  {
+   "id": "231:17128",
+   "size": 16,
+   "name": "ic_arrow_g_left",
+   "figma": "Icon/16/ic_arrow_g · 방향=left, 컬러=g",
+   "set": "Icon/16/ic_arrow_g",
+   "variant": {
+    "크기": "16",
+    "방향": "left",
+    "컬러": "g"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_arrow_g_left_16.svg"
+  },
+  {
+   "id": "231:17103",
+   "size": 16,
+   "name": "ic_arrow_g_up",
+   "figma": "Icon/16/ic_arrow_g · 방향=up, 컬러=g",
+   "set": "Icon/16/ic_arrow_g",
+   "variant": {
+    "크기": "16",
+    "방향": "up",
+    "컬러": "g"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_arrow_g_up_16.svg"
+  },
+  {
+   "id": "231:17145",
+   "size": 16,
+   "name": "ic_arrow_g_down",
+   "figma": "Icon/16/ic_arrow_g · 방향=down, 컬러=g",
+   "set": "Icon/16/ic_arrow_g",
+   "variant": {
+    "크기": "16",
+    "방향": "down",
+    "컬러": "g"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_arrow_g_down_16.svg"
+  },
+  {
+   "id": "231:17149",
+   "size": 16,
+   "name": "ic_arrow_g_right",
+   "figma": "Icon/16/ic_arrow_g · 방향=right, 컬러=g",
+   "set": "Icon/16/ic_arrow_g",
+   "variant": {
+    "크기": "16",
+    "방향": "right",
+    "컬러": "g"
+   },
+   "width": 16,
+   "height": 16,
+   "file": "16/ic_arrow_g_right_16.svg"
+  },
+  {
+   "id": "84:21244",
+   "size": 20,
+   "name": "ic_plus_20_w",
+   "figma": "Icon/20/ic_plus_20_w",
+   "set": null,
+   "variant": {},
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_plus_20_w_20.svg"
+  },
+  {
+   "id": "51:20863",
+   "size": 20,
+   "name": "ic_check_c_on",
+   "figma": "Icon/20/ic_check · 컬러=c, 상태=on",
+   "set": "Icon/20/ic_check",
+   "variant": {
+    "크기": "20",
+    "컬러": "c",
+    "상태": "on"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_check_c_on_20.svg"
+  },
+  {
+   "id": "231:17207",
+   "size": 20,
+   "name": "ic_check_c_ondisabled",
+   "figma": "Icon/20/ic_check · 컬러=c, 상태=ondisabled",
+   "set": "Icon/20/ic_check",
+   "variant": {
+    "크기": "20",
+    "컬러": "c",
+    "상태": "ondisabled"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_check_c_ondisabled_20.svg"
+  },
+  {
+   "id": "51:20866",
+   "size": 20,
+   "name": "ic_check_g_off",
+   "figma": "Icon/20/ic_check · 컬러=g, 상태=off",
+   "set": "Icon/20/ic_check",
+   "variant": {
+    "크기": "20",
+    "컬러": "g",
+    "상태": "off"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_check_g_off_20.svg"
+  },
+  {
+   "id": "231:17205",
+   "size": 20,
+   "name": "ic_check_g_offdisabeld",
+   "figma": "Icon/20/ic_check · 컬러=g, 상태=offdisabeld",
+   "set": "Icon/20/ic_check",
+   "variant": {
+    "크기": "20",
+    "컬러": "g",
+    "상태": "offdisabeld"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_check_g_offdisabeld_20.svg"
+  },
+  {
+   "id": "51:20867",
+   "size": 20,
+   "name": "ic_mail_c",
+   "figma": "Icon/20/ic_mail_c",
+   "set": null,
+   "variant": {},
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_mail_c_20.svg"
+  },
+  {
+   "id": "51:20869",
+   "size": 20,
+   "name": "ic_phone_c",
+   "figma": "Icon/20/ic_phone_c",
+   "set": null,
+   "variant": {},
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_phone_c_20.svg"
+  },
+  {
+   "id": "84:22625",
+   "size": 20,
+   "name": "ic_dashboard_w",
+   "figma": "Icon/20/ic_dashboard · 컬러=w",
+   "set": "Icon/20/ic_dashboard",
+   "variant": {
+    "크기": "20",
+    "컬러": "w"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_dashboard_w_20.svg"
+  },
+  {
+   "id": "87:2161",
+   "size": 20,
+   "name": "ic_dashboard_g",
+   "figma": "Icon/20/ic_dashboard · 컬러=g",
+   "set": "Icon/20/ic_dashboard",
+   "variant": {
+    "크기": "20",
+    "컬러": "g"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_dashboard_g_20.svg"
+  },
+  {
+   "id": "84:22618",
+   "size": 20,
+   "name": "ic_dashboard_c",
+   "figma": "Icon/20/ic_dashboard · 컬러=c",
+   "set": "Icon/20/ic_dashboard",
+   "variant": {
+    "크기": "20",
+    "컬러": "c"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_dashboard_c_20.svg"
+  },
+  {
+   "id": "87:2176",
+   "size": 20,
+   "name": "ic_munu_w",
+   "figma": "Icon/20/ic_munu · 컬러=w",
+   "set": "Icon/20/ic_munu",
+   "variant": {
+    "크기": "20",
+    "컬러": "w"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_munu_w_20.svg"
+  },
+  {
+   "id": "87:2182",
+   "size": 20,
+   "name": "ic_munu_g",
+   "figma": "Icon/20/ic_munu · 컬러=g",
+   "set": "Icon/20/ic_munu",
+   "variant": {
+    "크기": "20",
+    "컬러": "g"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_munu_g_20.svg"
+  },
+  {
+   "id": "632:165",
+   "size": 20,
+   "name": "ic_munu_b",
+   "figma": "Icon/20/ic_munu · 컬러=b",
+   "set": "Icon/20/ic_munu",
+   "variant": {
+    "크기": "20",
+    "컬러": "b"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_munu_b_20.svg"
+  },
+  {
+   "id": "87:2188",
+   "size": 20,
+   "name": "ic_munu_c",
+   "figma": "Icon/20/ic_munu · 컬러=c",
+   "set": "Icon/20/ic_munu",
+   "variant": {
+    "크기": "20",
+    "컬러": "c"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_munu_c_20.svg"
+  },
+  {
+   "id": "87:2195",
+   "size": 20,
+   "name": "ic_bubble_w",
+   "figma": "Icon/20/ic_bubble · 컬러=w",
+   "set": "Icon/20/ic_bubble",
+   "variant": {
+    "크기": "20",
+    "컬러": "w"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_bubble_w_20.svg"
+  },
+  {
+   "id": "87:2201",
+   "size": 20,
+   "name": "ic_bubble_g",
+   "figma": "Icon/20/ic_bubble · 컬러=g",
+   "set": "Icon/20/ic_bubble",
+   "variant": {
+    "크기": "20",
+    "컬러": "g"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_bubble_g_20.svg"
+  },
+  {
+   "id": "87:2207",
+   "size": 20,
+   "name": "ic_bubble_c",
+   "figma": "Icon/20/ic_bubble · 컬러=c",
+   "set": "Icon/20/ic_bubble",
+   "variant": {
+    "크기": "20",
+    "컬러": "c"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_bubble_c_20.svg"
+  },
+  {
+   "id": "84:22612",
+   "size": 20,
+   "name": "ic_bubble_w",
+   "figma": "Icon/20/ic_bubble_w",
+   "set": null,
+   "variant": {},
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_bubble_w_20.svg",
+   "duplicateOf": "87:2195"
+  },
+  {
+   "id": "247:17015",
+   "size": 20,
+   "name": "ic_radio_c_on",
+   "figma": "Icon/20/ic_radio · 컬러=c, 상태=on",
+   "set": "Icon/20/ic_radio",
+   "variant": {
+    "크기": "20",
+    "컬러": "c",
+    "상태": "on"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_radio_c_on_20.svg"
+  },
+  {
+   "id": "247:17016",
+   "size": 20,
+   "name": "ic_radio_c_off",
+   "figma": "Icon/20/ic_radio · 컬러=c, 상태=off",
+   "set": "Icon/20/ic_radio",
+   "variant": {
+    "크기": "20",
+    "컬러": "c",
+    "상태": "off"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_radio_c_off_20.svg"
+  },
+  {
+   "id": "247:17017",
+   "size": 20,
+   "name": "ic_radio_g_on",
+   "figma": "Icon/20/ic_radio · 컬러=g, 상태=on",
+   "set": "Icon/20/ic_radio",
+   "variant": {
+    "크기": "20",
+    "컬러": "g",
+    "상태": "on"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_radio_g_on_20.svg"
+  },
+  {
+   "id": "247:17018",
+   "size": 20,
+   "name": "ic_radio_g_off",
+   "figma": "Icon/20/ic_radio · 컬러=g, 상태=off",
+   "set": "Icon/20/ic_radio",
+   "variant": {
+    "크기": "20",
+    "컬러": "g",
+    "상태": "off"
+   },
+   "width": 20,
+   "height": 20,
+   "file": "20/ic_radio_g_off_20.svg"
+  },
+  {
+   "id": "51:19880",
+   "size": 24,
+   "name": "ic_mobilemenu_b",
+   "figma": "Icon/24/ic_mobilemenu_b",
+   "set": null,
+   "variant": {},
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_mobilemenu_b_24.svg"
+  },
+  {
+   "id": "51:20563",
+   "size": 24,
+   "name": "ic_check_b",
+   "figma": "Icon/24/ic_check · 컬러=b",
+   "set": "Icon/24/ic_check",
+   "variant": {
+    "크기": "24",
+    "컬러": "b"
+   },
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_check_b_24.svg"
+  },
+  {
+   "id": "51:20567",
+   "size": 24,
+   "name": "ic_check_w",
+   "figma": "Icon/24/ic_check · 컬러=w",
+   "set": "Icon/24/ic_check",
+   "variant": {
+    "크기": "24",
+    "컬러": "w"
+   },
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_check_w_24.svg"
+  },
+  {
+   "id": "51:20614",
+   "size": 24,
+   "name": "ic_correct_green",
+   "figma": "Icon/24/ic_correct · 컬러=green",
+   "set": "Icon/24/ic_correct",
+   "variant": {
+    "크기": "24",
+    "컬러": "green"
+   },
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_correct_green_24.svg"
+  },
+  {
+   "id": "51:20617",
+   "size": 24,
+   "name": "ic_correct_w",
+   "figma": "Icon/24/ic_correct · 컬러=w",
+   "set": "Icon/24/ic_correct",
+   "variant": {
+    "크기": "24",
+    "컬러": "w"
+   },
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_correct_w_24.svg"
+  },
+  {
+   "id": "51:20620",
+   "size": 24,
+   "name": "ic_correct_yellow",
+   "figma": "Icon/24/ic_correct · 컬러=yellow",
+   "set": "Icon/24/ic_correct",
+   "variant": {
+    "크기": "24",
+    "컬러": "yellow"
+   },
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_correct_yellow_24.svg"
+  },
+  {
+   "id": "51:20624",
+   "size": 24,
+   "name": "ic_arrow_right_blue",
+   "figma": "Icon/24/ic_arrow_right · 컬러=blue",
+   "set": "Icon/24/ic_arrow_right",
+   "variant": {
+    "크기": "24",
+    "컬러": "blue"
+   },
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_arrow_right_blue_24.svg"
+  },
+  {
+   "id": "51:20629",
+   "size": 24,
+   "name": "ic_arrow_right_w",
+   "figma": "Icon/24/ic_arrow_right · 컬러=w",
+   "set": "Icon/24/ic_arrow_right",
+   "variant": {
+    "크기": "24",
+    "컬러": "w"
+   },
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_arrow_right_w_24.svg"
+  },
+  {
+   "id": "51:20634",
+   "size": 24,
+   "name": "ic_arrow_right_yellow",
+   "figma": "Icon/24/ic_arrow_right · 컬러=yellow",
+   "set": "Icon/24/ic_arrow_right",
+   "variant": {
+    "크기": "24",
+    "컬러": "yellow"
+   },
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_arrow_right_yellow_24.svg"
+  },
+  {
+   "id": "51:20639",
+   "size": 24,
+   "name": "ic_arrow_right_g",
+   "figma": "Icon/24/ic_arrow_right · 컬러=g",
+   "set": "Icon/24/ic_arrow_right",
+   "variant": {
+    "크기": "24",
+    "컬러": "g"
+   },
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_arrow_right_g_24.svg"
+  },
+  {
+   "id": "111:1379",
+   "size": 24,
+   "name": "ic_arrow_up_b",
+   "figma": "Icon/24/ic_arrow_up_b",
+   "set": null,
+   "variant": {},
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_arrow_up_b_24.svg"
+  },
+  {
+   "id": "51:20603",
+   "size": 24,
+   "name": "ic_false_c",
+   "figma": "Icon/24/ic_false_c",
+   "set": null,
+   "variant": {},
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_false_c_24.svg"
+  },
+  {
+   "id": "231:17058",
+   "size": 24,
+   "name": "ic_calendar_g",
+   "figma": "Icon/24/ic_calendar_g",
+   "set": null,
+   "variant": {},
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_calendar_g_24.svg"
+  },
+  {
+   "id": "247:25110",
+   "size": 24,
+   "name": "ic_switch_c_on",
+   "figma": "Icon/24/ic_switch · 컬러=c, 상태=on",
+   "set": "Icon/24/ic_switch",
+   "variant": {
+    "크기": "24",
+    "컬러": "c",
+    "상태": "on"
+   },
+   "width": 44,
+   "height": 24,
+   "file": "24/ic_switch_c_on_24.svg"
+  },
+  {
+   "id": "247:25112",
+   "size": 24,
+   "name": "ic_switch_c_off",
+   "figma": "Icon/24/ic_switch · 컬러=c, 상태=off",
+   "set": "Icon/24/ic_switch",
+   "variant": {
+    "크기": "24",
+    "컬러": "c",
+    "상태": "off"
+   },
+   "width": 44,
+   "height": 24,
+   "file": "24/ic_switch_c_off_24.svg"
+  },
+  {
+   "id": "247:25114",
+   "size": 24,
+   "name": "ic_switch_g_on",
+   "figma": "Icon/24/ic_switch · 컬러=g, 상태=on",
+   "set": "Icon/24/ic_switch",
+   "variant": {
+    "크기": "24",
+    "컬러": "g",
+    "상태": "on"
+   },
+   "width": 44,
+   "height": 24,
+   "file": "24/ic_switch_g_on_24.svg"
+  },
+  {
+   "id": "247:25116",
+   "size": 24,
+   "name": "ic_switch_g_off",
+   "figma": "Icon/24/ic_switch · 컬러=g, 상태=off",
+   "set": "Icon/24/ic_switch",
+   "variant": {
+    "크기": "24",
+    "컬러": "g",
+    "상태": "off"
+   },
+   "width": 44,
+   "height": 24,
+   "file": "24/ic_switch_g_off_24.svg"
+  },
+  {
+   "id": "51:16262",
+   "size": 24,
+   "name": "ic_arrow_g_down",
+   "figma": "Icon/24/ic_arrow_g · 상태=down",
+   "set": "Icon/24/ic_arrow_g",
+   "variant": {
+    "크기": "24",
+    "상태": "down"
+   },
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_arrow_g_down_24.svg"
+  },
+  {
+   "id": "231:17062",
+   "size": 24,
+   "name": "ic_arrow_g_up",
+   "figma": "Icon/24/ic_arrow_g · 상태=up",
+   "set": "Icon/24/ic_arrow_g",
+   "variant": {
+    "크기": "24",
+    "상태": "up"
+   },
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_arrow_g_up_24.svg"
+  },
+  {
+   "id": "231:17081",
+   "size": 32,
+   "name": "ic_letter_b",
+   "figma": "Icon/32/ic_letter_b",
+   "set": null,
+   "variant": {},
+   "width": 32,
+   "height": 32,
+   "file": "32/ic_letter_b_32.svg"
+  },
+  {
+   "id": "231:17082",
+   "size": 32,
+   "name": "ic_phone_b",
+   "figma": "Icon/32/ic_phone_b",
+   "set": null,
+   "variant": {},
+   "width": 32,
+   "height": 32,
+   "file": "32/ic_phone_b_32.svg"
+  },
+  {
+   "id": "231:17083",
+   "size": 32,
+   "name": "ic_arrow_right_b",
+   "figma": "Icon/32/ic_arrow_right_b",
+   "set": null,
+   "variant": {},
+   "width": 32,
+   "height": 32,
+   "file": "32/ic_arrow_right_b_32.svg"
+  },
+  {
+   "id": "231:17093",
+   "size": 36,
+   "name": "ic_note_w",
+   "figma": "Icon/36/ic_note_w",
+   "set": null,
+   "variant": {},
+   "width": 36,
+   "height": 36,
+   "file": "36/ic_note_w_36.svg"
+  },
+  {
+   "id": "985:7",
+   "size": 55,
+   "name": "ic_arrow_blue_right",
+   "figma": "Icon/55/ic_arrow_blue · 속성=right",
+   "set": "Icon/55/ic_arrow_blue",
+   "variant": {
+    "크기": "55",
+    "속성": "right"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_blue_right_55.svg"
+  },
+  {
+   "id": "985:15",
+   "size": 55,
+   "name": "ic_arrow_blue_right_up",
+   "figma": "Icon/55/ic_arrow_blue · 속성=right_up",
+   "set": "Icon/55/ic_arrow_blue",
+   "variant": {
+    "크기": "55",
+    "속성": "right_up"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_blue_right_up_55.svg"
+  },
+  {
+   "id": "985:19",
+   "size": 55,
+   "name": "ic_arrow_blue_right_down",
+   "figma": "Icon/55/ic_arrow_blue · 속성=right_down",
+   "set": "Icon/55/ic_arrow_blue",
+   "variant": {
+    "크기": "55",
+    "속성": "right_down"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_blue_right_down_55.svg"
+  },
+  {
+   "id": "985:9",
+   "size": 55,
+   "name": "ic_arrow_blue_left",
+   "figma": "Icon/55/ic_arrow_blue · 속성=left",
+   "set": "Icon/55/ic_arrow_blue",
+   "variant": {
+    "크기": "55",
+    "속성": "left"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_blue_left_55.svg"
+  },
+  {
+   "id": "985:11",
+   "size": 55,
+   "name": "ic_arrow_blue_left_up",
+   "figma": "Icon/55/ic_arrow_blue · 속성=left_up",
+   "set": "Icon/55/ic_arrow_blue",
+   "variant": {
+    "크기": "55",
+    "속성": "left_up"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_blue_left_up_55.svg"
+  },
+  {
+   "id": "985:13",
+   "size": 55,
+   "name": "ic_arrow_blue_left_down",
+   "figma": "Icon/55/ic_arrow_blue · 속성=left_down",
+   "set": "Icon/55/ic_arrow_blue",
+   "variant": {
+    "크기": "55",
+    "속성": "left_down"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_blue_left_down_55.svg"
+  },
+  {
+   "id": "985:17",
+   "size": 55,
+   "name": "ic_arrow_blue_up",
+   "figma": "Icon/55/ic_arrow_blue · 속성=up",
+   "set": "Icon/55/ic_arrow_blue",
+   "variant": {
+    "크기": "55",
+    "속성": "up"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_blue_up_55.svg"
+  },
+  {
+   "id": "985:21",
+   "size": 55,
+   "name": "ic_arrow_blue_down",
+   "figma": "Icon/55/ic_arrow_blue · 속성=down",
+   "set": "Icon/55/ic_arrow_blue",
+   "variant": {
+    "크기": "55",
+    "속성": "down"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_blue_down_55.svg"
+  },
+  {
+   "id": "1026:873",
+   "size": 55,
+   "name": "ic_arrow_yellow_right",
+   "figma": "Icon/55/ic_arrow_yellow · 속성=right",
+   "set": "Icon/55/ic_arrow_yellow",
+   "variant": {
+    "크기": "55",
+    "속성": "right"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_yellow_right_55.svg"
+  },
+  {
+   "id": "1026:878",
+   "size": 55,
+   "name": "ic_arrow_yellow_right_up",
+   "figma": "Icon/55/ic_arrow_yellow · 속성=right_up",
+   "set": "Icon/55/ic_arrow_yellow",
+   "variant": {
+    "크기": "55",
+    "속성": "right_up"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_yellow_right_up_55.svg"
+  },
+  {
+   "id": "1026:883",
+   "size": 55,
+   "name": "ic_arrow_yellow_right_down",
+   "figma": "Icon/55/ic_arrow_yellow · 속성=right_down",
+   "set": "Icon/55/ic_arrow_yellow",
+   "variant": {
+    "크기": "55",
+    "속성": "right_down"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_yellow_right_down_55.svg"
+  },
+  {
+   "id": "1026:888",
+   "size": 55,
+   "name": "ic_arrow_yellow_left",
+   "figma": "Icon/55/ic_arrow_yellow · 속성=left",
+   "set": "Icon/55/ic_arrow_yellow",
+   "variant": {
+    "크기": "55",
+    "속성": "left"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_yellow_left_55.svg"
+  },
+  {
+   "id": "1026:893",
+   "size": 55,
+   "name": "ic_arrow_yellow_left_up",
+   "figma": "Icon/55/ic_arrow_yellow · 속성=left_up",
+   "set": "Icon/55/ic_arrow_yellow",
+   "variant": {
+    "크기": "55",
+    "속성": "left_up"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_yellow_left_up_55.svg"
+  },
+  {
+   "id": "1026:898",
+   "size": 55,
+   "name": "ic_arrow_yellow_left_down",
+   "figma": "Icon/55/ic_arrow_yellow · 속성=left_down",
+   "set": "Icon/55/ic_arrow_yellow",
+   "variant": {
+    "크기": "55",
+    "속성": "left_down"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_yellow_left_down_55.svg"
+  },
+  {
+   "id": "1026:903",
+   "size": 55,
+   "name": "ic_arrow_yellow_up",
+   "figma": "Icon/55/ic_arrow_yellow · 속성=up",
+   "set": "Icon/55/ic_arrow_yellow",
+   "variant": {
+    "크기": "55",
+    "속성": "up"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_yellow_up_55.svg"
+  },
+  {
+   "id": "1026:908",
+   "size": 55,
+   "name": "ic_arrow_yellow_down",
+   "figma": "Icon/55/ic_arrow_yellow · 속성=down",
+   "set": "Icon/55/ic_arrow_yellow",
+   "variant": {
+    "크기": "55",
+    "속성": "down"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_yellow_down_55.svg"
+  },
+  {
+   "id": "1026:960",
+   "size": 55,
+   "name": "ic_arrow_red_right",
+   "figma": "Icon/55/ic_arrow_red · 속성=right",
+   "set": "Icon/55/ic_arrow_red",
+   "variant": {
+    "크기": "55",
+    "속성": "right"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_red_right_55.svg"
+  },
+  {
+   "id": "1026:965",
+   "size": 55,
+   "name": "ic_arrow_red_right_up",
+   "figma": "Icon/55/ic_arrow_red · 속성=right_up",
+   "set": "Icon/55/ic_arrow_red",
+   "variant": {
+    "크기": "55",
+    "속성": "right_up"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_red_right_up_55.svg"
+  },
+  {
+   "id": "1026:970",
+   "size": 55,
+   "name": "ic_arrow_red_right_down",
+   "figma": "Icon/55/ic_arrow_red · 속성=right_down",
+   "set": "Icon/55/ic_arrow_red",
+   "variant": {
+    "크기": "55",
+    "속성": "right_down"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_red_right_down_55.svg"
+  },
+  {
+   "id": "1026:975",
+   "size": 55,
+   "name": "ic_arrow_red_left",
+   "figma": "Icon/55/ic_arrow_red · 속성=left",
+   "set": "Icon/55/ic_arrow_red",
+   "variant": {
+    "크기": "55",
+    "속성": "left"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_red_left_55.svg"
+  },
+  {
+   "id": "1026:980",
+   "size": 55,
+   "name": "ic_arrow_red_left_up",
+   "figma": "Icon/55/ic_arrow_red · 속성=left_up",
+   "set": "Icon/55/ic_arrow_red",
+   "variant": {
+    "크기": "55",
+    "속성": "left_up"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_red_left_up_55.svg"
+  },
+  {
+   "id": "1026:985",
+   "size": 55,
+   "name": "ic_arrow_red_left_down",
+   "figma": "Icon/55/ic_arrow_red · 속성=left_down",
+   "set": "Icon/55/ic_arrow_red",
+   "variant": {
+    "크기": "55",
+    "속성": "left_down"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_red_left_down_55.svg"
+  },
+  {
+   "id": "1026:990",
+   "size": 55,
+   "name": "ic_arrow_red_up",
+   "figma": "Icon/55/ic_arrow_red · 속성=up",
+   "set": "Icon/55/ic_arrow_red",
+   "variant": {
+    "크기": "55",
+    "속성": "up"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_red_up_55.svg"
+  },
+  {
+   "id": "1026:995",
+   "size": 55,
+   "name": "ic_arrow_red_down",
+   "figma": "Icon/55/ic_arrow_red · 속성=down",
+   "set": "Icon/55/ic_arrow_red",
+   "variant": {
+    "크기": "55",
+    "속성": "down"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_red_down_55.svg"
+  },
+  {
+   "id": "1026:1011",
+   "size": 55,
+   "name": "ic_arrow_green_right",
+   "figma": "Icon/55/ic_arrow_green · 속성=right",
+   "set": "Icon/55/ic_arrow_green",
+   "variant": {
+    "크기": "55",
+    "속성": "right"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_green_right_55.svg"
+  },
+  {
+   "id": "1026:1016",
+   "size": 55,
+   "name": "ic_arrow_green_right_up",
+   "figma": "Icon/55/ic_arrow_green · 속성=right_up",
+   "set": "Icon/55/ic_arrow_green",
+   "variant": {
+    "크기": "55",
+    "속성": "right_up"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_green_right_up_55.svg"
+  },
+  {
+   "id": "1026:1021",
+   "size": 55,
+   "name": "ic_arrow_green_right_down",
+   "figma": "Icon/55/ic_arrow_green · 속성=right_down",
+   "set": "Icon/55/ic_arrow_green",
+   "variant": {
+    "크기": "55",
+    "속성": "right_down"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_green_right_down_55.svg"
+  },
+  {
+   "id": "1026:1026",
+   "size": 55,
+   "name": "ic_arrow_green_left",
+   "figma": "Icon/55/ic_arrow_green · 속성=left",
+   "set": "Icon/55/ic_arrow_green",
+   "variant": {
+    "크기": "55",
+    "속성": "left"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_green_left_55.svg"
+  },
+  {
+   "id": "1026:1031",
+   "size": 55,
+   "name": "ic_arrow_green_left_up",
+   "figma": "Icon/55/ic_arrow_green · 속성=left_up",
+   "set": "Icon/55/ic_arrow_green",
+   "variant": {
+    "크기": "55",
+    "속성": "left_up"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_green_left_up_55.svg"
+  },
+  {
+   "id": "1026:1036",
+   "size": 55,
+   "name": "ic_arrow_green_left_down",
+   "figma": "Icon/55/ic_arrow_green · 속성=left_down",
+   "set": "Icon/55/ic_arrow_green",
+   "variant": {
+    "크기": "55",
+    "속성": "left_down"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_green_left_down_55.svg"
+  },
+  {
+   "id": "1026:1041",
+   "size": 55,
+   "name": "ic_arrow_green_up",
+   "figma": "Icon/55/ic_arrow_green · 속성=up",
+   "set": "Icon/55/ic_arrow_green",
+   "variant": {
+    "크기": "55",
+    "속성": "up"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_green_up_55.svg"
+  },
+  {
+   "id": "1026:1046",
+   "size": 55,
+   "name": "ic_arrow_green_down",
+   "figma": "Icon/55/ic_arrow_green · 속성=down",
+   "set": "Icon/55/ic_arrow_green",
+   "variant": {
+    "크기": "55",
+    "속성": "down"
+   },
+   "width": 55,
+   "height": 55,
+   "file": "55/ic_arrow_green_down_55.svg"
+  },
+  {
+   "id": "51:20038",
+   "size": 64,
+   "name": "ic_people_1",
+   "figma": "Icon/64/ic_people · 속성=1",
+   "set": "Icon/64/ic_people",
+   "variant": {
+    "크기": "64",
+    "속성": "1"
+   },
+   "width": 64,
+   "height": 64,
+   "file": "64/ic_people_1_64.svg"
+  },
+  {
+   "id": "51:20079",
+   "size": 64,
+   "name": "ic_people_2",
+   "figma": "Icon/64/ic_people · 속성=2",
+   "set": "Icon/64/ic_people",
+   "variant": {
+    "크기": "64",
+    "속성": "2"
+   },
+   "width": 64,
+   "height": 64,
+   "file": "64/ic_people_2_64.svg"
+  },
+  {
+   "id": "51:20117",
+   "size": 64,
+   "name": "ic_people_3",
+   "figma": "Icon/64/ic_people · 속성=3",
+   "set": "Icon/64/ic_people",
+   "variant": {
+    "크기": "64",
+    "속성": "3"
+   },
+   "width": 64,
+   "height": 64,
+   "file": "64/ic_people_3_64.svg"
+  },
+  {
+   "id": "51:19883",
+   "size": 72,
+   "name": "ic_home_b",
+   "figma": "Icon/72/ic_home · 컬러=b",
+   "set": "Icon/72/ic_home",
+   "variant": {
+    "크기": "72",
+    "컬러": "b"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_home_b_72.svg"
+  },
+  {
+   "id": "51:19900",
+   "size": 72,
+   "name": "ic_home_w",
+   "figma": "Icon/72/ic_home · 컬러=w",
+   "set": "Icon/72/ic_home",
+   "variant": {
+    "크기": "72",
+    "컬러": "w"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_home_w_72.svg"
+  },
+  {
+   "id": "51:19965",
+   "size": 72,
+   "name": "ic_recycle_b",
+   "figma": "Icon/72/ic_recycle · 컬러=b",
+   "set": "Icon/72/ic_recycle",
+   "variant": {
+    "크기": "72",
+    "컬러": "b"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_recycle_b_72.svg"
+  },
+  {
+   "id": "51:19975",
+   "size": 72,
+   "name": "ic_recycle_w",
+   "figma": "Icon/72/ic_recycle · 컬러=w",
+   "set": "Icon/72/ic_recycle",
+   "variant": {
+    "크기": "72",
+    "컬러": "w"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_recycle_w_72.svg"
+  },
+  {
+   "id": "51:19985",
+   "size": 72,
+   "name": "ic_recycle_blue",
+   "figma": "Icon/72/ic_recycle · 컬러=blue",
+   "set": "Icon/72/ic_recycle",
+   "variant": {
+    "크기": "72",
+    "컬러": "blue"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_recycle_blue_72.svg"
+  },
+  {
+   "id": "51:20009",
+   "size": 72,
+   "name": "ic_checklist_b",
+   "figma": "Icon/72/ic_checklist · 컬러=b",
+   "set": "Icon/72/ic_checklist",
+   "variant": {
+    "크기": "72",
+    "컬러": "b"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_checklist_b_72.svg"
+  },
+  {
+   "id": "51:20022",
+   "size": 72,
+   "name": "ic_checklist_w",
+   "figma": "Icon/72/ic_checklist · 컬러=w",
+   "set": "Icon/72/ic_checklist",
+   "variant": {
+    "크기": "72",
+    "컬러": "w"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_checklist_w_72.svg"
+  },
+  {
+   "id": "51:20160",
+   "size": 72,
+   "name": "ic_blueline_dart",
+   "figma": "Icon/72/ic_blueline · 속성=dart",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "dart"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_dart_72.svg"
+  },
+  {
+   "id": "51:20178",
+   "size": 72,
+   "name": "ic_blueline_hammer",
+   "figma": "Icon/72/ic_blueline · 속성=hammer",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "hammer"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_hammer_72.svg"
+  },
+  {
+   "id": "51:20189",
+   "size": 72,
+   "name": "ic_blueline_guardian",
+   "figma": "Icon/72/ic_blueline · 속성=guardian",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "guardian"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_guardian_72.svg"
+  },
+  {
+   "id": "51:20198",
+   "size": 72,
+   "name": "ic_blueline_housecare",
+   "figma": "Icon/72/ic_blueline · 속성=housecare",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "housecare"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_housecare_72.svg"
+  },
+  {
+   "id": "51:20208",
+   "size": 72,
+   "name": "ic_blueline_factory",
+   "figma": "Icon/72/ic_blueline · 속성=factory",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "factory"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_factory_72.svg"
+  },
+  {
+   "id": "51:20220",
+   "size": 72,
+   "name": "ic_blueline_zero",
+   "figma": "Icon/72/ic_blueline · 속성=zero",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "zero"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_zero_72.svg"
+  },
+  {
+   "id": "51:20225",
+   "size": 72,
+   "name": "ic_blueline_zeroscrew",
+   "figma": "Icon/72/ic_blueline · 속성=zeroscrew",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "zeroscrew"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_zeroscrew_72.svg"
+  },
+  {
+   "id": "51:20230",
+   "size": 72,
+   "name": "ic_blueline_Re100",
+   "figma": "Icon/72/ic_blueline · 속성=Re100",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "Re100"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_Re100_72.svg"
+  },
+  {
+   "id": "51:20247",
+   "size": 72,
+   "name": "ic_blueline_listmoney",
+   "figma": "Icon/72/ic_blueline · 속성=listmoney",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "listmoney"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_listmoney_72.svg"
+  },
+  {
+   "id": "51:20260",
+   "size": 72,
+   "name": "ic_blueline_rise",
+   "figma": "Icon/72/ic_blueline · 속성=rise",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "rise"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_rise_72.svg"
+  },
+  {
+   "id": "51:20267",
+   "size": 72,
+   "name": "ic_blueline_panel",
+   "figma": "Icon/72/ic_blueline · 속성=panel",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "panel"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_panel_72.svg"
+  },
+  {
+   "id": "51:20276",
+   "size": 72,
+   "name": "ic_blueline_human",
+   "figma": "Icon/72/ic_blueline · 속성=human",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "human"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_human_72.svg"
+  },
+  {
+   "id": "51:20291",
+   "size": 72,
+   "name": "ic_blueline_badge",
+   "figma": "Icon/72/ic_blueline · 속성=badge",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "badge"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_badge_72.svg"
+  },
+  {
+   "id": "51:20300",
+   "size": 72,
+   "name": "ic_blueline_rooffix",
+   "figma": "Icon/72/ic_blueline · 속성=rooffix",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "rooffix"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_rooffix_72.svg"
+  },
+  {
+   "id": "51:20310",
+   "size": 72,
+   "name": "ic_blueline_coin",
+   "figma": "Icon/72/ic_blueline · 속성=coin",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "coin"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_coin_72.svg"
+  },
+  {
+   "id": "51:20324",
+   "size": 72,
+   "name": "ic_blueline_book",
+   "figma": "Icon/72/ic_blueline · 속성=book",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "book"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_book_72.svg"
+  },
+  {
+   "id": "51:20336",
+   "size": 72,
+   "name": "ic_blueline_script",
+   "figma": "Icon/72/ic_blueline · 속성=script",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "script"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_script_72.svg"
+  },
+  {
+   "id": "51:20348",
+   "size": 72,
+   "name": "ic_blueline_eco",
+   "figma": "Icon/72/ic_blueline · 속성=eco",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "eco"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_eco_72.svg"
+  },
+  {
+   "id": "51:20361",
+   "size": 72,
+   "name": "ic_blueline_money",
+   "figma": "Icon/72/ic_blueline · 속성=money",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "money"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_money_72.svg"
+  },
+  {
+   "id": "51:20375",
+   "size": 72,
+   "name": "ic_blueline_earthfinger",
+   "figma": "Icon/72/ic_blueline · 속성=earthfinger",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "earthfinger"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_earthfinger_72.svg"
+  },
+  {
+   "id": "51:20397",
+   "size": 72,
+   "name": "ic_blueline_earthheart",
+   "figma": "Icon/72/ic_blueline · 속성=earthheart",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "earthheart"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_earthheart_72.svg"
+  },
+  {
+   "id": "51:20410",
+   "size": 72,
+   "name": "ic_blueline_guidecheck",
+   "figma": "Icon/72/ic_blueline · 속성=guidecheck",
+   "set": "Icon/72/ic_blueline",
+   "variant": {
+    "크기": "72",
+    "속성": "guidecheck"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_blueline_guidecheck_72.svg"
+  },
+  {
+   "id": "51:20592",
+   "size": 72,
+   "name": "ic_notice_w",
+   "figma": "Icon/72/ic_notice · 컬러=w",
+   "set": "Icon/72/ic_notice",
+   "variant": {
+    "크기": "72",
+    "컬러": "w"
+   },
+   "width": 72,
+   "height": 75,
+   "file": "72/ic_notice_w_72.svg"
+  },
+  {
+   "id": "51:20597",
+   "size": 72,
+   "name": "ic_notice_g",
+   "figma": "Icon/72/ic_notice · 컬러=g",
+   "set": "Icon/72/ic_notice",
+   "variant": {
+    "크기": "72",
+    "컬러": "g"
+   },
+   "width": 72,
+   "height": 75,
+   "file": "72/ic_notice_g_72.svg"
+  },
+  {
+   "id": "51:20645",
+   "size": 72,
+   "name": "ic_bluegrayLine_moneyflow",
+   "figma": "Icon/72/ic_bluegrayLine · 속성=moneyflow",
+   "set": "Icon/72/ic_bluegrayLine",
+   "variant": {
+    "크기": "72",
+    "속성": "moneyflow"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_bluegrayLine_moneyflow_72.svg"
+  },
+  {
+   "id": "51:20655",
+   "size": 72,
+   "name": "ic_bluegrayLine_bill",
+   "figma": "Icon/72/ic_bluegrayLine · 속성=bill",
+   "set": "Icon/72/ic_bluegrayLine",
+   "variant": {
+    "크기": "72",
+    "속성": "bill"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_bluegrayLine_bill_72.svg"
+  },
+  {
+   "id": "51:20667",
+   "size": 72,
+   "name": "ic_bluegrayLine_list",
+   "figma": "Icon/72/ic_bluegrayLine · 속성=list",
+   "set": "Icon/72/ic_bluegrayLine",
+   "variant": {
+    "크기": "72",
+    "속성": "list"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_bluegrayLine_list_72.svg"
+  },
+  {
+   "id": "51:20675",
+   "size": 72,
+   "name": "ic_bluegrayLine_recycle",
+   "figma": "Icon/72/ic_bluegrayLine · 속성=recycle",
+   "set": "Icon/72/ic_bluegrayLine",
+   "variant": {
+    "크기": "72",
+    "속성": "recycle"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_bluegrayLine_recycle_72.svg"
+  },
+  {
+   "id": "51:20685",
+   "size": 72,
+   "name": "ic_bluegrayLine_guide",
+   "figma": "Icon/72/ic_bluegrayLine · 속성=guide",
+   "set": "Icon/72/ic_bluegrayLine",
+   "variant": {
+    "크기": "72",
+    "속성": "guide"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_bluegrayLine_guide_72.svg"
+  },
+  {
+   "id": "51:20693",
+   "size": 72,
+   "name": "ic_bluegrayLine_5",
+   "figma": "Icon/72/ic_bluegrayLine · 속성=5",
+   "set": "Icon/72/ic_bluegrayLine",
+   "variant": {
+    "크기": "72",
+    "속성": "5"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_bluegrayLine_5_72.svg"
+  },
+  {
+   "id": "51:20714",
+   "size": 72,
+   "name": "ic_bluegrayLine_roof",
+   "figma": "Icon/72/ic_bluegrayLine · 속성=roof",
+   "set": "Icon/72/ic_bluegrayLine",
+   "variant": {
+    "크기": "72",
+    "속성": "roof"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_bluegrayLine_roof_72.svg"
+  },
+  {
+   "id": "51:19918",
+   "size": 72,
+   "name": "ic_pannel_b",
+   "figma": "Icon/72/ic_pannel · 컬러=b",
+   "set": "Icon/72/ic_pannel",
+   "variant": {
+    "크기": "72",
+    "컬러": "b"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_pannel_b_72.svg"
+  },
+  {
+   "id": "51:19928",
+   "size": 72,
+   "name": "ic_pannel_w",
+   "figma": "Icon/72/ic_pannel · 컬러=w",
+   "set": "Icon/72/ic_pannel",
+   "variant": {
+    "크기": "72",
+    "컬러": "w"
+   },
+   "width": 72,
+   "height": 72,
+   "file": "72/ic_pannel_w_72.svg"
+  },
+  {
+   "id": "51:20728",
+   "size": 80,
+   "name": "ic_balckblueLine_thunder",
+   "figma": "Icon/80/ic_balckblueLine · 속성=thunder",
+   "set": "Icon/80/ic_balckblueLine",
+   "variant": {
+    "크기": "80",
+    "속성": "thunder"
+   },
+   "width": 80,
+   "height": 80,
+   "file": "80/ic_balckblueLine_thunder_80.svg"
+  },
+  {
+   "id": "51:20738",
+   "size": 80,
+   "name": "ic_balckblueLine_fire",
+   "figma": "Icon/80/ic_balckblueLine · 속성=fire",
+   "set": "Icon/80/ic_balckblueLine",
+   "variant": {
+    "크기": "80",
+    "속성": "fire"
+   },
+   "width": 80,
+   "height": 80,
+   "file": "80/ic_balckblueLine_fire_80.svg"
+  },
+  {
+   "id": "51:20744",
+   "size": 80,
+   "name": "ic_balckblueLine_factory",
+   "figma": "Icon/80/ic_balckblueLine · 속성=factory",
+   "set": "Icon/80/ic_balckblueLine",
+   "variant": {
+    "크기": "80",
+    "속성": "factory"
+   },
+   "width": 80,
+   "height": 80,
+   "file": "80/ic_balckblueLine_factory_80.svg"
+  },
+  {
+   "id": "51:20756",
+   "size": 80,
+   "name": "ic_balckblueLine_Re100",
+   "figma": "Icon/80/ic_balckblueLine · 속성=Re100",
+   "set": "Icon/80/ic_balckblueLine",
+   "variant": {
+    "크기": "80",
+    "속성": "Re100"
+   },
+   "width": 80,
+   "height": 80,
+   "file": "80/ic_balckblueLine_Re100_80.svg"
+  },
+  {
+   "id": "51:20774",
+   "size": 80,
+   "name": "ic_blueline_panel",
+   "figma": "Icon/80/ic_blueline · 속성=panel",
+   "set": "Icon/80/ic_blueline",
+   "variant": {
+    "크기": "80",
+    "속성": "panel"
+   },
+   "width": 80,
+   "height": 80,
+   "file": "80/ic_blueline_panel_80.svg"
+  },
+  {
+   "id": "51:20792",
+   "size": 80,
+   "name": "ic_blueline_list",
+   "figma": "Icon/80/ic_blueline · 속성=list",
+   "set": "Icon/80/ic_blueline",
+   "variant": {
+    "크기": "80",
+    "속성": "list"
+   },
+   "width": 80,
+   "height": 80,
+   "file": "80/ic_blueline_list_80.svg"
+  },
+  {
+   "id": "51:20816",
+   "size": 80,
+   "name": "ic_blueline_simulation",
+   "figma": "Icon/80/ic_blueline · 속성=simulation",
+   "set": "Icon/80/ic_blueline",
+   "variant": {
+    "크기": "80",
+    "속성": "simulation"
+   },
+   "width": 80,
+   "height": 80,
+   "file": "80/ic_blueline_simulation_80.svg"
+  },
+  {
+   "id": "51:20825",
+   "size": 80,
+   "name": "ic_blueline_money",
+   "figma": "Icon/80/ic_blueline · 속성=money",
+   "set": "Icon/80/ic_blueline",
+   "variant": {
+    "크기": "80",
+    "속성": "money"
+   },
+   "width": 80,
+   "height": 80,
+   "file": "80/ic_blueline_money_80.svg"
+  },
+  {
+   "id": "51:20839",
+   "size": 80,
+   "name": "ic_blueline_listup",
+   "figma": "Icon/80/ic_blueline · 속성=listup",
+   "set": "Icon/80/ic_blueline",
+   "variant": {
+    "크기": "80",
+    "속성": "listup"
+   },
+   "width": 80,
+   "height": 80,
+   "file": "80/ic_blueline_listup_80.svg"
+  },
+  {
+   "id": "130:1351",
+   "size": 110,
+   "name": "ic_blueline_home",
+   "figma": "Icon/110/ic_blueline · 속성=home",
+   "set": "Icon/110/ic_blueline",
+   "variant": {
+    "크기": "110",
+    "속성": "home"
+   },
+   "width": 110,
+   "height": 110,
+   "file": "110/ic_blueline_home_110.svg"
+  },
+  {
+   "id": "130:1374",
+   "size": 110,
+   "name": "ic_blueline_recycle",
+   "figma": "Icon/110/ic_blueline · 속성=recycle",
+   "set": "Icon/110/ic_blueline",
+   "variant": {
+    "크기": "110",
+    "속성": "recycle"
+   },
+   "width": 110,
+   "height": 110,
+   "file": "110/ic_blueline_recycle_110.svg"
+  },
+  {
+   "id": "130:1388",
+   "size": 110,
+   "name": "ic_blueline_checklist",
+   "figma": "Icon/110/ic_blueline · 속성=checklist",
+   "set": "Icon/110/ic_blueline",
+   "variant": {
+    "크기": "110",
+    "속성": "checklist"
+   },
+   "width": 110,
+   "height": 110,
+   "file": "110/ic_blueline_checklist_110.svg"
+  },
+  {
+   "id": "130:1363",
+   "size": 110,
+   "name": "ic_blueline_pannel",
+   "figma": "Icon/110/ic_blueline · 속성=pannel",
+   "set": "Icon/110/ic_blueline",
+   "variant": {
+    "크기": "110",
+    "속성": "pannel"
+   },
+   "width": 110,
+   "height": 110,
+   "file": "110/ic_blueline_pannel_110.svg"
+  },
+  {
+   "id": "132:1300",
+   "size": 120,
+   "name": "colorLine_listpen",
+   "figma": "Icon/120/colorLine · 속성=listpen",
+   "set": "Icon/120/colorLine",
+   "variant": {
+    "크기": "120",
+    "속성": "listpen"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/colorLine_listpen_120.svg"
+  },
+  {
+   "id": "132:1318",
+   "size": 120,
+   "name": "colorLine_checklist",
+   "figma": "Icon/120/colorLine · 속성=checklist",
+   "set": "Icon/120/colorLine",
+   "variant": {
+    "크기": "120",
+    "속성": "checklist"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/colorLine_checklist_120.svg"
+  },
+  {
+   "id": "132:1336",
+   "size": 120,
+   "name": "colorLine_homethunder",
+   "figma": "Icon/120/colorLine · 속성=homethunder",
+   "set": "Icon/120/colorLine",
+   "variant": {
+    "크기": "120",
+    "속성": "homethunder"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/colorLine_homethunder_120.svg"
+  }
+ ]
+}

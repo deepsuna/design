@@ -1,0 +1,616 @@
+/* Deeprenewables — 디자인 토큰 (Format: Homepage)
+ * 자동 생성: design/design-system/build.mjs ← design/design-system/tokens.json (피그마 변수 원본)
+ * 직접 고치지 말고 피그마 값을 바꾼 뒤 tokens.json 을 갱신하고 build.mjs 를 다시 실행하세요. */
+
+/* 1. 원시 값 (Primitives) — 화면 코드에서 직접 쓰지 않는다 */
+:root {
+  --navy-500: #295bb7;
+  --navy-800: #0b2a6b;
+  --navy-900: #00174b;
+  --blue-50: #eef5ff;
+  --blue-100: #cce5ff;
+  --blue-200: #c0daff;
+  --blue-400: #84c0ff;
+  --blue-500: #007bff;
+  --blue-600: #0056b3;
+  --yellow-50: #fffdca;
+  --yellow-300: #ffd666;
+  --yellow-400: #ffe138;
+  --yellow-900: #3a3205;
+  --green-50: #e8f5ee;
+  --green-100: #d4edda;
+  --green-200: #aff3dd;
+  --green-400: #00a878;
+  --green-500: #1a8a4f;
+  --green-900: #0f2e1f;
+  --red-100: #ffdede;
+  --red-300: #ffa7a2;
+  --red-400: #fe5f55;
+  --red-500: #ef4444;
+  --red-600: #ff1c58;
+  --red-900: #3d1418;
+  --orange-50: #fff3cd;
+  --orange-200: #ffe0b2;
+  --orange-500: #ff7700;
+  --orange-700: #b7791f;
+  --purple-100: #ede9fe;
+  --purple-400: #8b5cf6;
+  --purple-500: #6d43c9;
+  --teal-100: #ccfbf1;
+  --teal-300: #5eead4;
+  --teal-500: #14b8a6;
+  --teal-700: #0f766e;
+  --pink-100: #fce7f3;
+  --pink-300: #f9a8d4;
+  --pink-500: #ec4899;
+  --pink-700: #be185d;
+  --indigo-100: #e0e7ff;
+  --indigo-300: #a5b4fc;
+  --indigo-500: #6366f1;
+  --indigo-700: #3730a3;
+  --black: #000000;
+  --gray-50: #f5f5f5;
+  --gray-150: #eeeeee;
+  --gray-175: #ecedf1;
+  --gray-200: #e0e0e0;
+  --gray-250: #dddddd;
+  --gray-300: #cccccc;
+  --gray-400: #bbbbbb;
+  --gray-500: #999999;
+  --gray-600: #757575;
+  --gray-700: #666666;
+  --gray-800: #333333;
+  --gray-900: #111111;
+  --white: #ffffff;
+  --black-alpha-10: rgb(0 0 0 / 0.1);
+  --black-alpha-20: rgb(0 0 0 / 0.2);
+  --black-alpha-30: rgb(0 0 0 / 0.3);
+  --black-alpha-40: rgb(0 0 0 / 0.4);
+  --black-alpha-50: rgb(0 0 0 / 0.5);
+  --black-alpha-60: rgb(0 0 0 / 0.6);
+  --black-alpha-70: rgb(0 0 0 / 0.7);
+  --black-alpha-80: rgb(0 0 0 / 0.8);
+  --black-alpha-90: rgb(0 0 0 / 0.9);
+  --black-alpha-08: rgb(0 0 0 / 0.08);
+  --black-alpha-06: rgb(0 0 0 / 0.06);
+  --black-alpha-05: rgb(0 0 0 / 0.05);
+  --black-alpha-04: rgb(0 0 0 / 0.04);
+  --black-alpha-00: rgb(0 0 0 / 0);
+  --font-family-noto-sans: "Noto Sans", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-family-pretendard: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-700: 700;
+  --font-size-10: 10px;
+  --font-size-11: 11px;
+  --font-size-12: 12px;
+  --font-size-13: 13px;
+  --font-size-14: 14px;
+  --font-size-15: 15px;
+  --font-size-16: 16px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-28: 28px;
+  --font-size-30: 30px;
+  --font-size-32: 32px;
+  --font-size-36: 36px;
+  --font-size-40: 40px;
+  --font-size-48: 48px;
+  --font-size-56: 56px;
+  --font-size-60: 60px;
+  --font-size-64: 64px;
+  --font-size-72: 72px;
+  --font-size-88: 88px;
+  --font-size-100: 100px;
+  --font-line-height-14: 14px;
+  --font-line-height-16: 16px;
+  --font-line-height-18: 18px;
+  --font-line-height-20: 20px;
+  --font-line-height-21: 21px;
+  --font-line-height-22: 22px;
+  --font-line-height-24: 24px;
+  --font-line-height-28: 28px;
+  --font-line-height-30: 30px;
+  --font-line-height-34: 34px;
+  --font-line-height-36: 36px;
+  --font-line-height-40: 40px;
+  --font-line-height-42: 42px;
+  --font-line-height-43: 43px;
+  --font-line-height-47: 47px;
+  --font-line-height-48: 48px;
+  --font-line-height-52: 52px;
+  --font-line-height-62: 62px;
+  --font-line-height-72: 72px;
+  --font-line-height-77: 77px;
+  --font-line-height-92: 92px;
+  --font-line-height-106: 106px;
+  --font-line-height-120: 120px;
+  --font-letter-spacing-0: 0em;
+  --font-letter-spacing--0_2: -0.002em;
+  --font-letter-spacing--0_36: -0.0036em;
+  --radius-0: 0px;
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-9999: 9999px;
+  --spacing-0: 0px;
+  --spacing-4: 4px;
+  --spacing-6: 6px;
+  --spacing-8: 8px;
+  --spacing-10: 10px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-30: 30px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-80: 80px;
+  --spacing-100: 100px;
+  --spacing-120: 120px;
+  --size-280: 280px;
+  --size-688: 688px;
+  --size-720: 720px;
+  --size-1024: 1024px;
+  --size-1200: 1200px;
+  --size-1560: 1560px;
+  --size-1600: 1600px;
+  --exception-kakao-yellow: #fee500;
+  --exception-kakao-black: #000000;
+  --exception-google-white: #ffffff;
+  --exception-google-gray: #747775;
+  --exception-google-black: #1f1f1f;
+}
+
+/* 2. 브랜드 값 (Brand: Deeprenewables) */
+:root {
+  --brand-primary: var(--navy-900);
+  --brand-primary-on-dark: var(--navy-500);
+  --brand-fill-on-dark: var(--navy-500);
+  --brand-accent: var(--yellow-400);
+  --brand-page-dark: var(--navy-900);
+  --brand-subtle-dark: var(--navy-800);
+  --brand-text-strong-dark: var(--gray-50);
+  --brand-card-dark: var(--navy-800);
+  --brand-card-subtle-dark: var(--gray-700);
+  --brand-text-on-card-dark: var(--gray-50);
+  --brand-text-on-card-secondary-dark: var(--gray-300);
+  --brand-text-on-card-tertiary-dark: var(--gray-500);
+  --brand-border-card-dark: var(--gray-700);
+  --radius-none: var(--radius-0);
+  --radius-xs: var(--radius-4);
+  --radius-sm: var(--radius-8);
+  --radius-md: var(--radius-12);
+  --radius-lg: var(--radius-16);
+  --radius-full: var(--radius-9999);
+  --radius-button: var(--radius-sm);
+  --radius-control: var(--radius-sm);
+  --radius-control-small: var(--radius-xs);
+  --radius-card: var(--radius-lg);
+  --radius-pill: var(--radius-full);
+  --font-family-base: var(--font-family-pretendard);
+  --font-family-sheet: var(--font-family-noto-sans);
+}
+
+/* 3. 포맷 값 (Format: Homepage) — 글자 크기·간격 */
+:root {
+  --font-size-display-1: var(--font-size-72);
+  --font-size-display-2: var(--font-size-56);
+  --font-size-display-3: var(--font-size-48);
+  --font-size-display-4: var(--font-size-40);
+  --font-size-heading-1: var(--font-size-36);
+  --font-size-heading-2: var(--font-size-32);
+  --font-size-heading-3: var(--font-size-30);
+  --font-size-heading-4: var(--font-size-24);
+  --font-size-heading-5: var(--font-size-20);
+  --font-size-heading-6: var(--font-size-16);
+  --font-size-lead-1: var(--font-size-32);
+  --font-size-lead-2: var(--font-size-28);
+  --font-size-lead-3: var(--font-size-24);
+  --font-size-lead-4: var(--font-size-20);
+  --font-size-body-1: var(--font-size-16);
+  --font-size-body-2: var(--font-size-14);
+  --font-size-body-3: var(--font-size-13);
+  --font-size-input-label: var(--font-size-label-1);
+  --font-size-label-1: var(--font-size-15);
+  --font-size-label-2: var(--font-size-13);
+  --font-size-caption-1: var(--font-size-12);
+  --font-size-caption-2: var(--font-size-11);
+  --font-size-caption-3: var(--font-size-10);
+  --font-size-footer: var(--font-size-14);
+  --font-size-input: var(--font-size-16);
+  --font-line-height-display-1: var(--font-line-height-92);
+  --font-line-height-display-2: var(--font-line-height-72);
+  --font-line-height-display-3: var(--font-line-height-62);
+  --font-line-height-display-4: var(--font-line-height-52);
+  --font-line-height-heading-1: var(--font-line-height-47);
+  --font-line-height-heading-2: var(--font-line-height-43);
+  --font-line-height-heading-3: var(--font-line-height-40);
+  --font-line-height-heading-4: var(--font-line-height-34);
+  --font-line-height-heading-5: var(--font-line-height-28);
+  --font-line-height-heading-6: var(--font-line-height-24);
+  --font-line-height-lead-1: var(--font-line-height-48);
+  --font-line-height-lead-2: var(--font-line-height-42);
+  --font-line-height-lead-3: var(--font-line-height-36);
+  --font-line-height-lead-4: var(--font-line-height-30);
+  --font-line-height-body-1: var(--font-line-height-24);
+  --font-line-height-body-2: var(--font-line-height-22);
+  --font-line-height-body-3: var(--font-line-height-20);
+  --font-line-height-input-label: var(--font-line-height-label-1);
+  --font-line-height-label-1: var(--font-line-height-21);
+  --font-line-height-label-2: var(--font-line-height-18);
+  --font-line-height-caption-1: var(--font-line-height-18);
+  --font-line-height-caption-2: var(--font-line-height-16);
+  --font-line-height-caption-3: var(--font-line-height-14);
+  --font-line-height-footer: var(--font-line-height-22);
+  --font-letter-spacing-body-3: var(--font-letter-spacing--0_2);
+  --font-letter-spacing-footer: var(--font-letter-spacing--0_2);
+  --font-letter-spacing-caption-1: var(--font-letter-spacing-0);
+  --font-weight-regular: var(--font-weight-400);
+  --font-weight-medium: var(--font-weight-500);
+  --font-weight-bold: var(--font-weight-700);
+  --spacing-none: var(--spacing-0);
+  --spacing-xxs: var(--spacing-4);
+  --spacing-xxs-plus: var(--spacing-6);
+  --spacing-xs: var(--spacing-8);
+  --spacing-xs-plus: var(--spacing-10);
+  --spacing-sm: var(--spacing-12);
+  --spacing-md: var(--spacing-16);
+  --spacing-md-plus: var(--spacing-20);
+  --spacing-lg: var(--spacing-24);
+  --spacing-lg-plus: var(--spacing-30);
+  --spacing-xl: var(--spacing-32);
+  --spacing-xl-plus: var(--spacing-40);
+  --spacing-2xl: var(--spacing-48);
+  --spacing-2xl-plus: var(--spacing-64);
+  --spacing-3xl: var(--spacing-80);
+  --spacing-4xl: var(--spacing-100);
+  --spacing-5xl: var(--spacing-120);
+  --layout-breakpoint-xl: var(--size-1600);
+  --layout-breakpoint-lg: var(--size-1200);
+  --layout-breakpoint-md: var(--size-1024);
+  --layout-breakpoint-sm: var(--size-720);
+  --layout-breakpoint-min: var(--size-280);
+  --layout-margin-desktop: var(--spacing-20);
+  --layout-margin-tablet: var(--spacing-16);
+  --layout-margin-mobile: var(--spacing-16);
+  --layout-max-width-content: var(--size-1560);
+  --layout-max-width-list: var(--size-1200);
+  --layout-max-width-form: var(--size-688);
+  --control-height: 56px;
+  --control-height-sm: 40px;
+}
+
+/* 4. 역할 색 (Theme) — 기본 Light. <html data-theme="dark"> 로 전환. 속성이 없으면 OS 설정을 따른다 */
+:root,
+[data-theme="light"] {
+  --color-text-primary: var(--gray-800);
+  --color-text-strong: var(--gray-900);
+  --color-text-secondary: var(--gray-700);
+  --color-text-tertiary: var(--gray-500);
+  --color-text-disabled: var(--gray-400);
+  --color-text-disabled-subtle: var(--gray-200);
+  --color-text-placeholder: var(--gray-250);
+  --color-text-label: var(--gray-300);
+  --color-text-inverse: var(--white);
+  --color-text-inverse-secondary: var(--gray-300);
+  --color-text-on-brand: var(--white);
+  --color-text-on-point: var(--gray-800);
+  --color-text-brand: var(--brand-primary);
+  --color-text-point-accessible: var(--orange-700);
+  --color-text-success: var(--green-500);
+  --color-text-success-on-dark: var(--green-200);
+  --color-text-warning: var(--orange-500);
+  --color-text-error: var(--red-600);
+  --color-text-on-card: var(--gray-800);
+  --color-text-on-card-secondary: var(--gray-700);
+  --color-text-on-card-tertiary: var(--gray-500);
+  --color-bg-default: var(--white);
+  --color-bg-subtle: var(--gray-50);
+  --color-bg-input: var(--gray-50);
+  --color-bg-brand: var(--brand-primary);
+  --color-bg-brand-subtle: var(--blue-50);
+  --color-bg-disabled: var(--gray-50);
+  --color-bg-success-subtle: var(--green-50);
+  --color-bg-warning-subtle: var(--yellow-50);
+  --color-bg-error-subtle: var(--red-100);
+  --color-bg-dark: var(--gray-900);
+  --color-bg-dark-raised: var(--gray-800);
+  --color-bg-card: var(--white);
+  --color-bg-card-subtle: var(--gray-50);
+  --color-border-default: var(--gray-175);
+  --color-border-strong: var(--gray-300);
+  --color-border-brand: var(--brand-primary);
+  --color-border-elevation: var(--black-alpha-00);
+  --color-border-card: var(--gray-175);
+  --color-border-input: var(--gray-250);
+  --color-border-focus: var(--blue-100);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-action: var(--brand-primary);
+  --color-brand-accent: var(--brand-accent);
+  --color-icon-default: var(--gray-700);
+  --color-data-blue: var(--blue-500);
+  --color-shadow-sm: var(--black-alpha-06);
+  --color-shadow-md: var(--black-alpha-10);
+  --color-shadow-lg-key: var(--black-alpha-08);
+  --color-shadow-lg-ambient: var(--black-alpha-04);
+  --color-exception-kakao-bg: var(--exception-kakao-yellow);
+  --color-exception-kakao-text: var(--exception-kakao-black);
+  --color-exception-google-bg: var(--exception-google-white);
+  --color-exception-google-border: var(--exception-google-gray);
+  --color-exception-google-text: var(--exception-google-black);
+}
+[data-theme="dark"] {
+  --color-text-primary: var(--brand-text-strong-dark);
+  --color-text-strong: var(--brand-text-strong-dark);
+  --color-text-secondary: var(--gray-300);
+  --color-text-tertiary: var(--gray-500);
+  --color-text-disabled: var(--gray-700);
+  --color-text-disabled-subtle: var(--gray-700);
+  --color-text-placeholder: var(--gray-700);
+  --color-text-label: var(--gray-600);
+  --color-text-inverse: var(--white);
+  --color-text-inverse-secondary: var(--gray-300);
+  --color-text-on-brand: var(--white);
+  --color-text-on-point: var(--gray-800);
+  --color-text-brand: var(--blue-400);
+  --color-text-point-accessible: var(--yellow-400);
+  --color-text-success: var(--green-200);
+  --color-text-success-on-dark: var(--green-200);
+  --color-text-warning: var(--yellow-300);
+  --color-text-error: var(--red-300);
+  --color-text-on-card: var(--brand-text-on-card-dark);
+  --color-text-on-card-secondary: var(--brand-text-on-card-secondary-dark);
+  --color-text-on-card-tertiary: var(--brand-text-on-card-tertiary-dark);
+  --color-bg-default: var(--brand-page-dark);
+  --color-bg-subtle: var(--gray-800);
+  --color-bg-input: var(--gray-800);
+  --color-bg-brand: var(--brand-fill-on-dark);
+  --color-bg-brand-subtle: var(--brand-subtle-dark);
+  --color-bg-disabled: var(--gray-800);
+  --color-bg-success-subtle: var(--green-900);
+  --color-bg-warning-subtle: var(--yellow-900);
+  --color-bg-error-subtle: var(--red-900);
+  --color-bg-dark: var(--gray-800);
+  --color-bg-dark-raised: var(--gray-700);
+  --color-bg-card: var(--brand-card-dark);
+  --color-bg-card-subtle: var(--brand-card-subtle-dark);
+  --color-border-default: var(--gray-800);
+  --color-border-strong: var(--gray-500);
+  --color-border-brand: var(--blue-400);
+  --color-border-elevation: var(--gray-800);
+  --color-border-card: var(--brand-border-card-dark);
+  --color-border-input: var(--gray-700);
+  --color-border-focus: var(--blue-600);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-action: var(--brand-primary-on-dark);
+  --color-brand-accent: var(--brand-accent);
+  --color-icon-default: var(--gray-300);
+  --color-data-blue: var(--blue-400);
+  --color-shadow-sm: var(--black-alpha-00);
+  --color-shadow-md: var(--black-alpha-00);
+  --color-shadow-lg-key: var(--black-alpha-00);
+  --color-shadow-lg-ambient: var(--black-alpha-00);
+  --color-exception-kakao-bg: var(--exception-kakao-yellow);
+  --color-exception-kakao-text: var(--exception-kakao-black);
+  --color-exception-google-bg: var(--exception-google-white);
+  --color-exception-google-border: var(--exception-google-gray);
+  --color-exception-google-text: var(--exception-google-black);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-text-primary: var(--brand-text-strong-dark);
+    --color-text-strong: var(--brand-text-strong-dark);
+    --color-text-secondary: var(--gray-300);
+    --color-text-tertiary: var(--gray-500);
+    --color-text-disabled: var(--gray-700);
+    --color-text-disabled-subtle: var(--gray-700);
+    --color-text-placeholder: var(--gray-700);
+    --color-text-label: var(--gray-600);
+    --color-text-inverse: var(--white);
+    --color-text-inverse-secondary: var(--gray-300);
+    --color-text-on-brand: var(--white);
+    --color-text-on-point: var(--gray-800);
+    --color-text-brand: var(--blue-400);
+    --color-text-point-accessible: var(--yellow-400);
+    --color-text-success: var(--green-200);
+    --color-text-success-on-dark: var(--green-200);
+    --color-text-warning: var(--yellow-300);
+    --color-text-error: var(--red-300);
+    --color-text-on-card: var(--brand-text-on-card-dark);
+    --color-text-on-card-secondary: var(--brand-text-on-card-secondary-dark);
+    --color-text-on-card-tertiary: var(--brand-text-on-card-tertiary-dark);
+    --color-bg-default: var(--brand-page-dark);
+    --color-bg-subtle: var(--gray-800);
+    --color-bg-input: var(--gray-800);
+    --color-bg-brand: var(--brand-fill-on-dark);
+    --color-bg-brand-subtle: var(--brand-subtle-dark);
+    --color-bg-disabled: var(--gray-800);
+    --color-bg-success-subtle: var(--green-900);
+    --color-bg-warning-subtle: var(--yellow-900);
+    --color-bg-error-subtle: var(--red-900);
+    --color-bg-dark: var(--gray-800);
+    --color-bg-dark-raised: var(--gray-700);
+    --color-bg-card: var(--brand-card-dark);
+    --color-bg-card-subtle: var(--brand-card-subtle-dark);
+    --color-border-default: var(--gray-800);
+    --color-border-strong: var(--gray-500);
+    --color-border-brand: var(--blue-400);
+    --color-border-elevation: var(--gray-800);
+    --color-border-card: var(--brand-border-card-dark);
+    --color-border-input: var(--gray-700);
+    --color-border-focus: var(--blue-600);
+    --color-brand-primary: var(--brand-primary);
+    --color-brand-action: var(--brand-primary-on-dark);
+    --color-brand-accent: var(--brand-accent);
+    --color-icon-default: var(--gray-300);
+    --color-data-blue: var(--blue-400);
+    --color-shadow-sm: var(--black-alpha-00);
+    --color-shadow-md: var(--black-alpha-00);
+    --color-shadow-lg-key: var(--black-alpha-00);
+    --color-shadow-lg-ambient: var(--black-alpha-00);
+    --color-exception-kakao-bg: var(--exception-kakao-yellow);
+    --color-exception-kakao-text: var(--exception-kakao-black);
+    --color-exception-google-bg: var(--exception-google-white);
+    --color-exception-google-border: var(--exception-google-gray);
+    --color-exception-google-text: var(--exception-google-black);
+  }
+}
+
+/* 5. 텍스트 스타일 — 피그마 "단계/두께" ↔ .text-<단계> + .font-<두께> */
+.font-regular { font-weight: var(--font-weight-regular); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-bold { font-weight: var(--font-weight-bold); }
+.text-display-1 { /* bold */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-display-1);
+  line-height: var(--font-line-height-display-1);
+  font-weight: var(--font-weight-bold);
+}
+.text-display-2 { /* bold */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-display-2);
+  line-height: var(--font-line-height-display-2);
+  font-weight: var(--font-weight-bold);
+}
+.text-display-3 { /* bold */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-display-3);
+  line-height: var(--font-line-height-display-3);
+  font-weight: var(--font-weight-bold);
+}
+.text-display-4 { /* bold */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-display-4);
+  line-height: var(--font-line-height-display-4);
+  font-weight: var(--font-weight-bold);
+}
+.text-heading-1 { /* bold */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-heading-1);
+  line-height: var(--font-line-height-heading-1);
+  font-weight: var(--font-weight-bold);
+}
+.text-heading-2 { /* bold */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-heading-2);
+  line-height: var(--font-line-height-heading-2);
+  font-weight: var(--font-weight-bold);
+}
+.text-heading-3 { /* bold */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-heading-3);
+  line-height: var(--font-line-height-heading-3);
+  font-weight: var(--font-weight-bold);
+}
+.text-heading-4 { /* bold */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-heading-4);
+  line-height: var(--font-line-height-heading-4);
+  font-weight: var(--font-weight-bold);
+}
+.text-heading-5 { /* bold */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-heading-5);
+  line-height: var(--font-line-height-heading-5);
+  font-weight: var(--font-weight-bold);
+}
+.text-heading-6 { /* bold */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-heading-6);
+  line-height: var(--font-line-height-heading-6);
+  font-weight: var(--font-weight-bold);
+}
+.text-lead-1 { /* regular */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-lead-1);
+  line-height: var(--font-line-height-lead-1);
+  font-weight: var(--font-weight-regular);
+}
+.text-lead-2 { /* regular · medium */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-lead-2);
+  line-height: var(--font-line-height-lead-2);
+  font-weight: var(--font-weight-regular);
+}
+.text-lead-3 { /* regular */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-lead-3);
+  line-height: var(--font-line-height-lead-3);
+  font-weight: var(--font-weight-regular);
+}
+.text-lead-4 { /* regular */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-lead-4);
+  line-height: var(--font-line-height-lead-4);
+  font-weight: var(--font-weight-regular);
+}
+.text-body-1 { /* regular · medium */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body-1);
+  line-height: var(--font-line-height-body-1);
+  font-weight: var(--font-weight-regular);
+}
+.text-body-2 { /* regular · medium */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body-2);
+  line-height: var(--font-line-height-body-2);
+  font-weight: var(--font-weight-regular);
+}
+.text-body-3 { /* regular */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body-3);
+  line-height: var(--font-line-height-body-3);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--font-letter-spacing-body-3);
+}
+.text-label-1 { /* regular · bold */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-label-1);
+  line-height: var(--font-line-height-label-1);
+  font-weight: var(--font-weight-regular);
+}
+.text-label-2 { /* regular */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-label-2);
+  line-height: var(--font-line-height-label-2);
+  font-weight: var(--font-weight-regular);
+}
+.text-input { /* regular */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-input);
+  line-height: var(--font-line-height-label-1);
+  font-weight: var(--font-weight-regular);
+}
+.text-caption-1 { /* regular · bold */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-caption-1);
+  line-height: var(--font-line-height-caption-1);
+  font-weight: var(--font-weight-regular);
+}
+.text-caption-2 { /* regular */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-caption-2);
+  line-height: var(--font-line-height-caption-2);
+  font-weight: var(--font-weight-regular);
+}
+.text-caption-3 { /* regular */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-caption-3);
+  line-height: var(--font-line-height-caption-3);
+  font-weight: var(--font-weight-regular);
+}
+.text-button-sm { /* medium */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body-2);
+  line-height: normal;
+  font-weight: var(--font-weight-medium);
+}
+
+/* 6. 그림자 — 라이트는 그림자, 다크는 투명 그림자 + 1px 테두리 */
+.shadow-sm { box-shadow: 0 1px 4px 0 var(--color-shadow-sm); border: 1px solid var(--color-border-elevation); }
+.shadow-md { box-shadow: 0 4px 12px 0 var(--color-shadow-md); border: 1px solid var(--color-border-elevation); }
+.shadow-lg { box-shadow: 0 8px 24px 0 var(--color-shadow-lg-key), 0 2px 6px 0 var(--color-shadow-lg-ambient); border: 1px solid var(--color-border-elevation); }

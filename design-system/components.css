@@ -1,0 +1,217 @@
+/* Components — 피그마 "3 Component" 와 1:1. 역할 토큰(var(--…))만 쓴다. 색·px 직접 입력 금지. 손으로 관리하는 파일.
+ * 셸·띠·브레이크포인트는 layout.css, 모션은 motion.css.
+ * 우선순위(사이트 사용 빈도): 버튼 → 카드 → 입력창·폼 → 콜아웃 → 표 → 배지·칩 */
+
+/* ---------- 글자 링크 기본 (2026-10-20) ---------- */
+/* 클래스 없는 <a> 는 text/brand. 방문한 뒤에도 같은 색 — 브라우저 기본 파랑 · 보라 없음. :where 로 우선순위 0 → 부품 · 화면별 링크 색이 항상 이긴다 */
+:where(a:not([class])), :where(a:not([class])):visited { color: var(--color-text-brand); }
+
+/* ---------- 버튼 ---------- */
+/* 버튼 hover 효과 없음 (2026-10-19) — 마우스를 올려도 색 · 밝기 · 움직임이 바뀌지 않는다. 버튼임은 손가락 모양 커서(cursor: pointer)로만 알린다 */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--spacing-xs);
+  height: 48px; padding-inline: var(--spacing-lg);
+  border-radius: var(--radius-button); border: 1px solid transparent;
+  font-family: var(--font-family-base); font-size: var(--font-size-body-1); font-weight: var(--font-weight-bold); line-height: 1;
+  cursor: pointer; transition: background-color .15s, border-color .15s, color .15s;
+  text-decoration: none; /* <a class="btn"> 로 쓸 때 밑줄 제거 (2026-10-16) */
+}
+.btn--primary { background: var(--color-brand-action); color: var(--color-text-on-brand); }
+.btn--secondary { background: var(--color-bg-default); color: var(--color-text-brand); border-color: var(--color-border-brand); }
+.btn--point { background: var(--color-brand-accent); color: var(--color-text-on-point); }
+.btn--ghost { background: transparent; color: var(--color-text-brand); }
+.btn--ghost-gray { background: var(--color-bg-default); color: var(--color-text-tertiary); border-color: var(--color-text-label); }   /* 피그마 Button Variant=Ghost_gray: 흰 바탕 · 테두리 text/label · 글자 text/tertiary (2026-10-19 피그마에 맞춤 — 전엔 테두리 없는 투명) */
+.btn--text { height: auto; padding: 0; border: 0; background: transparent; color: var(--color-text-brand); font-size: var(--font-size-body-2); font-weight: var(--font-weight-medium); }   /* 피그마 Button Variant=Text: 테두리 없음 (투명 1px 도 빼야 글자 끝이 박스 끝과 같다) */
+/* 화살표 텍스트 버튼 (2026-10-19) — 글자 오른쪽에 Icon/16/ic_arrow_right. 모양만 마스크로 쓰고 글자색(currentColor)으로 칠한다 */
+.btn--arrow::after {
+  content: ""; flex: none; width: var(--spacing-md); height: var(--spacing-md); background: currentColor;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'><path d='M5 3L12 7.93091L5 13' stroke='black' stroke-width='1.5' stroke-linecap='round'/></svg>") center / contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'><path d='M5 3L12 7.93091L5 13' stroke='black' stroke-width='1.5' stroke-linecap='round'/></svg>") center / contain no-repeat;
+}
+.btn--text.btn--arrow { gap: var(--spacing-none); }   /* 글자와 아이콘 사이 0 (2026-10-19 지시 — 피그마 Text·Icon=Right 는 4) */
+.btn:disabled, .btn[aria-disabled="true"] { background: var(--color-bg-disabled); color: var(--color-text-disabled); border-color: transparent; cursor: not-allowed; filter: none; }
+.btn--xs { height: var(--spacing-32); padding-inline: var(--spacing-xs); border-radius: var(--radius-control-small); font-size: var(--font-size-label-1); }   /* 피그마 Button Size=S: 높이 32 · 좌우 8 · 둥글기 4 · label-1/Bold (2026-10-19) */
+.btn--sm { height: 36px; padding-inline: var(--spacing-md); font-size: var(--font-size-body-2); }
+.btn--lg { height: var(--control-height); padding-inline: var(--spacing-lg); }   /* 피그마 Button Size=56: 입력창과 같은 높이 (control/height), 좌우 24 */
+.btn--block { display: flex; width: 100%; }   /* 블록 요소 — 위아래 여백이 이웃과 겹쳐(collapse) 간격이 두 배가 되지 않는다 */
+
+/* ---------- 카드 ---------- */
+.card {
+  /* 카드 토큰(bg/card · text/on-card …): 왓핀은 다크에서도 흰 카드 (2026-10-08). 카드 안에서는 역할 색을 카드용으로 바꿔 끼운다 */
+  --color-bg-default: var(--color-bg-card); --color-bg-subtle: var(--color-bg-card-subtle); --color-bg-input: var(--color-bg-card-subtle);
+  --color-text-primary: var(--color-text-on-card); --color-text-strong: var(--color-text-on-card);
+  --color-text-secondary: var(--color-text-on-card-secondary); --color-text-tertiary: var(--color-text-on-card-tertiary);
+  --color-border-default: var(--color-border-card);
+  background: var(--color-bg-card); color: var(--color-text-on-card);
+  border-radius: var(--radius-card); padding: var(--spacing-lg);   /* radius/card = 16 (피그마 05 Radius · 2026-10-08 확정) */
+  border: 1px solid var(--color-border-elevation); box-shadow: 0 1px 4px 0 var(--color-shadow-sm);   /* Default = shadow/sm. 다크는 테두리 */
+}
+.card--outlined { border-color: var(--color-border-default); box-shadow: none; }
+.card--subtle { background: var(--color-bg-subtle); border-color: transparent; }
+.card--kpi .card__value { font-size: var(--font-size-heading-2); line-height: var(--font-line-height-heading-2); font-weight: var(--font-weight-bold); color: var(--color-text-strong); }
+.card--kpi .card__delta-up { color: var(--color-text-success); }
+.card--kpi .card__delta-down { color: var(--color-text-error); }
+.card__title { font-size: var(--font-size-heading-6); line-height: var(--font-line-height-heading-6); font-weight: var(--font-weight-bold); color: var(--color-text-strong); margin-bottom: var(--spacing-xs); }
+.card__desc { font-size: var(--font-size-body-2); line-height: var(--font-line-height-body-2); color: var(--color-text-secondary); }
+
+/* ---------- 입력창 · 폼 ---------- */
+.field { display: flex; flex-direction: column; gap: var(--spacing-xs); }   /* 피그마 Input/Field: 라벨↔입력창↔도움말 8 (spacing/xs) */
+.field + .field { margin-top: var(--spacing-md); }   /* 폼 안 칸 사이 간격 — 모든 사이트 공통 */
+.field ~ .btn--block { margin-top: var(--spacing-lg); }   /* 마지막 입력칸 ↔ 제출 버튼 24 (피그마에 폼 화면이 없어 정한 값) */
+.field__label { font-size: var(--font-size-label-1); line-height: var(--font-line-height-label-1); font-weight: var(--font-weight-bold); color: var(--color-text-strong); }
+.field__label .req { color: var(--color-text-brand); }   /* 피그마 Input/Field: 필수 표시 = text/brand */
+.input {
+  width: 100%; height: var(--control-height); padding-inline: var(--spacing-sm);   /* 피그마 Input/Inner: 좌우 12 (spacing/sm) */
+  background: var(--color-bg-default); color: var(--color-text-strong);
+  border: 1px solid var(--color-border-input); border-radius: var(--radius-control);
+  font-family: var(--font-family-base); font-size: var(--font-size-input); line-height: var(--font-line-height-label-1);   /* 피그마 Input/Inner: 16 (font/size/input → font/size/16). 아이폰 사파리는 16 미만 입력칸에서 화면을 자동 확대한다. 라벨은 15 그대로 */
+  outline: none; transition: border-color .15s;
+}
+.input::placeholder { color: var(--color-text-placeholder); }
+.input:focus, .input[placeholder]:not(:placeholder-shown):not([aria-invalid="true"]):not(:disabled):not(:read-only) { border-color: var(--color-border-brand); }   /* Focus · Filled — 피그마 Form=Focus/Filled/Success: 1px border/brand, 바깥 링 없음. placeholder 가 없는 입력창은 :placeholder-shown 이 영영 거짓이라 [placeholder] 로 한정 (2026-10-16) */
+/* 브라우저 자동완성이 흰 배경을 강제로 칠하는 것을 막는다 */
+.input:-webkit-autofill, .input:-webkit-autofill:hover, .input:-webkit-autofill:focus { -webkit-text-fill-color: var(--color-text-strong); -webkit-box-shadow: 0 0 0 1000px var(--color-bg-default) inset; }
+.input[aria-invalid="true"] { border-color: var(--color-text-error); }
+.input:disabled { background: var(--color-bg-disabled); color: var(--color-text-disabled); border-color: var(--color-border-default); }
+input.input:read-only:not(:disabled), textarea.input:read-only:not(:disabled) { background: var(--color-bg-input); }   /* select 는 항상 :read-only 라 제외 */
+.input--sm { height: var(--control-height-sm); }
+textarea.input { height: auto; min-height: 120px; padding-block: var(--spacing-sm); resize: vertical; }
+.field__help { font-size: var(--font-size-label-2); line-height: var(--font-line-height-label-2); color: var(--color-text-tertiary); }
+.field__help--error { color: var(--color-text-error); }
+.check { display: inline-flex; align-items: center; gap: var(--spacing-xs); font-size: var(--font-size-label-1); line-height: var(--font-line-height-label-1); color: var(--color-text-primary); cursor: pointer; }
+.check input { width: 20px; height: 20px; accent-color: var(--color-brand-action); border-radius: var(--radius-control-small); }
+.check input[type="radio"] { appearance: none; margin: 0; border-radius: var(--radius-pill); border: 1px solid var(--color-border-strong); background: var(--color-bg-default); transition: border var(--motion-fast); }
+.check input[type="radio"]:checked { border: 6px solid var(--color-brand-action); }
+.check input[type="radio"]:disabled { border-color: var(--color-border-default); background: var(--color-bg-disabled); }
+.switch { position: relative; width: 44px; height: 24px; border-radius: var(--radius-pill); background: var(--color-border-strong); border: 0; cursor: pointer; transition: background .15s; }
+.switch::after { content: ""; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: var(--radius-pill); background: var(--color-text-inverse); transition: transform .15s; }
+.switch[aria-checked="true"] { background: var(--color-brand-action); }
+.switch[aria-checked="true"]::after { transform: translateX(20px); }
+
+/* ---------- 콜아웃 ---------- */
+.callout { display: flex; gap: var(--spacing-sm); padding: var(--spacing-md); border-radius: var(--radius-md); font-size: var(--font-size-body-2); line-height: var(--font-line-height-body-2); color: var(--color-text-primary); border: 1px solid transparent; }
+.callout--info { background: var(--color-bg-brand-subtle); border-color: var(--color-border-brand); }
+.callout--tip { background: var(--color-bg-success-subtle); }
+.callout--warn { background: var(--color-bg-warning-subtle); }
+.callout--error { background: var(--color-bg-error-subtle); color: var(--color-text-error); }
+.callout--point { background: var(--color-brand-accent); color: var(--color-text-on-point); }
+.callout__title { font-weight: var(--font-weight-bold); display: block; margin-bottom: var(--spacing-xxs); }
+
+/* ---------- 표 ---------- */
+.table { width: 100%; border-collapse: collapse; font-size: var(--font-size-body-2); line-height: var(--font-line-height-body-2); }
+.table th { text-align: left; font-weight: var(--font-weight-bold); color: var(--color-text-on-brand); background: var(--color-bg-brand); padding: var(--spacing-sm) var(--spacing-md); }
+.table td { padding: var(--spacing-sm) var(--spacing-md); border-bottom: 1px solid var(--color-border-default); color: var(--color-text-primary); }
+.table--subtle th { background: var(--color-bg-subtle); color: var(--color-text-secondary); }
+.table tbody tr:hover td { background: var(--color-bg-subtle); }
+.table .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ---------- 배지 · 칩 ---------- */
+.badge { display: inline-flex; align-items: center; height: 25px; padding-inline: var(--spacing-xs); border-radius: var(--radius-pill); font-size: var(--font-size-caption-1); line-height: 1; font-weight: var(--font-weight-bold); }
+.badge--primary { background: var(--color-bg-brand); color: var(--color-text-on-brand); }
+.badge--gray { background: var(--color-bg-subtle); color: var(--color-text-secondary); }
+.badge--warning { background: var(--color-bg-warning-subtle); color: var(--color-text-point-accessible); }
+.badge--success { background: var(--color-bg-success-subtle); color: var(--color-text-success); }
+.chips { display: flex; flex-wrap: wrap; gap: var(--spacing-xs); }
+.chip { display: inline-flex; align-items: center; height: 32px; padding-inline: var(--spacing-sm); border-radius: var(--radius-pill); border: 1px solid var(--color-border-strong); background: var(--color-bg-default); color: var(--color-text-secondary); font-size: var(--font-size-body-2); cursor: pointer; }
+.chip.is-active { background: var(--color-bg-brand); border-color: transparent; color: var(--color-text-on-brand); }
+
+/* ---------- 진행 바 ---------- */
+.progress { height: 8px; border-radius: var(--radius-pill); background: var(--color-bg-subtle); overflow: hidden; }
+.progress > span { display: block; height: 100%; background: var(--color-brand-action); border-radius: inherit; }
+
+/* ======================================================================
+   피그마 3 Component 중 2026-10-08 추가분 7종 (가이드 4. Production/Wattfin › 09 샘플)
+   모든 값은 역할 토큰. 브랜드·라이트/다크 전환은 토큰이 담당한다.
+   ====================================================================== */
+
+/* ---------- CTA 바 (피그마 CTA: Size L 56 / M 40 · Shadow · Type Single / Two) ---------- */
+.cta { display: flex; align-items: center; gap: var(--spacing-md); padding: var(--spacing-md) var(--spacing-md-plus); background: var(--color-bg-default); }
+.cta--shadow { border-top: 1px solid var(--color-border-elevation); box-shadow: 0 1px 4px 0 var(--color-shadow-sm); }
+.cta--sticky { position: sticky; bottom: 0; z-index: 5; }
+.cta > .btn { flex: 1 1 0; height: 56px; border-radius: var(--radius-button); }
+.cta--m > .btn { height: 40px; }
+.cta > .btn--reset { flex: 0 0 auto; background: var(--color-bg-default); color: var(--color-text-tertiary); border-color: var(--color-text-label); }   /* Type=Two 의 '초기화' */
+.cta > .btn--reset::before { content: "+"; font-weight: var(--font-weight-regular); color: var(--color-text-tertiary); }
+
+/* ---------- 휴대폰 입력 (피그마 Input/Phone) — .field + .input 조합. 상태별 테두리는 .input 규칙 ---------- */
+.input--phone { font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+
+/* ---------- 날짜 · 선택 상자 (피그마 Input/Calendar · Input/dropdown) — 오른쪽 ic_down_24 ---------- */
+.input--date, .input--select {
+  appearance: none; -webkit-appearance: none; padding-right: calc(var(--spacing-sm) + 24px + var(--spacing-sm));
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><path d='M4 9L12 17L20 9' stroke='%23999999' stroke-width='2' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat; background-position: right var(--spacing-sm) center; background-size: 24px 24px;
+}
+.input--date::-webkit-calendar-picker-indicator { opacity: 0; width: 24px; height: 24px; cursor: pointer; }
+.input--select:disabled { background-image: none; }
+/* 펼친 목록 (커스텀 드롭다운용) — 피그마 State=Open */
+.menu { margin-top: var(--spacing-xs); border: 1px solid var(--color-text-placeholder); border-radius: var(--radius-control); background: var(--color-bg-default); padding: 1px 0; overflow: hidden; }
+.menu__item { display: block; width: 100%; padding: 17px var(--spacing-sm); border: 0; background: transparent; text-align: left; font-family: inherit; font-size: var(--font-size-label-1); line-height: var(--font-line-height-label-1); color: var(--color-text-strong); cursor: pointer; }
+.menu__item:hover, .menu__item.is-active { background: var(--color-bg-disabled); border-radius: var(--radius-sm); }
+
+/* ---------- 세그먼트 (피그마 Segment/60/segment) ---------- */
+.segment { display: flex; padding: var(--spacing-xxs-plus); border: 1px solid var(--color-border-default); border-radius: var(--radius-sm); background: var(--color-bg-default); }
+.segment__item {
+  flex: 1 1 0; display: inline-flex; align-items: center; justify-content: center; gap: var(--spacing-xs);
+  height: 48px; padding-inline: var(--spacing-lg-plus); border: 0; border-radius: var(--radius-sm); background: transparent;
+  font-family: inherit; font-size: var(--font-size-body-1); line-height: var(--font-line-height-body-1); font-weight: var(--font-weight-regular); color: var(--color-text-tertiary);
+  cursor: pointer; white-space: nowrap; transition: background-color var(--motion-fast), color var(--motion-fast);
+}
+.segment__item.is-active, .segment__item[aria-pressed="true"], .segment__item[aria-selected="true"] { background: var(--color-bg-brand); color: var(--color-text-inverse); font-weight: var(--font-weight-bold); }
+.segment__item:disabled { cursor: not-allowed; color: var(--color-text-disabled); }
+.segment__item .badge { font-weight: var(--font-weight-regular); }
+
+/* ---------- 탭 (피그마 Segment/48/Tab Item) ---------- */
+.tabs { display: flex; gap: 0; border-bottom: 1px solid var(--color-border-default); }
+.tab {
+  display: inline-flex; flex-direction: column; align-items: center; padding: var(--spacing-sm) var(--spacing-md) 0; border: 0; background: transparent;
+  font-family: inherit; font-size: var(--font-size-body-1); line-height: var(--font-line-height-body-1); color: var(--color-text-secondary); cursor: pointer; white-space: nowrap;
+}
+.tab::after { content: ""; display: block; width: 100%; height: 2px; margin-top: var(--spacing-sm); background: transparent; border-radius: 1px; transition: background-color var(--motion-fast); }
+.tab.is-active, .tab[aria-selected="true"] { font-size: var(--font-size-label-1); line-height: var(--font-line-height-label-1); font-weight: var(--font-weight-bold); color: var(--color-text-brand); padding-top: calc(var(--spacing-sm) + 1.5px); }
+.tab.is-active::after, .tab[aria-selected="true"]::after { background: var(--color-bg-brand); }
+.tab:disabled { color: var(--color-text-disabled); cursor: not-allowed; }
+
+/* ---------- 페이지네이션 (피그마 Segment/36/Pagination · Pagination/Page) ---------- */
+.pagination { display: inline-flex; align-items: center; gap: var(--spacing-xxs); }
+.pagination__page {
+  display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border: 0; border-radius: var(--radius-md); background: var(--color-bg-default);
+  font-family: inherit; font-size: var(--font-size-body-2); line-height: var(--font-line-height-body-2); color: var(--color-text-secondary); cursor: pointer; text-decoration: none;
+}
+.pagination__page.is-active, .pagination__page[aria-current="page"] { background: var(--color-bg-brand); color: var(--color-text-on-brand); }
+.pagination__arrow {
+  display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 36px; border: 0; background: transparent; cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'><path d='M5.33366 14L10.667 8.66667L5.33366 3.33333' stroke='%23999999' stroke-width='1.33333' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat; background-position: center; background-size: 16px 16px;
+}
+.pagination__arrow--prev { transform: rotate(180deg); }
+.pagination__arrow:disabled { opacity: .35; cursor: not-allowed; }
+
+/* ---------- 아코디언 (피그마 3 Component › Accordion, State=Closed/Open) — 2026-10-18 ----------
+   <details class="accordion"><summary>제목</summary><div class="accordion__body">본문</div></details>
+   닫힘·열림 모두 16(spacing/md) 리듬: 선─16─제목─16─[본문 상자 안쪽 16]─16─선. 열린 제목 아래에는 선이 없다.
+   여러 개를 쌓으면 각 항목 위 선이 구분선이 되고, 목록 맨 아래에만 아래 선을 하나 더 그린다. */
+.accordion { border-top: 1px solid var(--color-border-default); }
+.accordion:last-of-type { border-bottom: 1px solid var(--color-border-default); }
+[data-theme="dark"] .accordion { border-color: var(--color-border-strong); }   /* 다크에서 border/default 는 어두운 바탕에 묻힌다 */
+.accordion > summary {
+  display: flex; align-items: center; gap: var(--spacing-xs);
+  padding: var(--spacing-md) var(--spacing-xxs);
+  font-family: var(--font-family-base); font-size: var(--font-size-heading-6); line-height: var(--font-line-height-heading-6); font-weight: var(--font-weight-bold);
+  color: var(--color-text-strong); cursor: pointer; list-style: none; user-select: none;
+  transition: color var(--motion-fast);
+}
+.accordion > summary::-webkit-details-marker { display: none; }
+.accordion > summary::before {   /* + / – 아이콘 (피그마 icon: label-1/Bold · text/brand · 폭 16 spacing/md) */
+  content: "+"; flex: none; width: var(--spacing-md); text-align: center;
+  font-size: var(--font-size-label-1); font-weight: var(--font-weight-bold); color: var(--color-text-brand);
+}
+.accordion[open] > summary::before { content: "–"; }
+.accordion > summary:hover { color: var(--color-text-brand); }
+.accordion > summary:focus-visible { outline: 2px solid var(--color-border-brand); outline-offset: 2px; }
+.accordion[open] { padding-bottom: var(--spacing-md); }   /* 상자 아래 16 — 피그마 Open 변형의 아래 안쪽 여백. 바깥 여백(margin)이면 놓인 곳에 따라 밖으로 빠져나간다 */
+.accordion__body {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-sm); background: var(--color-bg-subtle);
+  font-size: var(--font-size-body-1); line-height: var(--font-line-height-body-1); color: var(--color-text-secondary);
+}
