@@ -1,4 +1,5 @@
 {
+ "$version": "피그마 기준 v1.0 · 261112 (2026.11.12)",
  "$description": "피그마 2. Element › Icon 프레임의 아이콘 목록. 피그마에서 내보낸 생성물이다 — 손으로 고치지 않는다. 아이콘을 바꾸려면 피그마에서 바꾼 뒤 다시 내보낸다(Claude: \"피그마 아이콘 다시 내보내줘\"). SVG 는 이 폴더의 <크기>/<이름>_<크기>.svg",
  "$source": {
   "fileKey": "tXPHUuCgrV3o1STFl7kcvI",
@@ -22,7 +23,7 @@
   {
    "size": 24,
    "label": "24px UI 아이콘",
-   "count": 19
+   "count": 22
   },
   {
    "size": 32,
@@ -42,7 +43,7 @@
   {
    "size": 64,
    "label": "64px 중형 아이콘",
-   "count": 3
+   "count": 8
   },
   {
    "size": 72,
@@ -62,7 +63,7 @@
   {
    "size": 120,
    "label": "120px 아이콘",
-   "count": 3
+   "count": 22
   }
  ],
  "icons": [
@@ -1021,6 +1022,17 @@
    "file": "24/ic_calendar_g_24.svg"
   },
   {
+   "id": "3508:22",
+   "size": 24,
+   "name": "ic_clock_g",
+   "figma": "Icon/24/ic_clock_g",
+   "set": null,
+   "variant": {},
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_clock_g_24.svg"
+  },
+  {
    "id": "247:25110",
    "size": 24,
    "name": "ic_switch_c_on",
@@ -1107,6 +1119,34 @@
    "width": 24,
    "height": 24,
    "file": "24/ic_arrow_g_up_24.svg"
+  },
+  {
+   "id": "3476:238",
+   "size": 24,
+   "name": "ic_arrow_g_left",
+   "figma": "Icon/24/ic_arrow_g · 상태=left",
+   "set": "Icon/24/ic_arrow_g",
+   "variant": {
+    "크기": "24",
+    "상태": "left"
+   },
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_arrow_g_left_24.svg"
+  },
+  {
+   "id": "3476:241",
+   "size": 24,
+   "name": "ic_arrow_g_right",
+   "figma": "Icon/24/ic_arrow_g · 상태=right",
+   "set": "Icon/24/ic_arrow_g",
+   "variant": {
+    "크기": "24",
+    "상태": "right"
+   },
+   "width": 24,
+   "height": 24,
+   "file": "24/ic_arrow_g_right_24.svg"
   },
   {
    "id": "231:17081",
@@ -1641,6 +1681,76 @@
    "width": 64,
    "height": 64,
    "file": "64/ic_people_3_64.svg"
+  },
+  {
+   "id": "3419:16",
+   "size": 64,
+   "name": "ic_growth_lv1_sprout",
+   "figma": "Icon/64/ic_growth · 속성=lv1_sprout",
+   "set": "Icon/64/ic_growth",
+   "variant": {
+    "크기": "64",
+    "속성": "lv1_sprout"
+   },
+   "width": 64,
+   "height": 64,
+   "file": "64/ic_growth_lv1_sprout_64.svg"
+  },
+  {
+   "id": "3419:34",
+   "size": 64,
+   "name": "ic_growth_lv2_stem",
+   "figma": "Icon/64/ic_growth · 속성=lv2_stem",
+   "set": "Icon/64/ic_growth",
+   "variant": {
+    "크기": "64",
+    "속성": "lv2_stem"
+   },
+   "width": 64,
+   "height": 64,
+   "file": "64/ic_growth_lv2_stem_64.svg"
+  },
+  {
+   "id": "3419:54",
+   "size": 64,
+   "name": "ic_growth_lv3_bud",
+   "figma": "Icon/64/ic_growth · 속성=lv3_bud",
+   "set": "Icon/64/ic_growth",
+   "variant": {
+    "크기": "64",
+    "속성": "lv3_bud"
+   },
+   "width": 64,
+   "height": 64,
+   "file": "64/ic_growth_lv3_bud_64.svg"
+  },
+  {
+   "id": "3419:77",
+   "size": 64,
+   "name": "ic_growth_lv4_flower",
+   "figma": "Icon/64/ic_growth · 속성=lv4_flower",
+   "set": "Icon/64/ic_growth",
+   "variant": {
+    "크기": "64",
+    "속성": "lv4_flower"
+   },
+   "width": 64,
+   "height": 64,
+   "file": "64/ic_growth_lv4_flower_64.svg"
+  },
+  {
+   "id": "3419:104",
+   "size": 64,
+   "name": "ic_growth_lv5_fruit",
+   "figma": "Icon/64/ic_growth · 속성=lv5_fruit",
+   "set": "Icon/64/ic_growth",
+   "variant": {
+    "크기": "64",
+    "속성": "lv5_fruit"
+   },
+   "width": 64,
+   "height": 64,
+   "file": "64/ic_growth_lv5_fruit_64.svg"
   },
   {
    "id": "51:19883",
@@ -2425,6 +2535,272 @@
    "width": 120,
    "height": 120,
    "file": "120/colorLine_homethunder_120.svg"
+  },
+  {
+   "id": "3267:1058",
+   "size": 120,
+   "name": "3dbluehouse2floor_bottom",
+   "figma": "Icon · 속성 1=120, 속성 2=3dbluehouse2floor_bottom",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "3dbluehouse2floor_bottom"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/3dbluehouse2floor_bottom_120.svg"
+  },
+  {
+   "id": "3291:1742",
+   "size": 120,
+   "name": "3dbluehouse",
+   "figma": "Icon · 속성 1=120, 속성 2=3dbluehouse",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "3dbluehouse"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/3dbluehouse_120.svg"
+  },
+  {
+   "id": "3291:2084",
+   "size": 120,
+   "name": "3dbluehouse2floor",
+   "figma": "Icon · 속성 1=120, 속성 2=3dbluehouse2floor",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "3dbluehouse2floor"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/3dbluehouse2floor_120.svg"
+  },
+  {
+   "id": "3291:1329",
+   "size": 120,
+   "name": "solarrooflease",
+   "figma": "Icon · 속성 1=120, 속성 2=solarrooflease",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "solarrooflease"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/solarrooflease_120.svg"
+  },
+  {
+   "id": "3291:1576",
+   "size": 120,
+   "name": "cash",
+   "figma": "Icon · 속성 1=120, 속성 2=cash",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "cash"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/cash_120.svg"
+  },
+  {
+   "id": "3371:24",
+   "size": 120,
+   "name": "patent",
+   "figma": "Icon · 속성 1=120, 속성 2=patent",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "patent"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/patent_120.svg"
+  },
+  {
+   "id": "3372:28",
+   "size": 120,
+   "name": "re100",
+   "figma": "Icon · 속성 1=120, 속성 2=re100",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "re100"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/re100_120.svg"
+  },
+  {
+   "id": "3373:76",
+   "size": 120,
+   "name": "completion",
+   "figma": "Icon · 속성 1=120, 속성 2=completion",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "completion"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/completion_120.svg"
+  },
+  {
+   "id": "3374:99",
+   "size": 120,
+   "name": "roofleaseincome",
+   "figma": "Icon · 속성 1=120, 속성 2=roofleaseincome",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "roofleaseincome"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/roofleaseincome_120.svg"
+  },
+  {
+   "id": "3386:61",
+   "size": 120,
+   "name": "forecast",
+   "figma": "Icon · 속성 1=120, 속성 2=forecast",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "forecast"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/forecast_120.svg"
+  },
+  {
+   "id": "3387:74",
+   "size": 120,
+   "name": "solarrental",
+   "figma": "Icon · 속성 1=120, 속성 2=solarrental",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "solarrental"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/solarrental_120.svg"
+  },
+  {
+   "id": "3410:28",
+   "size": 120,
+   "name": "powersale",
+   "figma": "Icon · 속성 1=120, 속성 2=powersale",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "powersale"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/powersale_120.svg"
+  },
+  {
+   "id": "3411:49",
+   "size": 120,
+   "name": "reinvest",
+   "figma": "Icon · 속성 1=120, 속성 2=reinvest",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "reinvest"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/reinvest_120.svg"
+  },
+  {
+   "id": "3414:2",
+   "size": 120,
+   "name": "powersale_mint",
+   "figma": "Icon · 속성 1=120, 속성 2=powersale_mint",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "powersale_mint"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/powersale_mint_120.svg"
+  },
+  {
+   "id": "3414:29",
+   "size": 120,
+   "name": "powersale_peach",
+   "figma": "Icon · 속성 1=120, 속성 2=powersale_peach",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "powersale_peach"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/powersale_peach_120.svg"
+  },
+  {
+   "id": "3414:56",
+   "size": 120,
+   "name": "powersale_lavender",
+   "figma": "Icon · 속성 1=120, 속성 2=powersale_lavender",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "powersale_lavender"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/powersale_lavender_120.svg"
+  },
+  {
+   "id": "3414:83",
+   "size": 120,
+   "name": "reinvest_mint",
+   "figma": "Icon · 속성 1=120, 속성 2=reinvest_mint",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "reinvest_mint"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/reinvest_mint_120.svg"
+  },
+  {
+   "id": "3414:131",
+   "size": 120,
+   "name": "reinvest_peach",
+   "figma": "Icon · 속성 1=120, 속성 2=reinvest_peach",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "reinvest_peach"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/reinvest_peach_120.svg"
+  },
+  {
+   "id": "3414:179",
+   "size": 120,
+   "name": "reinvest_lavender",
+   "figma": "Icon · 속성 1=120, 속성 2=reinvest_lavender",
+   "set": "Icon",
+   "variant": {
+    "속성 1": "120",
+    "속성 2": "reinvest_lavender"
+   },
+   "width": 120,
+   "height": 120,
+   "file": "120/reinvest_lavender_120.svg"
   }
  ]
 }

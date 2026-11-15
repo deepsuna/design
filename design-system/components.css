@@ -1,4 +1,5 @@
 /* Components — 피그마 "3 Component" 와 1:1. 역할 토큰(var(--…))만 쓴다. 색·px 직접 입력 금지. 손으로 관리하는 파일.
+ * 피그마 기준 v1.0 · 261112 (2026.11.12) — 딥리뉴통합디자인가이드 표지 버전 (build.mjs 가 자동으로 적음)
  * 셸·띠·브레이크포인트는 layout.css, 모션은 motion.css.
  * 우선순위(사이트 사용 빈도): 버튼 → 카드 → 입력창·폼 → 콜아웃 → 표 → 배지·칩 */
 
@@ -28,10 +29,24 @@
   -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'><path d='M5 3L12 7.93091L5 13' stroke='black' stroke-width='1.5' stroke-linecap='round'/></svg>") center / contain no-repeat;
           mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'><path d='M5 3L12 7.93091L5 13' stroke='black' stroke-width='1.5' stroke-linecap='round'/></svg>") center / contain no-repeat;
 }
-.btn--text.btn--arrow { gap: var(--spacing-none); }   /* 글자와 아이콘 사이 0 (2026-10-19 지시 — 피그마 Text·Icon=Right 는 4) */
-.btn:disabled, .btn[aria-disabled="true"] { background: var(--color-bg-disabled); color: var(--color-text-disabled); border-color: transparent; cursor: not-allowed; filter: none; }
+.btn--text.btn--arrow { gap: var(--spacing-none); }   /* 글자와 아이콘 사이 0 — 피그마 Button Variant=Text · Size=S · Icon=Right 도 0 (2026-11-06 피그마 4 → 0) */
+/* + 아이콘 버튼 (2026-11-06) — 피그마 Button Ghost · Size=40 · Icon=On: 글자 왼쪽에 Icon/16/ic_plus, 아이콘 ↔ 글자 4. 글자색(currentColor)으로 칠한다 */
+.btn--plus { gap: var(--spacing-xxs); }
+.btn--icon-right::before { order: 1; }   /* 아이콘을 글자 오른쪽으로 — 피그마 Button Icon=Right (2026-11-06) */
+.btn--plus::before {
+  content: ""; flex: none; width: var(--spacing-md); height: var(--spacing-md); background: currentColor;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'><rect x='2.00008' y='6.93533' width='11.9999' height='2.12902' rx='1.06451' fill='black'/><rect x='6.93562' y='2.00009' width='2.12902' height='11.9999' rx='1.06451' fill='black'/></svg>") center / contain no-repeat;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'><rect x='2.00008' y='6.93533' width='11.9999' height='2.12902' rx='1.06451' fill='black'/><rect x='6.93562' y='2.00009' width='2.12902' height='11.9999' rx='1.06451' fill='black'/></svg>") center / contain no-repeat;
+}
+/* 비활성 — 피그마 Button State=Disabled 그대로 (2026-11-06 맞춤. 전엔 바탕 bg/disabled · 글자 text/disabled 로 피그마와 달랐다)
+   Solid(primary · point): 바탕 text/disabled-subtle · 글자 text/inverse. Ghost(테두리 버튼): 바탕 bg/default · 테두리 · 글자 text/disabled-subtle */
+.btn:disabled, .btn[aria-disabled="true"] { background: var(--color-text-disabled-subtle); color: var(--color-text-inverse); border-color: transparent; cursor: not-allowed; filter: none; }
+.btn--secondary:disabled, .btn--secondary[aria-disabled="true"],
+.btn--ghost-gray:disabled, .btn--ghost-gray[aria-disabled="true"] { background: var(--color-bg-default); color: var(--color-text-disabled-subtle); border-color: var(--color-text-disabled-subtle); }
+.btn--text:disabled, .btn--text[aria-disabled="true"] { background: transparent; color: var(--color-text-disabled-subtle); }   /* 텍스트 버튼은 상자 없이 글자만 흐리게 — 피그마 Text 에는 Disabled 상태가 없어 Ghost 비활성 글자색을 따름 */
 .btn--xs { height: var(--spacing-32); padding-inline: var(--spacing-xs); border-radius: var(--radius-control-small); font-size: var(--font-size-label-1); }   /* 피그마 Button Size=S: 높이 32 · 좌우 8 · 둥글기 4 · label-1/Bold (2026-10-19) */
 .btn--sm { height: 36px; padding-inline: var(--spacing-md); font-size: var(--font-size-body-2); }
+.btn--md { height: var(--control-height-sm); }   /* 피그마 Button Size=40: 높이 40 (control/height-sm) · 좌우 24 · 글자 16 Bold — 기본(48) 보다 한 단계 낮은 버튼 (2026-11-06) */
 .btn--lg { height: var(--control-height); padding-inline: var(--spacing-lg); }   /* 피그마 Button Size=56: 입력창과 같은 높이 (control/height), 좌우 24 */
 .btn--block { display: flex; width: 100%; }   /* 블록 요소 — 위아래 여백이 이웃과 겹쳐(collapse) 간격이 두 배가 되지 않는다 */
 
@@ -75,7 +90,7 @@
 .input:disabled { background: var(--color-bg-disabled); color: var(--color-text-disabled); border-color: var(--color-border-default); }
 input.input:read-only:not(:disabled), textarea.input:read-only:not(:disabled) { background: var(--color-bg-input); }   /* select 는 항상 :read-only 라 제외 */
 .input--sm { height: var(--control-height-sm); }
-textarea.input { height: auto; min-height: 120px; padding-block: var(--spacing-sm); resize: vertical; }
+textarea.input { height: auto; min-height: 180px; padding-block: var(--spacing-md); resize: vertical; }   /* 피그마 TextArea: 입력 상자 높이 180 · 위아래 16 · 좌우 12 (2026-11-03) */
 .field__help { font-size: var(--font-size-label-2); line-height: var(--font-line-height-label-2); color: var(--color-text-tertiary); }
 .field__help--error { color: var(--color-text-error); }
 .check { display: inline-flex; align-items: center; gap: var(--spacing-xs); font-size: var(--font-size-label-1); line-height: var(--font-line-height-label-1); color: var(--color-text-primary); cursor: pointer; }
@@ -136,18 +151,85 @@ textarea.input { height: auto; min-height: 120px; padding-block: var(--spacing-s
 /* ---------- 휴대폰 입력 (피그마 Input/Phone) — .field + .input 조합. 상태별 테두리는 .input 규칙 ---------- */
 .input--phone { font-variant-numeric: tabular-nums; letter-spacing: .02em; }
 
-/* ---------- 날짜 · 선택 상자 (피그마 Input/Calendar · Input/dropdown) — 오른쪽 ic_down_24 ---------- */
+/* ---------- 날짜 · 선택 상자 (피그마 Input/Calendar · Input/dropdown) — 오른쪽 아이콘: 선택 상자 ic_arrow_g 24(아래) · 날짜 ic_calendar_g 24 · 높이 32 선택 상자 ic_arrow_g 16 ---------- */
 .input--date, .input--select {
   appearance: none; -webkit-appearance: none; padding-right: calc(var(--spacing-sm) + 24px + var(--spacing-sm));
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><path d='M4 9L12 17L20 9' stroke='%23999999' stroke-width='2' stroke-linecap='round'/></svg>");
   background-repeat: no-repeat; background-position: right var(--spacing-sm) center; background-size: 24px 24px;
 }
-.input--date::-webkit-calendar-picker-indicator { opacity: 0; width: 24px; height: 24px; cursor: pointer; }
+/* 날짜 입력창은 달력 아이콘 — 피그마 Icon/24/ic_calendar_g (icons/24/ic_calendar_g_24.svg 그대로) (2026-11-10) */
+.input--date {
+  background-image: url("data:image/svg+xml;utf8,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><g clip-path='url(%23clip0_231_17058)'><path d='M18.5 5H5.5C4.11929 5 3 6.11929 3 7.5V19C3 20.3807 4.11929 21.5 5.5 21.5H18.5C19.8807 21.5 21 20.3807 21 19V7.5C21 6.11929 19.8807 5 18.5 5Z' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M3 10H21' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M8 3V7' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M16 3V7' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g><defs><clipPath id='clip0_231_17058'><rect width='20' height='20.5' fill='white' transform='translate(2 2)'/></clipPath></defs></svg>");
+}
+/* 입력창 어디를 눌러도 시스템 달력이 열림 (2026-11-11) — 브라우저의 보이지 않는 달력 버튼을 입력창 전체 크기로 늘림. 글자는 그 아래 그대로 보임.
+   크롬 · 엣지 · 안드로이드: 전체 영역. 사파리(맥) · 파이어폭스: 이 선택자가 없어 날짜 칸 글자 자리는 직접 입력, 아이콘 자리는 달력. 아이폰은 원래 전체가 달력 */
+.input--date { position: relative; }
+.input--date::-webkit-calendar-picker-indicator { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; padding: 0; opacity: 0; cursor: pointer; }
 .input--select:disabled { background-image: none; }
+.input--xs { height: var(--spacing-32); border-radius: var(--radius-control-small); }   /* 피그마 Input/Inner Height=32 (선택 상자): 높이 32 · 둥글기 4 (2026-11-03) */
+/* 높이 32 선택 상자는 16px 화살표 — 피그마 Icon/16/ic_arrow_g 방향=down (icons/16/ic_arrow_g_down_16.svg 그대로) (2026-11-10) */
+.input--select.input--xs {
+  padding-right: calc(var(--spacing-sm) + 16px + var(--spacing-sm));
+  background-image: url("data:image/svg+xml;utf8,<svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M2.66602 5.6665L7.99935 10.9998L13.3327 5.6665' stroke='%23999999' stroke-width='1.33333' stroke-linecap='round'/></svg>");
+  background-size: 16px 16px;
+}
+
+/* ---------- 버튼이 안에 있는 입력창 (피그마 Input/Inner State=button) — 테두리 상자 안에 입력칸 + 작은 버튼(.btn--xs) (2026-11-03) ---------- */
+.input-group {
+  display: flex; align-items: center; gap: var(--spacing-sm); height: var(--control-height); padding-inline: var(--spacing-sm);
+  border: 1px solid var(--color-border-input); border-radius: var(--radius-control); background: var(--color-bg-default);
+}
+.input-group:focus-within { border-color: var(--color-border-brand); }
+.input-group > .input { flex: 1 1 auto; min-width: 0; height: auto; padding: 0; border: 0; border-radius: 0; background: transparent; }
+.input-group > .btn { flex: none; }
+/* ---------- 단위가 바깥에 붙는 입력창 (피그마 Input/Inner State=Placeholder_Outerword) — 입력창 오른쪽 16 띄워 단위 글자(예: 평) (2026-11-03) ---------- */
+.input-unit { display: flex; align-items: center; gap: var(--spacing-md); }
+.input-unit > .input { flex: 1 1 auto; min-width: 0; }
+.input-unit__text { flex: none; font-size: var(--font-size-heading-6); line-height: var(--font-line-height-heading-6); font-weight: var(--font-weight-bold); color: var(--color-text-strong); }
 /* 펼친 목록 (커스텀 드롭다운용) — 피그마 State=Open */
-.menu { margin-top: var(--spacing-xs); border: 1px solid var(--color-text-placeholder); border-radius: var(--radius-control); background: var(--color-bg-default); padding: 1px 0; overflow: hidden; }
-.menu__item { display: block; width: 100%; padding: 17px var(--spacing-sm); border: 0; background: transparent; text-align: left; font-family: inherit; font-size: var(--font-size-label-1); line-height: var(--font-line-height-label-1); color: var(--color-text-strong); cursor: pointer; }
-.menu__item:hover, .menu__item.is-active { background: var(--color-bg-disabled); border-radius: var(--radius-sm); }
+/*   피그마 'Input + Dropdown': 입력칸 바로 아래 붙음(간격 0) · 항목 글자 16 · 마우스 올린 항목은 회색 바탕(둥글기 없음) (2026-11-10) */
+.menu { margin-top: 0; border: 1px solid var(--color-text-placeholder); border-radius: var(--radius-control); background: var(--color-bg-default); padding: 1px 0; overflow: hidden; }
+.menu__item { display: block; width: 100%; padding: 17px var(--spacing-sm); border: 0; background: transparent; text-align: left; font-family: inherit; font-size: var(--font-size-input); line-height: var(--font-line-height-label-1); color: var(--color-text-strong); cursor: pointer; }
+.menu__item:hover, .menu__item.is-active { background: var(--color-bg-disabled); }
+/* 커스텀 드롭다운의 닫힌 칸(button.input.input--select) · 펼친 상태(.is-open, aria-expanded) — 화살표 위로: 피그마 Icon/24/ic_arrow_g 상태=up */
+
+/* ---------- 선택 상자 펼친 목록 (2026-11-10 결정: 드롭다운은 시스템 기본 select 를 쓴다) ----------
+ *   마우스를 쓰는 PC·태블릿 + 지원 브라우저(크롬·엣지): 목록 너비 = 입력칸 너비 · 열리면 화살표 위로(Icon/24/ic_arrow_g 상태=up) · 목록 모양은 피그마 State=Open
+ *   그 밖(사파리·파이어폭스 · 휴대폰 · 터치 태블릿): 시스템 목록 그대로, 화살표는 아래(down) 그대로. 쓰는 쪽 HTML 은 똑같이 <select class="input input--select"> */
+@supports (appearance: base-select) {
+  @media (hover: hover) and (pointer: fine) {
+    .input--select, .input--select::picker(select) { appearance: base-select; }
+    .input--select { display: flex; align-items: center; cursor: pointer; }
+    .input--select::picker-icon { display: none; }   /* 화살표는 위 배경 아이콘(ic_arrow_g) 하나만 */
+    .input--select:open {
+      background-image: url("data:image/svg+xml;utf8,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M20 16L12 8L4 16' stroke='%23999999' stroke-width='2' stroke-linecap='round'/></svg>");
+    }
+    .input--select.input--xs:open {
+      background-image: url("data:image/svg+xml;utf8,<svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M13.333 11L7.99967 5.66667L2.66634 11' stroke='%23999999' stroke-width='1.33333' stroke-linecap='round'/></svg>");
+    }
+    .input--select::picker(select) {
+      width: anchor-size(width); min-width: 0; margin: 0; padding: 1px 0;
+      border: 1px solid var(--color-text-placeholder); border-radius: var(--radius-control); background: var(--color-bg-default); box-shadow: none;
+    }
+    .input--select option { padding: 17px var(--spacing-sm); font-size: var(--font-size-input); line-height: var(--font-line-height-label-1); color: var(--color-text-strong); white-space: normal; }
+    .input--select option::checkmark { display: none; }
+    .input--select option:is(:hover, :focus-visible) { background: var(--color-bg-disabled); outline: none; }
+    .input--select option:disabled { color: var(--color-text-placeholder); }
+    .input--select option[value=""]:disabled { display: none; }   /* '선택' 안내 문구는 목록에 넣지 않음 (피그마 State=Open). 다른 브라우저는 <option value="" disabled hidden> 으로 숨긴다 */
+    .input--select.input--xs option { padding: var(--spacing-xs) var(--spacing-sm); }
+  }
+}
+
+/* ---------- 시각 선택 상자 (피그마 Input/Time) — 날짜 칸 옆에 두는 시각 칸 (2026-11-11 결정: 입력창이 아니라 선택 상자) ----------
+ *   <select class="input input--select input--time"> 에 00:00 · 00:30 … 23:30 (30분 간격) 을 넣는다. 선택 상자라 사파리 · 휴대폰에서도 누르면 목록이 뜬다.
+ *   오른쪽 아이콘은 피그마 Icon/24/ic_clock_g (icons/24/ic_clock_g_24.svg 그대로) — 열려도 시계 그대로.
+ *   날짜 + 시각 조합: <div class="input-pair"><input class="input input--date" type="date"><select class="input input--select input--time">…</select></div> */
+.input--time, .input--time:open {
+  background-image: url("data:image/svg+xml;utf8,<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='12' cy='12' r='8' stroke='%23999999' stroke-width='2'/><path d='M12 7V12L15.5 14' stroke='%23999999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+.input-pair { display: flex; gap: var(--spacing-sm); }   /* 날짜 칸이 남는 폭을 다 쓰고, 시각 칸은 128 고정 (피그마 Input/Calendar + Input/Time 견본) */
+.input-pair > .input--date { flex: 1 1 0; min-width: 0; }
+.input-pair > .input--time { flex: 0 0 128px; width: 128px; }
 
 /* ---------- 세그먼트 (피그마 Segment/60/segment) ---------- */
 .segment { display: flex; padding: var(--spacing-xxs-plus); border: 1px solid var(--color-border-default); border-radius: var(--radius-sm); background: var(--color-bg-default); }

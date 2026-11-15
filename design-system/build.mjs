@@ -12,6 +12,13 @@ const repo = join(root, '..', '..');      // 저장소 루트
 const tokens = JSON.parse(readFileSync(join(root, 'tokens.json'), 'utf8'));
 const guide = JSON.parse(readFileSync(join(root, 'guide.json'), 'utf8'));
 
+// ---------- 피그마 기준 버전 (2026-11-10) — 모든 CSS · JSON · 갤러리 맨 위에 적는다 ----------
+// tokens.$version = 피그마 0. Overview 표지 배지(노드 399:88) 글자. 예: "v1.0 · 261110" → 날짜 2026.11.10
+const VERSION = tokens.$version || '';
+const vm = VERSION.match(/(\d{2})(\d{2})(\d{2})\s*$/);
+const VERSION_DATE = vm ? `20${vm[1]}.${vm[2]}.${vm[3]}` : '';
+const STAMP = VERSION ? `피그마 기준 ${VERSION}${VERSION_DATE ? ` (${VERSION_DATE})` : ''}` : '';
+
 // ---------- guide.json 검사 — tokens.json(피그마)과 어긋나면 여기서 멈춘다 ----------
 {
   const errs = [];
@@ -32,11 +39,14 @@ const guide = JSON.parse(readFileSync(join(root, 'guide.json'), 'utf8'));
     for (const p of h.products || []) if (p !== 'common' && !P.includes(p)) errs.push(`history[${i}] products 의 "${p}" 가 없음 (common 또는 products id)`);
     for (const f of h.formats || []) if (f !== 'common' && !F.includes(f)) errs.push(`history[${i}] formats 의 "${f}" 가 없음 (common 또는 formats id)`);
     if (!h.products?.length || !h.formats?.length || !h.text) errs.push(`history[${i}] 에 products · formats · text 가 모두 있어야 함`);
+    if (h.type && !['추가', '삭제', '수정'].includes(h.type)) errs.push(`history[${i}] type 은 추가 · 삭제 · 수정 중 하나`);
   });
   if (!P.includes(guide.default.product) || !F.includes(guide.default.format)) errs.push('default.product / default.format 이 목록에 없음');
   if (errs.length) { console.error('guide.json 오류:\n  - ' + errs.join('\n  - ')); process.exit(1); }
 }
 
+// 미공개 포맷 (guide.json formats[].hidden: true) — 검사는 전체로 하고, 갤러리(탭 · 구성 현황 · 포맷 화면 · 히스토리 필터)에서는 뺀다 (2026-11-12, PPT)
+guide.formats = guide.formats.filter((f) => !f.hidden);
 const FORMAT = guide.formats.find((f) => f.css).mode; // 'Homepage'
 // 카드로 취급하는 선택자 — 디자인 시스템(.card) + 왓핀 사이트의 카드 클래스. 4-1 블록에 쓴다
 const LIGHT_SURFACE = '.card, .sl-card, .wf-card2, .wf-live-card, .wf-kpi, .wf-carbon, .wf-dash, .sl-stat, [data-theme="dark"] .wf-feature-stat'; // 웹은 홈페이지 포맷만 쓴다. PPT·SNS 값은 tokens.json 에 그대로 있다.
@@ -66,14 +76,29 @@ const line = (path, token, mode) => {
   const val = ref ? refToVar(ref) : unit(path, token.$type, raw);
   return `  ${cssName(path)}: ${val};`;
 };
-const header = (title) => `/* ${title}\n * 자동 생성: design/design-system/build.mjs ← design/design-system/tokens.json (피그마 변수 원본)\n * 직접 고치지 말고 피그마 값을 바꾼 뒤 tokens.json 을 갱신하고 build.mjs 를 다시 실행하세요. */\n`;
+const header = (title) => `/* ${title}\n${STAMP ? ` * ${STAMP} — 딥리뉴통합디자인가이드 표지 버전\n` : ''} * 자동 생성: design/design-system/build.mjs ← design/design-system/tokens.json (피그마 변수 원본)\n * 직접 고치지 말고 피그마 값을 바꾼 뒤 tokens.json 을 갱신하고 build.mjs 를 다시 실행하세요. */\n`;
 
 // ---------- 브랜드 1개 = CSS 1개 ----------
-function brandCss(brand, { allBrands = false } = {}) {
-  const prim = flat(tokens.primitives).map(([p, t]) => line(p, t));
-  const br = flat(tokens.brand).map(([p, t]) => line(p, t, brand));
-  const fm = flat(tokens.format).map(([p, t]) => line(p, t, FORMAT));
-  const th = Object.fromEntries(THEMES.map((m) => [m, flat(tokens.theme).map(([p, t]) => line(p, t, m))]));
+// 채널 나누기 (2026-11-12): 토큰은 공통(전체) 한 벌에서 파생된다. 채널 역할 토큰은 경로가 채널 이름으로 시작한다 — sns/color/* · sns/spacing/* (나중에 ppt/* 도 같은 규칙).
+//   channel 없음 = 공통 + 홈페이지(지금 홈페이지는 공통을 그대로 쓴다) → dist/<brand>.css · 사이트 tokens.css
+//   channel 'sns' = sns 역할 토큰만 → dist/<brand>.sns.css (공통 CSS 뒤에 읽는다. 별칭이라 var(--…) 로 공통 값을 가리킨다)
+const CHANNELS = ['sns'];
+const channelOf = (path) => CHANNELS.find((c) => path.split('/').includes(c)) || null;
+function brandCss(brand, { allBrands = false, channel = null } = {}) {
+  const pick = (list) => list.filter(([p]) => channelOf(p) === channel);
+  const prim = pick(flat(tokens.primitives)).map(([p, t]) => line(p, t));
+  const br = pick(flat(tokens.brand)).map(([p, t]) => line(p, t, brand));
+  const fm = pick(flat(tokens.format)).map(([p, t]) => line(p, t, FORMAT));
+  const th = Object.fromEntries(THEMES.map((m) => [m, pick(flat(tokens.theme)).map(([p, t]) => line(p, t, m))]));
+  if (channel) {
+    const [light, dark] = THEMES;
+    let out = header(`${brand} — ${channel.toUpperCase()} 역할 토큰 (공통 토큰의 별칭. ${brand.toLowerCase()}.css 뒤에 읽는다)`);
+    out += `\n/* 3. 포맷 값 (${channel}) */\n:root {\n${fm.join('\n')}\n}\n`;
+    out += `\n/* 4. 역할 색 (${channel}) — 기본 ${light}. <html data-theme="dark"> 로 전환 */\n:root,\n[data-theme="${light.toLowerCase()}"] {\n${th[light].join('\n')}\n}\n`;
+    out += `[data-theme="${dark.toLowerCase()}"] {\n${th[dark].join('\n')}\n}\n`;
+    out += `@media (prefers-color-scheme: dark) {\n  :root:not([data-theme]) {\n${th[dark].map((l) => '  ' + l).join('\n')}\n  }\n}\n`;
+    return out;
+  }
   const [light, dark] = THEMES;
 
   let out = header(`${brand} — 디자인 토큰 (Format: ${FORMAT})`);
@@ -110,6 +135,7 @@ function brandCss(brand, { allBrands = false } = {}) {
   out += `.font-regular { font-weight: var(--font-weight-regular); }\n.font-medium { font-weight: var(--font-weight-medium); }\n.font-bold { font-weight: var(--font-weight-bold); }\n`;
   const steps = new Map();
   for (const [name, s] of Object.entries(tokens.textStyles)) {
+    if (name.startsWith('SNS/')) continue; // 채널 전용 스타일(SNS/…)은 웹 클래스로 만들지 않는다 — 피그마 · 갤러리 포맷 탭에서만 (2026-11-12)
     const cls = name.split('/')[0];
     if (!steps.has(cls)) steps.set(cls, { ...s, weights: [] });
     steps.get(cls).weights.push(name.split('/')[1].toLowerCase());
@@ -129,46 +155,90 @@ function brandCss(brand, { allBrands = false } = {}) {
   return out;
 }
 
+// ---------- 손으로 고치는 CSS · JSON 에도 같은 버전 줄을 적는다 (있으면 바꾸고, 없으면 첫 줄 아래에 넣는다) ----------
+const stampFile = (p) => {
+  if (!STAMP || !existsSync(p)) return;
+  const s = readFileSync(p, 'utf8');
+  let out = s;
+  if (p.endsWith('.css')) {
+    const lineTxt = ` * ${STAMP} — 딥리뉴통합디자인가이드 표지 버전 (build.mjs 가 자동으로 적음)`;
+    const end = s.indexOf('*/');
+    const head = s.slice(0, end), re = /^ \* 피그마 기준 .*$/m;
+    out = (re.test(head) ? head.replace(re, lineTxt) : head.replace(/^(\/\*[^\n]*\n)/, `$1${lineTxt}\n`)) + s.slice(end);
+  } else {
+    const lineTxt = `"$version": ${JSON.stringify(STAMP)}`, re = /^(\s*)"\$version": ".*?"/m;
+    out = re.test(s.slice(0, 400)) ? s.replace(re, `$1${lineTxt}`) : s.replace(/^\{\n(\s*)/, (m, ind) => `{\n${ind}${lineTxt},\n${ind}`);
+    try { JSON.parse(out); } catch { console.error(`버전 줄을 넣지 못함: ${p}`); return; }
+  }
+  if (out !== s) writeFileSync(p, out);
+};
+for (const f of ['layout.css', 'components.css', 'motion.css', 'guide.json', 'icons/icons.json', 'icons/logos.json']) stampFile(join(root, f));
+
 mkdirSync(join(root, 'dist'), { recursive: true });
 const dist = {};
+const distChannel = {}; // `${brand}/${channel}` → CSS (2026-11-12)
 for (const b of BRANDS) {
   dist[b] = brandCss(b);
   writeFileSync(join(root, 'dist', `${b.toLowerCase()}.css`), dist[b]);
+  for (const c of CHANNELS) { distChannel[`${b}/${c}`] = brandCss(b, { channel: c }); writeFileSync(join(root, 'dist', `${b.toLowerCase()}.${c}.css`), distChannel[`${b}/${c}`]); }
 }
 
 // ---------- 홈페이지(wattpin-main)로 복사 ----------
+const NO_SITE = !!process.env.NO_SITE; // NO_SITE=1 node build.mjs → 갤러리 · dist 만 만들고 사이트 폴더는 건드리지 않음 (2026-11-03)
 const site = join(repo, 'code', 'wattpin-main', 'app', 'styles');
-if (existsSync(site)) {
-  writeFileSync(join(site, 'tokens.css'), dist.Wattfin);
+if (!NO_SITE && existsSync(site)) {
+  writeFileSync(join(site, 'tokens.css'), dist.Wattfin); // 공통 + 홈페이지만. 채널 토큰(dist/*.sns.css)은 사이트에 넣지 않는다
   for (const f of ['layout.css', 'components.css', 'motion.css']) copyFileSync(join(root, f), join(site, f));
 }
 
 // ---------- 실제 사이트(바탕화면 github/wattfin)로 복사 — 브랜드 3종 + 라이트/다크 한 파일 ----------
-const dev = [join(repo, 'wattfin', 'app', 'styles'), join(repo, '..', 'wattfin', 'app', 'styles')].find(existsSync); // 2026-10-21부터 사이트 작업은 github/wattfin 한 곳 (design 폴더가 github/design 이면 repo = github)
+const dev = [join(repo, 'wattfin', 'app', 'styles'), join(repo, '..', 'wattfin', 'app', 'styles')].find((d) => !NO_SITE && existsSync(d)); // 2026-10-21부터 사이트 작업은 github/wattfin 한 곳 (design 폴더가 github/design 이면 repo = github)
 if (dev) {
-  writeFileSync(join(dev, 'tokens.css'), brandCss('Wattfin', { allBrands: true }));
+  writeFileSync(join(dev, 'tokens.css'), brandCss('Wattfin', { allBrands: true })); // 공통 + 홈페이지만
   copyFileSync(join(root, 'components.css'), join(dev, 'figma-components.css'));
   copyFileSync(join(root, 'motion.css'), join(dev, 'motion.css'));
 }
 
 // ---------- 갤러리 (gallery/index.html + gallery/tokens.json) ----------
 const hand = ['layout.css', 'components.css', 'motion.css'].map((f) => `/* ===== ${f} ===== */\n` + readFileSync(join(root, f), 'utf8')).join('\n');
-const TYPE_STEPS = [...new Set(Object.keys(tokens.textStyles).map((n) => n.split('/')[0]))];
+const TYPE_STEPS = [...new Set(Object.keys(tokens.textStyles).filter((n) => !n.startsWith('SNS/')).map((n) => n.split('/')[0]))];
 const WEIGHTS = Object.fromEntries(TYPE_STEPS.map((s) => [s, Object.keys(tokens.textStyles).filter((n) => n.startsWith(s + '/')).map((n) => n.split('/')[1].toLowerCase())]));
-const COLOR_TOKENS = flat(tokens.theme).map(([p]) => p.replace(/^color\//, '')).filter((p) => !p.startsWith('shadow/'));
-const VERSION = tokens.$version || ''; // 피그마 0. Overview 의 버전 글자(노드 399:88). tokens.json 내보내기가 채운다
+const COLOR_TOKENS = flat(tokens.theme).filter(([p]) => !channelOf(p)).map(([p]) => p.replace(/^color\//, '')).filter((p) => !p.startsWith('shadow/')); // 채널 토큰(sns/…)은 포맷 탭의 역할 토큰 표에서 보여 준다
+// VERSION · STAMP 는 맨 위에서 만든다 (피그마 0. Overview 의 버전 글자, 노드 399:88. tokens.json 내보내기가 채운다)
 const FIGMA_FILE = guide.figma.url;
 const figmaNode = (key) => FIGMA_FILE + '?node-id=' + guide.figma.nodes[key].replace(':', '-');
 const FIGMA_P9 = figmaNode('homepage'); // 0 Overview · P9 홈페이지 규격
-const VIEWS = [['guide', '디자인 가이드'], ['icons', '아이콘 · 로고'], ['status', '구성 현황'], ['history', '히스토리 및 사용 주의사항']];
+const VIEWS = [['apply', '적용 방법'], ['guide', '디자인 가이드'], ['icons', '아이콘 · 로고'], ['status', '구성 현황'], ['history', '히스토리 · 주의사항']];
 // 프로덕트 · 포맷 · 진행 현황 · 히스토리 · 주의사항 · 규격 글은 guide.json 에서 관리한다 (새 히스토리는 guide.json history 맨 아래에 추가)
 const PRODUCTS = guide.products; // 갤러리 표시 순서
 const FORMATS = guide.formats.map((f) => [f.id, f.label]);
 const CSS_FORMAT = guide.formats.find((f) => f.css).id; // 'homepage' — 부품 갤러리. 나머지 포맷은 토큰 비교 화면
 const HISTORY = guide.history;
 const CAVEATS = guide.caveats.map((c) => [c.title, c.text]);
+const APPLY = guide.apply; // '적용 방법' — 첫 메뉴. 장(chapters)마다 단계 · 복사 칸 (2026-11-09 작성 · 2026-11-12 장으로 나눔)
+const escHtml = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const fillMark = (s) => s.replace(/\((링크|[^()\n]*\/[^()\n]*)\)/g, (m) => `<b class="g-fill">${m}</b>`); // 사용자가 적어야 할 자리 — 포인트색 굵게 (2026-11-12)
+const copyBox = (copy, label) => `<div class="g-copy">${label ? `<div class="text-caption-1 g-muted">[${label}]</div>` : ''}<pre class="g-copy__text">${fillMark(escHtml(copy))}</pre><button type="button" class="btn btn--primary btn--sm g-copy__btn">복사</button></div>`;
+const applyStep = (s, i) => `        <div class="card g-apply__step"><div class="g-apply__num">${i + 1}</div><h3 class="text-heading-6">${s.title}</h3><p class="text-body-2 g-muted">${s.text}</p>${s.items ? `<ul class="g-apply__items text-body-2">${s.items.map((x) => `<li>${x}</li>`).join('')}</ul>` : ''}${s.copy ? copyBox(s.copy) : ''}${(s.copies || []).map((c) => copyBox(c.copy, c.label)).join('')}</div>`;
+const applyChapter = (c) => `    <section class="g-section g-apply">
+      <h2 class="text-heading-3">${c.title}</h2>${c.premise ? `<div class="callout callout--info"><div>${c.premise}</div></div>` : ''}<p class="text-body-1 g-muted g-note">${c.lead}</p>
+      <div class="g-apply__steps">
+${c.steps.map(applyStep).join('\n')}
+      </div>
+      <ul class="g-apply__notes text-body-2 g-muted">${(c.notes || []).map((n) => `<li>${n}</li>`).join('')}</ul>
+    </section>
+`;
+const applyView = APPLY ? `  <div class="wf-shell g-applyview">
+    <section class="g-section">
+      <h2 class="text-heading-4">${APPLY.title}</h2><p class="text-body-2 g-muted g-note">${APPLY.lead} 원본: <code>guide.json</code> apply · 피그마 <a href="${FIGMA_FILE}?node-id=3614-2" target="_blank" rel="noreferrer">P11 · 적용 방법</a></p>
+    </section>
+${(APPLY.chapters || [APPLY]).map(applyChapter).join('\n')}
+  </div>
+` : '';
+const TIME_OPTIONS = Array.from({ length: 48 }, (_, i) => `${String(i >> 1).padStart(2, '0')}:${i % 2 ? '30' : '00'}`).map((t) => `<option${t === '09:30' ? ' selected' : ''}>${t}</option>`).join(''); // 시각 선택 상자 (Input/Time) 30분 간격 (2026-11-11)
 const SPEC_BREAKPOINTS = guide.specs.homepage.breakpoints;
 const SPEC_WIDTHS = guide.specs.homepage.widths;
+const SPEC_TYPE = guide.specs.homepage.typeScale || []; // 화면 폭별 제목 크기 단계 (2026-11-03)
 const STATUS = Object.fromEntries(guide.statuses.map((s) => [s.id, s]));
 const STATUS_BADGE = { applied: 'badge--success', ready: 'badge--primary', tokens: 'badge--warning', planned: 'badge--gray' };
 const statusBadge = (id) => `<span class="badge ${STATUS_BADGE[id] || 'badge--gray'}">${STATUS[id].label}</span>`;
@@ -183,12 +253,35 @@ const typeRows = (mode) => TYPE_STEPS.map((s) => {
   return `<div class="g-type-row"><code class="text-caption-1 g-muted">${s} · ${WEIGHTS[s].join('/')} · ${size}</code><div>${WEIGHTS[s].map((w) => `<p class="text-${s} font-${w}">에너지와 금융을 연결합니다 Aa 123</p>`).join('')}</div></div>`;
 }).join('\n');
 const swatches = COLOR_TOKENS.map((t) => `<div class="g-swatch"><span class="g-swatch__chip" style="background:var(--color-${t.replace(/\//g, '-')})"></span><code class="text-caption-1">${t}</code><code class="text-caption-2 g-muted" data-token="${t}"></code></div>`).join('\n');
-const brandStyles = PRODUCTS.map((p) => `<style data-brand="${p.id}"${p.id === guide.default.product ? '' : ' media="not all"'}>\n${dist[p.brand]}\n</style>`).join('\n');
+const brandStyles = PRODUCTS.map((p) => `<style data-brand="${p.id}"${p.id === guide.default.product ? '' : ' media="not all"'}>\n${dist[p.brand]}\n${CHANNELS.map((c) => distChannel[`${p.brand}/${c}`]).join('\n')}\n</style>`).join('\n');
 
 // ---------- 포맷 탭 (PPT · SNS) — 화면 요소 준비중. 피그마 Format 변수를 웹 포맷(홈페이지)과 비교하고 그 값으로 글자를 그린다 ----------
 const FMT_TOKENS = flat(tokens.format);
 const fmtShow = (path, v) => (path.includes('letter-spacing') ? `${v}%` : path.includes('font/weight') ? String(v) : `${v}px`);
 const fmtCss = guide.formats.filter((f) => !f.css).map((f) => `.g-fmt[data-fmt="${f.id}"] {\n${FMT_TOKENS.map(([p, t]) => line(p, t, f.mode)).join('\n')}\n}\n[data-format="${f.id}"] .g-fmt[data-fmt="${f.id}"] { display: flex; }`).join('\n');
+// 채널 역할 토큰 표 (포맷 id 가 채널 이름과 같을 때 — sns) · 값은 공통 토큰 별칭 (2026-11-12)
+const channelCard = (id) => {
+  if (!CHANNELS.includes(id)) return '';
+  const refOf = (t, m) => (t.$ref?.[m] || (typeof t.$value[m] === 'string' ? t.$value[m] : '브랜드별')).replace(/^(primitives|brand|theme|format)\//, '');
+  const colors = flat(tokens.theme).filter(([p]) => channelOf(p) === id);
+  const spaces = flat(tokens.format).filter(([p]) => channelOf(p) === id);
+  // 색은 홈페이지 색 견본과 같은 모양으로 — 칩은 var(--sns-…) 라 프로덕트 · 테마를 바꾸면 같이 바뀐다
+  const sw = colors.map(([p, t]) => `<div class="g-swatch"><span class="g-swatch__chip" style="background:var(${cssName(p)})"></span><code class="text-caption-1">${p}</code><code class="text-caption-2 g-muted" data-var="${cssName(p)}"></code><span class="text-caption-2 g-muted">${THEMES.map((m) => `${m} ${refOf(t, m)}`).join(' · ')}</span></div>`).join('\n');
+  const sp = spaces.map(([p, t]) => `<tr><td><code>${p}</code></td><td><b>${fmtShow(p, t.$value[FORMAT])}</b> → ${(t.$ref?.[FORMAT] || '').replace(/^format\//, '')}</td><td><span class="g-spbar" style="width:${t.$value[FORMAT]}px"></span></td></tr>`).join('\n');
+  return `    <section class="g-section">
+      <h3 class="text-heading-5">${id.toUpperCase()} 역할 색 (${colors.length}) — dist/&lt;프로덕트&gt;.${id}.css</h3><p class="text-body-2 g-muted g-note">공통 토큰의 별칭입니다(피그마 Theme 컬렉션 ${id}/color/*). 위에서 프로덕트 · 테마를 바꾸면 칩 색이 같이 바뀝니다. 템플릿은 피그마 3. Component › 카카오톡 템플릿.</p>
+      <div class="g-swatches">
+${sw}
+      </div>
+    </section>
+    <section class="g-section">
+      <h3 class="text-heading-5">${id.toUpperCase()} 역할 간격 (${spaces.length})</h3><p class="text-body-2 g-muted g-note">피그마 Format 컬렉션 ${id}/spacing/* · 공통 spacing 토큰의 별칭</p>
+      <div class="card"><table class="g-table"><tr><th>변수</th><th>값 → 원 토큰</th><th></th></tr>
+${sp}
+</table></div>
+    </section>
+`;
+};
 const formatPanels = guide.formats.filter((f) => !f.css).map((f) => {
   const diffs = FMT_TOKENS.filter(([, t]) => t.$value[f.mode] !== t.$value[FORMAT]);
   const per = PRODUCTS.map((p) => `<span class="g-row g-row--tight">${p.label} ${statusBadge(guide.matrix[p.id][f.id].status)}</span>`).join('');
@@ -205,7 +298,7 @@ const formatPanels = guide.formats.filter((f) => !f.css).map((f) => {
       <h3 class="text-heading-5">${LABEL[CSS_FORMAT]}와 다른 값 (${diffs.length} / ${FMT_TOKENS.length})</h3>
       ${table}
     </section>
-    <section class="g-section">
+${channelCard(f.id)}    <section class="g-section">
       <h3 class="text-heading-5">글자 크기 미리보기 · Format=${f.mode}</h3><p class="text-body-2 g-muted g-note">텍스트 스타일 "단계/두께" 를 이 포맷 값으로 그린 것 (크기/줄높이 px)</p>
       <div class="g-type">
 ${typeRows(f.mode)}
@@ -252,6 +345,7 @@ ${brandRows}
   </div>`;
 
 // ---------- 히스토리 — 프로덕트 · 포맷 태그와 필터 ----------
+const HIST_TYPE = { '추가': 'badge--success', '삭제': 'badge--gray', '수정': 'badge--primary' }; // 히스토리 유형 배지 (2026-11-09)
 const histTags = (h) => [
   ...h.products.map((p) => `<span class="g-tag${p === 'common' ? '' : ' g-tag--product'}">${p === 'common' ? '공통' : LABEL[p]}</span>`),
   ...h.formats.map((f) => `<span class="g-tag g-tag--format">${f === 'common' ? '모든 포맷' : LABEL[f]}</span>`),
@@ -298,8 +392,8 @@ const iconView = `
       <nav class="g-icon-jump" aria-label="바로 가기"><a class="chip" href="#icon-logo">로고</a>${ICONS.sections.map((s) => `<a class="chip" href="#icon-${s.size}">${s.size}px</a>`).join('')}</nav>
     </section>
     <div id="icon-logo" class="g-icon-logos">
-${LOGOS.groups.map((g, n) => `    <section class="g-section g-icon-sec g-icon-sec--logo" id="icon-logo-${n + 1}">
-      <h3 class="text-heading-5">${g.label} <small class="text-body-2 g-muted">${g.count}개 · ${LABEL[g.product]}</small></h3>
+${LOGOS.groups.map((g, n) => `    <section class="g-section g-icon-sec g-icon-sec--logo${g.product === 'common' ? ' g-icon-sec--partner' : ''}" id="icon-logo-${n + 1}">
+      <h3 class="text-heading-5">${g.label} <small class="text-body-2 g-muted">${g.count}개 · ${LABEL[g.product] || '공통'}</small></h3>${g.note ? `<p class="text-body-2 g-muted">${g.note}</p>` : ''}
       <div class="g-icon-grid">
         ${LOGOS.logos.filter((l) => l.group === g.label).map(iconCard).join('\n        ')}
       </div>
@@ -319,6 +413,7 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<!-- ${STAMP} — 자동 생성: design/design-system/build.mjs -->
 <title>${guide.name}</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
 ${brandStyles}
@@ -334,13 +429,15 @@ body { font-family: var(--font-family-base); font-size: var(--font-size-body-1);
 .g-tabs { display: flex; gap: var(--spacing-xs); width: 100%; padding-top: var(--spacing-xs); border-top: 1px solid var(--color-border-default); }
 .g-tab { padding: var(--spacing-xs) var(--spacing-md); border: 0; border-bottom: 2px solid transparent; background: none; color: var(--color-text-secondary); font: inherit; font-size: var(--font-size-body-2); cursor: pointer; }
 .g-tab.is-active { color: var(--color-text-brand); border-bottom-color: var(--color-border-brand); font-weight: 700; }
-.g-version { font-weight: 500; margin-left: var(--spacing-xxs); vertical-align: middle; }
+.g-title { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: var(--spacing-md); row-gap: var(--spacing-xxs); padding: var(--spacing-xl-plus) var(--spacing-md) var(--spacing-lg); background: var(--color-bg-default); } /* 가이드 이름 — 크게, 화면 폭 전체 (2026-11-10) */
+.g-title h1 { margin: 0; min-width: 0; max-width: 100%; word-break: keep-all; overflow-wrap: anywhere; }
+.g-version { margin: 0; font-weight: 500; }
 .g-views { display: flex; flex-wrap: wrap; gap: var(--spacing-xs); width: 100%; }
 .g-view-tab { white-space: nowrap; }
 .g-view-tab { padding: var(--spacing-xs) var(--spacing-md); border: 1px solid var(--color-border-default); border-radius: var(--radius-sm); background: var(--color-bg-card); color: var(--color-text-secondary); font: inherit; font-size: var(--font-size-body-2); cursor: pointer; }
 .g-view-tab.is-active { background: var(--color-bg-brand); color: var(--color-text-on-brand); border-color: var(--color-bg-brand); font-weight: 700; }
-.g-history, .g-status, .g-icons { display: none; flex: 1; padding-block: var(--spacing-xl); flex-direction: column; gap: var(--spacing-2xl); }
-[data-view="history"] .g-history, [data-view="status"] .g-status, [data-view="icons"] .g-icons { display: flex; }
+.g-applyview, .g-history, .g-status, .g-icons { display: none; flex: 1; padding-block: var(--spacing-xl); flex-direction: column; gap: var(--spacing-2xl); }
+[data-view="apply"] .g-applyview, [data-view="history"] .g-history, [data-view="status"] .g-status, [data-view="icons"] .g-icons { display: flex; }
 .g-table { width: 100%; border-collapse: collapse; font-size: var(--font-size-body-2); line-height: var(--font-line-height-body-2); }
 .g-table th, .g-table td { text-align: left; vertical-align: top; padding: var(--spacing-xs) var(--spacing-sm); border-bottom: 1px solid var(--color-border-default); }
 .g-table th { color: var(--color-text-tertiary); font-weight: 500; white-space: nowrap; }
@@ -374,6 +471,8 @@ ${fmtCss}
 .g-same td { color: var(--color-text-tertiary); }
 .g-filters { display: flex; flex-wrap: wrap; align-items: center; gap: var(--spacing-sm) var(--spacing-lg); }
 .g-hist-tagcell { width: 1%; }
+.g-hist-type { width: 1%; white-space: nowrap; }
+.g-hist-text { color: var(--color-text-primary); }
 .g-hist-tags { display: flex; flex-wrap: wrap; gap: var(--spacing-xxs); min-width: 140px; }
 .g-tag { display: inline-flex; align-items: center; height: 20px; padding-inline: var(--spacing-xxs-plus); border: 1px solid var(--color-border-default); border-radius: var(--radius-pill); font-size: var(--font-size-caption-2); color: var(--color-text-secondary); white-space: nowrap; }
 .g-tag--product { color: var(--color-text-brand); border-color: var(--color-border-brand); font-weight: 700; }
@@ -389,6 +488,12 @@ ${fmtCss}
 .g-icon-sec--logo .g-icon-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 640px), 1fr)); }
 .g-icon-sec--logo .g-icon { flex-wrap: wrap; align-items: flex-start; }
 .g-icon-sec--logo .g-icon__tile { flex: 1 1 100%; width: auto; height: auto; justify-content: start; padding: var(--spacing-lg); }
+/* 협력사 로고는 칸이 200×60 으로 모두 같아서 일반 아이콘처럼 좁은 칸에 여러 개 */
+.g-icon-sec--partner .g-icon-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr)); }
+.g-icon-sec--partner .g-icon { flex-wrap: wrap; align-items: center; }
+.g-icon-sec--partner .g-icon__actions { flex-direction: row; width: 100%; }
+.g-icon-sec--partner .g-icon__actions .btn { flex: 1; }
+.g-icon-sec--partner .g-icon__tile { flex: none; width: 216px; height: 76px; justify-content: center; padding: 0; }
 .g-icon-sec[hidden], .g-icon[hidden] { display: none; }
 .g-icon-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: var(--spacing-sm); }
 .g-icon { display: flex; align-items: center; gap: var(--spacing-sm); padding: var(--spacing-sm); border: 1px solid var(--color-border-default); border-radius: var(--radius-md); background: var(--color-bg-card); color: var(--color-text-on-card); }
@@ -409,6 +514,18 @@ ${fmtCss}
 }
 .g-body { flex: 1; padding-block: var(--spacing-xl); display: flex; flex-direction: column; gap: var(--spacing-2xl); }
 .g-section { display: flex; flex-direction: column; gap: var(--spacing-md); }
+.g-apply { padding: var(--spacing-xl); border: 2px solid var(--color-border-brand, var(--color-text-brand)); border-radius: var(--radius-lg); background: var(--color-bg-card); color: var(--color-text-on-card); }
+.g-apply__steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: var(--spacing-md); }
+.g-apply__step { display: flex; flex-direction: column; gap: var(--spacing-xs); padding: var(--spacing-md); }
+.g-apply__num { width: 28px; height: 28px; border-radius: 50%; background: var(--color-bg-brand, var(--color-text-brand)); color: var(--color-text-on-brand, #fff); display: grid; place-items: center; font-weight: 700; }
+.g-copy { display: flex; flex-direction: column; gap: var(--spacing-xs); margin-top: auto; }
+.g-copy__text { margin: 0; padding: var(--spacing-sm); background: var(--color-bg-subtle); border: 1px solid var(--color-border-default); border-radius: var(--radius-sm); font-size: var(--font-size-caption-1); line-height: 1.5; white-space: pre-wrap; word-break: break-all; user-select: all; }
+.g-copy__btn { align-self: flex-end; }
+.g-apply__notes { margin: 0; padding-left: 1.2em; }
+.g-apply__items { margin: 0; padding-left: 1.2em; } /* 단계 안 목록 (2026-11-12) */
+.g-fill { color: var(--color-text-brand); font-weight: 700; } /* 복사 칸에서 사용자가 적는 자리 */
+.g-apply__step .g-copy + .g-copy { margin-top: var(--spacing-xs); }
+.g-apply__notes li + li { margin-top: var(--spacing-xxs); }
 .g-note { margin-top: calc(-1 * var(--spacing-xs)); }
 .g-muted { color: var(--color-text-tertiary); }
 .g-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--spacing-sm); }
@@ -419,6 +536,7 @@ ${fmtCss}
 .g-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--spacing-sm); }
 .g-swatch { display: flex; flex-direction: column; gap: var(--spacing-xxs); }
 .g-swatch__chip { display: block; height: 40px; border-radius: var(--radius-sm); border: 1px solid var(--color-border-default); }
+.g-spbar { display: inline-block; height: 10px; background: var(--color-brand-primary); border-radius: 2px; vertical-align: middle; } /* 간격 길이 보기 (2026-11-12) — 상단 메뉴 .g-bar 와 이름이 겹치지 않게 */
 .g-footer { padding-block: var(--spacing-lg); }
 .g-howto { font-size: var(--font-size-body-2); line-height: var(--font-line-height-body-2); color: var(--color-text-secondary); display: flex; flex-direction: column; gap: var(--spacing-xs); }
 .g-howto code { background: var(--color-bg-subtle); padding: 0 4px; border-radius: var(--radius-xs); }
@@ -427,8 +545,10 @@ ${fmtCss}
 </head>
 <body>
 <main class="g">
+  <div class="g-title">
+    <h1 class="text-heading-2">${guide.name}</h1>${STAMP ? `\n    <p class="g-version text-body-1 g-muted">${STAMP}</p>` : ''}
+  </div>
   <header class="g-bar">
-    <strong class="text-heading-6">${guide.name}${VERSION ? ` <small class="g-version text-caption-1 g-muted">${VERSION}</small>` : ''}</strong>
     <nav class="g-views" aria-label="보기">${VIEWS.map(([v, l]) => `<button class="g-view-tab" data-set="view" data-value="${v}">${l}</button>`).join('')}</nav>
     <div class="g-switch g-switch--top"><span class="text-caption-1 g-muted">Product</span>${chips('brand', PRODUCTS.map((p) => [p.id, p.label]))}</div>
     <div class="g-switch g-switch--top g-switch--theme"><span class="text-caption-1 g-muted">Theme</span>${chips('theme', THEMES.map((t) => [t.toLowerCase(), t.toLowerCase()]))}</div>
@@ -442,12 +562,12 @@ ${formatPanels}
 ${iconView}
 ${statusView}
 
-  <div class="wf-shell g-history">
+${applyView}  <div class="wf-shell g-history">
     <section class="g-section">
-      <h2 class="text-heading-4">히스토리</h2><p class="text-body-2 g-muted g-note">디자인 가이드가 바뀐 기록. 최신이 아래. 프로덕트 · 포맷을 고르면 공통 항목도 함께 보입니다. 원본: <code>guide.json</code> history · 피그마 <a href="${figmaNode('ops')}" target="_blank" rel="noreferrer">P8 운영 정보</a></p>
+      <h2 class="text-heading-4">히스토리</h2><p class="text-body-2 g-muted g-note">디자인 가이드에서 추가 · 삭제 · 수정한 것만 짧게 적습니다. 최신이 아래. 프로덕트 · 포맷을 고르면 공통 항목도 함께 보입니다. 원본: <code>guide.json</code> history · 피그마 <a href="${figmaNode('ops')}" target="_blank" rel="noreferrer">P8 운영 정보</a></p>
       <div class="g-filters">${histFilters}<span class="text-caption-1 g-muted g-hist-count"></span></div>
       <div class="card g-scroll"><table class="g-table">
-${HISTORY.map((h) => `        <tr class="g-hist-row" data-products="${h.products.join(' ')}" data-formats="${h.formats.join(' ')}"><td class="g-hist-date">${h.date}</td><td class="g-hist-tagcell"><div class="g-hist-tags">${histTags(h)}</div></td><td class="g-hist-text">${h.text}</td></tr>`).join('\n')}
+${HISTORY.map((h) => `        <tr class="g-hist-row" data-products="${h.products.join(' ')}" data-formats="${h.formats.join(' ')}"><td class="g-hist-date">${h.date}</td><td class="g-hist-type">${h.type ? `<span class="badge ${HIST_TYPE[h.type] || 'badge--gray'}">${h.type}</span>` : ''}</td><td class="g-hist-text">${h.text}</td><td class="g-hist-tagcell"><div class="g-hist-tags">${histTags(h)}</div></td></tr>`).join('\n')}
       </table></div>
     </section>
     <section class="g-section">
@@ -476,8 +596,16 @@ ${SPEC_BREAKPOINTS.map(([r, d, t]) => `            <tr><td>${r}</td><td>${d}</td
 ${SPEC_WIDTHS.map(([k, w, d, v]) => `            <tr><td>${k}</td><td><b>${w}</b></td><td>${d}</td><td><code>${v}</code></td></tr>`).join('\n')}
           </table>
           <p class="text-body-2 g-muted" style="margin-top:var(--spacing-sm)"><b>GNB · 푸터</b> — 배경과 구분선은 항상 화면 전체 폭. 그 밖의 모든 콘텐츠는 위 최대 폭 안에서 가운데 정렬.</p>
-          <p class="text-body-2 g-muted" style="margin-top:var(--spacing-xs)"><b>토큰</b> — breakpoint xl 1600 · lg 1200 · md 1024 · sm 720 · min 280 / margin desktop 20 · tablet 16 · mobile 16 / max-width content 1560 · list 1200 · form 688. 모두 Primitives(size/*, spacing/*)에서 파생. 코드: <code>var(--layout-max-width-content)</code></p>
+          <p class="text-body-2 g-muted" style="margin-top:var(--spacing-xs)"><b>토큰</b> — breakpoint xl 1600 · lg 1200 · sm 720 · min 280 (md 1024 는 참고용 — 화면 구간에 쓰지 않음) / margin desktop 20 · tablet 16 · mobile 16 / max-width content 1560 · list 1200 · read 760 · form 688. 모두 Primitives(size/*, spacing/*)에서 파생. 코드: <code>var(--layout-max-width-content)</code></p>
         </div>
+      </div>
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <p class="text-heading-6">글자 크기 단계</p>
+        <p class="text-body-2 g-muted">화면이 넓어지면 제목만 한 단계씩 커집니다. 본문 · 부품 글자는 그대로.</p>
+        <div class="g-scroll"><table class="g-table">
+          <tr><th>요소</th><th>모바일 ~720</th><th>태블릿 721~</th><th>PC 1200~</th><th>큰 PC 1600~</th></tr>
+${SPEC_TYPE.map(([k, a, b, c, d]) => `            <tr><td>${k}</td><td>${a}</td><td>${b}</td><td>${c}</td><td>${d}</td></tr>`).join('\n')}
+        </table></div>
       </div>
       <div class="g-diagram">
         <div class="g-diagram__band">GNB — 화면 전체 폭</div>
@@ -515,6 +643,8 @@ ${SPEC_WIDTHS.map(([k, w, d, v]) => `            <tr><td>${k}</td><td><b>${w}</b
         <div class="field"><label class="field__label">조합원 번호</label><input class="input" value="WF-2026-0042" readonly><span class="field__help">읽기 전용 (DB 값)</span></div>
         <div class="field"><label class="field__label">비활성</label><input class="input" placeholder="입력 불가" disabled></div>
         <div class="field"><label class="field__label">문의 내용</label><textarea class="input" placeholder="문의 남겨주시면 3영업일 이내 답변드립니다"></textarea></div>
+        <div class="field"><label class="field__label">문의 내용 (DB 값 · 수정 불가)</label><textarea class="input" readonly>지붕 면적은 약 120평이며, 남향입니다.</textarea></div>
+        <div class="field"><label class="field__label">비활성 여러 줄</label><textarea class="input" placeholder="입력할 수 없습니다" disabled></textarea></div>
         <div class="g-row"><label class="check"><input type="checkbox" checked> 개인정보 수집 동의</label><label class="check"><input type="radio" name="r" checked> 개인</label><label class="check"><input type="radio" name="r"> 법인</label><button class="switch" role="switch" aria-checked="true" onclick="this.setAttribute('aria-checked', this.getAttribute('aria-checked')==='true'?'false':'true')"></button></div>
       </div>
     </section>
@@ -561,12 +691,17 @@ ${SPEC_WIDTHS.map(([k, w, d, v]) => `            <tr><td>${k}</td><td><b>${w}</b
     </section>
 
     <section class="g-section">
-      <h2 class="text-heading-4">6-2. 휴대폰 · 날짜 · 선택 상자 · CTA 바</h2><p class="text-body-2 g-muted g-note">.input--phone · .input--date · .input--select · .menu · .cta (피그마 Input/Phone · Calendar · dropdown · CTA)</p>
+      <h2 class="text-heading-4">6-2. 휴대폰 · 날짜 · 선택 상자 · CTA 바</h2><p class="text-body-2 g-muted g-note">.input--phone · .input--date · .input--select · .input--time · .input-pair · .input--xs · .input-group · .input-unit · .menu · .cta (피그마 Input/Phone · Calendar · Time · dropdown · Input/Inner · CTA)</p>
       <div class="wf-shell--form g-form">
-        <div class="field"><label class="field__label">휴대전화 번호 <span class="req">*</span></label><input class="input input--phone" type="tel" inputmode="numeric" placeholder="010-1234-5678"><span class="field__help">숫자만 입력하면 자동으로 형식이 맞춰집니다.</span></div>
+        <div class="field"><label class="field__label">휴대전화 번호 <span class="req">*</span></label><input class="input input--phone" type="tel" inputmode="numeric" pattern="[0-9]*" maxlength="11" autocomplete="tel-national" placeholder="01012345678" oninput="this.value=this.value.replace(/\\D/g,'')"><span class="field__help">숫자만 입력 가능합니다.</span></div>
         <div class="field"><label class="field__label">날짜 <span class="req">*</span></label><input class="input input--date" type="date" value="2026-06-27"></div>
-        <div class="field"><label class="field__label">dropdown <span class="req">*</span></label><select class="input input--select"><option value="" selected disabled>선택</option><option>공장/창고</option><option>상가</option></select></div>
-        <div class="menu"><button class="menu__item is-active">공장/창고</button><button class="menu__item">공장/창고</button><button class="menu__item">풀버전 다 노출시켜주세요 내용은 다 노출시켜주세요</button></div>
+        <div class="field"><label class="field__label">날짜 · 시각 (예: 모집 시작)</label><div class="input-pair"><input class="input input--date" type="date" value="2026-06-27" aria-label="날짜"><select class="input input--select input--time" aria-label="시각">${TIME_OPTIONS}</select></div><span class="field__help">시각은 30분 간격 목록에서 고릅니다. 칸 어디를 눌러도 선택 창이 열립니다.</span></div>
+        <div class="field"><label class="field__label">dropdown <span class="req">*</span></label><select class="input input--select"><option value="" selected disabled hidden>선택</option><option>공장/창고</option><option>상가</option><option>풀버전 다 노출시켜주세요 내용은 다 노출시켜주세요 풀버전 다 노출</option></select></div>
+        <div class="field"><label class="field__label">작은 선택 상자 (높이 32)</label><select class="input input--select input--xs"><option>2026년</option><option>2025년</option></select></div>
+        <div class="field"><label class="field__label">버튼이 안에 있는 입력창</label><div class="input-group"><input class="input" placeholder="인증번호 6자리"><button class="btn btn--secondary btn--xs" type="button">확인</button></div></div>
+        <div class="field"><label class="field__label">지붕 면적 <span class="req">*</span></label><div class="input-unit"><input class="input" inputmode="numeric" placeholder="면적을 입력해 주세요"><span class="input-unit__text">평</span></div></div>
+        <div class="field"><label class="field__label">dropdown (비활성)</label><select class="input input--select" disabled><option selected>선택</option></select></div>
+        <p class="text-body-2 g-muted">드롭다운은 시스템 기본 select 를 씁니다. 마우스를 쓰는 PC·태블릿의 크롬·엣지에서는 펼친 목록 너비가 입력칸과 같고 열리면 화살표가 위로 바뀝니다. 사파리·파이어폭스·휴대폰은 시스템 목록이 그대로 뜹니다.</p>
         <div class="cta cta--shadow"><button class="btn btn--primary">CTA 버튼</button></div>
         <div class="cta"><button class="btn btn--reset">초기화</button><button class="btn btn--primary">CTA 버튼</button></div>
         <div class="cta cta--m"><button class="btn btn--primary">CTA 버튼 (M)</button></div>
@@ -641,6 +776,7 @@ ${swatches}
     document.querySelectorAll('.g-view-tab[data-set=view]').forEach(function (c) { c.classList.toggle('is-active', c.dataset.value === view); });
     var cs = getComputedStyle(html);
     document.querySelectorAll('[data-token]').forEach(function (el) { el.textContent = cs.getPropertyValue('--color-' + el.dataset.token.replace(/\\//g, '-')).trim(); });
+    document.querySelectorAll('[data-var]').forEach(function (el) { el.textContent = cs.getPropertyValue(el.dataset.var).trim(); }); // 채널 역할 색 견본 (2026-11-12)
   }
   document.querySelectorAll('.chip[data-set=brand]').forEach(function (c) { c.addEventListener('click', function () { setBrand(c.dataset.value); sync(); }); });
   document.querySelectorAll('.chip[data-set=theme]').forEach(function (c) { c.addEventListener('click', function () { html.setAttribute('data-theme', c.dataset.value); sync(); }); });
@@ -659,6 +795,11 @@ ${swatches}
     document.querySelectorAll('.chip[data-hfilter]').forEach(function (c) { c.classList.toggle('is-active', hf[c.dataset.hfilter] === c.dataset.value); });
     document.querySelector('.g-hist-count').textContent = n + ' / ' + rows.length + '건';
   }
+  document.querySelectorAll('.g-copy__btn').forEach(function (b) { b.addEventListener('click', function () {
+    var box = b.parentNode.querySelector('.g-copy__text'), t = box.textContent;
+    var done = function () { b.textContent = '복사됨'; setTimeout(function () { b.textContent = '복사'; }, 1500); };
+    if (navigator.clipboard) navigator.clipboard.writeText(t).then(done); else { var r = document.createRange(); r.selectNodeContents(box); var s = getSelection(); s.removeAllRanges(); s.addRange(r); document.execCommand('copy'); done(); }
+  }); });
   document.querySelectorAll('.chip[data-hfilter]').forEach(function (c) { c.addEventListener('click', function () { hf[c.dataset.hfilter] = c.dataset.value; filterHistory(); }); });
   filterHistory();
   // 아이콘 — 찾기 · 배경 · PNG 배율 · 다운로드. PNG 는 내장 SVG 를 그 자리에서 캔버스에 그려 만든다
@@ -714,4 +855,4 @@ writeFileSync(join(design, 'gallery', 'index.html'), html);
 copyFileSync(join(root, 'tokens.json'), join(design, 'gallery', 'tokens.json'));
 copyFileSync(join(root, 'guide.json'), join(design, 'gallery', 'guide.json'));
 
-console.log(`built → design/design-system/dist/{${BRANDS.map((b) => b.toLowerCase()).join(',')}}.css · design/gallery/index.html · design/gallery/tokens.json · design/gallery/guide.json · 아이콘 ${ICONS.icons.length}개 · 로고 ${LOGOS.logos.length}개${existsSync(site) ? ' · code/wattpin-main/app/styles/' : ''}`);
+console.log(`built → design/design-system/dist/{${BRANDS.map((b) => b.toLowerCase()).join(',')}}.css (+ .${CHANNELS.join('/.')}.css) · design/gallery/index.html · design/gallery/tokens.json · design/gallery/guide.json · 아이콘 ${ICONS.icons.length}개 · 로고 ${LOGOS.logos.length}개${existsSync(site) ? ' · code/wattpin-main/app/styles/' : ''}`);

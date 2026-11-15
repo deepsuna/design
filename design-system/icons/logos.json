@@ -1,237 +1,557 @@
 {
- "$description": "피그마 2. Element › Icon_Logo 의 로고 목록. 피그마에서 내보낸 생성물 — 손으로 고치지 않는다. SVG 는 이 폴더의 logo/<이름>.svg",
- "$source": {
-  "fileKey": "tXPHUuCgrV3o1STFl7kcvI",
-  "page": "2. Element",
-  "node": "197:1838",
-  "exported": "2026-10-21"
- },
- "groups": [
-  {
-   "label": "솔라리스 로고",
-   "product": "solarlease",
-   "set": "Icon/50/ic_solaleaselogo",
-   "count": 6
+  "$version": "피그마 기준 v1.0 · 261112 (2026.11.12)",
+  "$description": "피그마 2. Element › Icon_Logo 의 로고 목록. 피그마에서 내보낸 생성물 — 손으로 고치지 않는다. SVG 는 이 폴더의 logo/<이름>.svg",
+  "$source": {
+    "fileKey": "tXPHUuCgrV3o1STFl7kcvI",
+    "page": "2. Element",
+    "node": "197:1838",
+    "exported": "2026-11-12"
   },
-  {
-   "label": "솔라리스 협동조합 로고",
-   "product": "solarlease",
-   "set": "Icon/50/ic_solaleaseCooplogo",
-   "count": 2
-  },
-  {
-   "label": "딥리뉴어블스 로고",
-   "product": "deeprenewables",
-   "set": "icon/ic_GNBlogo",
-   "count": 8
-  },
-  {
-   "label": "왓핀 로고",
-   "product": "wattfin",
-   "set": "Icon/50/ic_wattfin",
-   "count": 4
-  }
- ],
- "logos": [
-  {
-   "id": "195:9470",
-   "group": "솔라리스 로고",
-   "product": "solarlease",
-   "name": "ic_solaleaselogo_logo_kor_color",
-   "figma": "Icon/50/ic_solaleaselogo · Type=logo, Language=kor, Color=color",
-   "width": 244,
-   "height": 50,
-   "file": "logo/ic_solaleaselogo_logo_kor_color.svg"
-  },
-  {
-   "id": "195:9480",
-   "group": "솔라리스 로고",
-   "product": "solarlease",
-   "name": "ic_solaleaselogo_logo_kor_white",
-   "figma": "Icon/50/ic_solaleaselogo · Type=logo, Language=kor, Color=white",
-   "width": 244,
-   "height": 50,
-   "file": "logo/ic_solaleaselogo_logo_kor_white.svg"
-  },
-  {
-   "id": "195:9490",
-   "group": "솔라리스 로고",
-   "product": "solarlease",
-   "name": "ic_solaleaselogo_logo_eng_color",
-   "figma": "Icon/50/ic_solaleaselogo · Type=logo, Language=eng, Color=color",
-   "width": 310.99,
-   "height": 50,
-   "file": "logo/ic_solaleaselogo_logo_eng_color.svg"
-  },
-  {
-   "id": "195:9507",
-   "group": "솔라리스 로고",
-   "product": "solarlease",
-   "name": "ic_solaleaselogo_logo_eng_white",
-   "figma": "Icon/50/ic_solaleaselogo · Type=logo, Language=eng, Color=white",
-   "width": 310.99,
-   "height": 50,
-   "file": "logo/ic_solaleaselogo_logo_eng_white.svg"
-  },
-  {
-   "id": "200:3221",
-   "group": "솔라리스 로고",
-   "product": "solarlease",
-   "name": "ic_solaleaselogo_mark_color",
-   "figma": "Icon/50/ic_solaleaselogo · Type=mark, Language=none, Color=color",
-   "width": 68,
-   "height": 50,
-   "file": "logo/ic_solaleaselogo_mark_color.svg"
-  },
-  {
-   "id": "200:3237",
-   "group": "솔라리스 로고",
-   "product": "solarlease",
-   "name": "ic_solaleaselogo_mark_white",
-   "figma": "Icon/50/ic_solaleaselogo · Type=mark, Language=none, Color=white",
-   "width": 68,
-   "height": 50,
-   "file": "logo/ic_solaleaselogo_mark_white.svg"
-  },
-  {
-   "id": "3189:206",
-   "group": "솔라리스 협동조합 로고",
-   "product": "solarlease",
-   "name": "ic_solaleaseCooplogo_logo_kor_color",
-   "figma": "Icon/50/ic_solaleaseCooplogo · Type=logo, Language=kor, Color=color",
-   "width": 426.54,
-   "height": 50,
-   "file": "logo/ic_solaleaseCooplogo_logo_kor_color.svg"
-  },
-  {
-   "id": "3189:238",
-   "group": "솔라리스 협동조합 로고",
-   "product": "solarlease",
-   "name": "ic_solaleaseCooplogo_logo_kor_white",
-   "figma": "Icon/50/ic_solaleaseCooplogo · Type=logo, Language=kor, Color=white",
-   "width": 426.54,
-   "height": 50,
-   "file": "logo/ic_solaleaseCooplogo_logo_kor_white.svg"
-  },
-  {
-   "id": "195:9591",
-   "group": "딥리뉴어블스 로고",
-   "product": "deeprenewables",
-   "name": "ic_GNBlogo_korea_color",
-   "figma": "icon/ic_GNBlogo · 속성1=68, 속성2=korea, 속성3=color",
-   "width": 180,
-   "height": 68,
-   "file": "logo/ic_GNBlogo_korea_color.svg"
-  },
-  {
-   "id": "195:9654",
-   "group": "딥리뉴어블스 로고",
-   "product": "deeprenewables",
-   "name": "ic_GNBlogo_korea_white",
-   "figma": "icon/ic_GNBlogo · 속성1=68, 속성2=korea, 속성3=white",
-   "width": 180.02,
-   "height": 68,
-   "file": "logo/ic_GNBlogo_korea_white.svg"
-  },
-  {
-   "id": "3228:260",
-   "group": "딥리뉴어블스 로고",
-   "product": "deeprenewables",
-   "name": "ic_GNBlogo_korea_black",
-   "figma": "icon/ic_GNBlogo · 속성1=68, 속성2=korea, 속성3=black",
-   "width": 180.02,
-   "height": 68,
-   "file": "logo/ic_GNBlogo_korea_black.svg"
-  },
-  {
-   "id": "3222:91",
-   "group": "딥리뉴어블스 로고",
-   "product": "deeprenewables",
-   "name": "ic_GNBlogo_eng_color",
-   "figma": "icon/ic_GNBlogo · 속성1=68, 속성2=eng, 속성3=color",
-   "width": 384.16,
-   "height": 68,
-   "file": "logo/ic_GNBlogo_eng_color.svg"
-  },
-  {
-   "id": "3222:205",
-   "group": "딥리뉴어블스 로고",
-   "product": "deeprenewables",
-   "name": "ic_GNBlogo_eng_white",
-   "figma": "icon/ic_GNBlogo · 속성1=68, 속성2=eng, 속성3=white",
-   "width": 384.16,
-   "height": 68,
-   "file": "logo/ic_GNBlogo_eng_white.svg"
-  },
-  {
-   "id": "3228:292",
-   "group": "딥리뉴어블스 로고",
-   "product": "deeprenewables",
-   "name": "ic_GNBlogo_eng_black",
-   "figma": "icon/ic_GNBlogo · 속성1=68, 속성2=eng, 속성3=black",
-   "width": 384.16,
-   "height": 68,
-   "file": "logo/ic_GNBlogo_eng_black.svg"
-  },
-  {
-   "id": "3229:322",
-   "group": "딥리뉴어블스 로고",
-   "product": "deeprenewables",
-   "name": "ic_GNBlogo_mark_color",
-   "figma": "icon/ic_GNBlogo · 속성1=68, 속성2=mark, 속성3=color",
-   "width": 51.4,
-   "height": 68,
-   "file": "logo/ic_GNBlogo_mark_color.svg"
-  },
-  {
-   "id": "3229:385",
-   "group": "딥리뉴어블스 로고",
-   "product": "deeprenewables",
-   "name": "ic_GNBlogo_mark_white",
-   "figma": "icon/ic_GNBlogo · 속성1=68, 속성2=mark, 속성3=white",
-   "width": 51.4,
-   "height": 68,
-   "file": "logo/ic_GNBlogo_mark_white.svg"
-  },
-  {
-   "id": "1131:138",
-   "group": "왓핀 로고",
-   "product": "wattfin",
-   "name": "ic_wattfin_englishfull_color",
-   "figma": "Icon/50/ic_wattfin · 속성1=180, 속성2=englishfull, 속성3=color",
-   "width": 219,
-   "height": 50,
-   "file": "logo/ic_wattfin_englishfull_color.svg"
-  },
-  {
-   "id": "1131:140",
-   "group": "왓핀 로고",
-   "product": "wattfin",
-   "name": "ic_wattfin_englishfull_white",
-   "figma": "Icon/50/ic_wattfin · 속성1=180, 속성2=englishfull, 속성3=white",
-   "width": 219,
-   "height": 50,
-   "file": "logo/ic_wattfin_englishfull_white.svg"
-  },
-  {
-   "id": "3055:235",
-   "group": "왓핀 로고",
-   "product": "wattfin",
-   "name": "ic_wattfin_mark_color",
-   "figma": "Icon/50/ic_wattfin · 속성1=180, 속성2=mark, 속성3=color",
-   "width": 55,
-   "height": 35,
-   "file": "logo/ic_wattfin_mark_color.svg"
-  },
-  {
-   "id": "3055:251",
-   "group": "왓핀 로고",
-   "product": "wattfin",
-   "name": "ic_wattfin_mark_white",
-   "figma": "Icon/50/ic_wattfin · 속성1=180, 속성2=mark, 속성3=white",
-   "width": 55,
-   "height": 35,
-   "file": "logo/ic_wattfin_mark_white.svg"
-  }
- ]
+  "groups": [
+    {
+      "label": "솔라리스 로고",
+      "product": "solarlease",
+      "set": "Icon/50/ic_solaleaselogo",
+      "count": 6
+    },
+    {
+      "label": "솔라리스 협동조합 로고",
+      "product": "solarlease",
+      "set": "Icon/50/ic_solaleaseCooplogo",
+      "count": 2
+    },
+    {
+      "label": "딥리뉴어블스 로고",
+      "product": "deeprenewables",
+      "set": "icon/ic_GNBlogo",
+      "count": 8
+    },
+    {
+      "label": "왓핀 로고",
+      "product": "wattfin",
+      "set": "Icon/50/ic_wattfin",
+      "count": 6
+    },
+    {
+      "label": "협력사 로고",
+      "product": "common",
+      "set": "Icon/40/ic_partnerlogo",
+      "count": 29,
+      "exported": "2026-11-12",
+      "note": "칸 200×60(여백 포함). 로고는 비율을 지키고 눈으로 볼 때 크기가 비슷하도록 맞춤. 수협 · H에너지 · 에스와이전기는 이미지 원본뿐이라 SVG 안에 그림 파일이 들어 있음. 한국환경산업기술원(2026-11-11 추가) · 빅웨이브(기후변화청년모임)는 원본 PDF 벡터·그라데이션 그대로 (2026-11-12). 빅웨이브 흰색판은 어두운 바탕용(모든 면 #fff)"
+    }
+  ],
+  "logos": [
+    {
+      "id": "195:9470",
+      "group": "솔라리스 로고",
+      "product": "solarlease",
+      "name": "ic_solaleaselogo_logo_kor_color",
+      "figma": "Icon/50/ic_solaleaselogo · Type=logo, Language=kor, Color=color",
+      "width": 244,
+      "height": 50,
+      "file": "logo/ic_solaleaselogo_logo_kor_color.svg"
+    },
+    {
+      "id": "195:9480",
+      "group": "솔라리스 로고",
+      "product": "solarlease",
+      "name": "ic_solaleaselogo_logo_kor_white",
+      "figma": "Icon/50/ic_solaleaselogo · Type=logo, Language=kor, Color=white",
+      "width": 244,
+      "height": 50,
+      "file": "logo/ic_solaleaselogo_logo_kor_white.svg"
+    },
+    {
+      "id": "195:9490",
+      "group": "솔라리스 로고",
+      "product": "solarlease",
+      "name": "ic_solaleaselogo_logo_eng_color",
+      "figma": "Icon/50/ic_solaleaselogo · Type=logo, Language=eng, Color=color",
+      "width": 310.99,
+      "height": 50,
+      "file": "logo/ic_solaleaselogo_logo_eng_color.svg"
+    },
+    {
+      "id": "195:9507",
+      "group": "솔라리스 로고",
+      "product": "solarlease",
+      "name": "ic_solaleaselogo_logo_eng_white",
+      "figma": "Icon/50/ic_solaleaselogo · Type=logo, Language=eng, Color=white",
+      "width": 310.99,
+      "height": 50,
+      "file": "logo/ic_solaleaselogo_logo_eng_white.svg"
+    },
+    {
+      "id": "200:3221",
+      "group": "솔라리스 로고",
+      "product": "solarlease",
+      "name": "ic_solaleaselogo_mark_color",
+      "figma": "Icon/50/ic_solaleaselogo · Type=mark, Language=none, Color=color",
+      "width": 68,
+      "height": 50,
+      "file": "logo/ic_solaleaselogo_mark_color.svg"
+    },
+    {
+      "id": "200:3237",
+      "group": "솔라리스 로고",
+      "product": "solarlease",
+      "name": "ic_solaleaselogo_mark_white",
+      "figma": "Icon/50/ic_solaleaselogo · Type=mark, Language=none, Color=white",
+      "width": 68,
+      "height": 50,
+      "file": "logo/ic_solaleaselogo_mark_white.svg"
+    },
+    {
+      "id": "3189:206",
+      "group": "솔라리스 협동조합 로고",
+      "product": "solarlease",
+      "name": "ic_solaleaseCooplogo_logo_kor_color",
+      "figma": "Icon/50/ic_solaleaseCooplogo · Type=logo, Language=kor, Color=color",
+      "width": 426.54,
+      "height": 50,
+      "file": "logo/ic_solaleaseCooplogo_logo_kor_color.svg"
+    },
+    {
+      "id": "3189:238",
+      "group": "솔라리스 협동조합 로고",
+      "product": "solarlease",
+      "name": "ic_solaleaseCooplogo_logo_kor_white",
+      "figma": "Icon/50/ic_solaleaseCooplogo · Type=logo, Language=kor, Color=white",
+      "width": 426.54,
+      "height": 50,
+      "file": "logo/ic_solaleaseCooplogo_logo_kor_white.svg"
+    },
+    {
+      "id": "195:9591",
+      "group": "딥리뉴어블스 로고",
+      "product": "deeprenewables",
+      "name": "ic_GNBlogo_korea_color",
+      "figma": "icon/ic_GNBlogo · 속성1=68, 속성2=korea, 속성3=color",
+      "width": 180,
+      "height": 68,
+      "file": "logo/ic_GNBlogo_korea_color.svg"
+    },
+    {
+      "id": "195:9654",
+      "group": "딥리뉴어블스 로고",
+      "product": "deeprenewables",
+      "name": "ic_GNBlogo_korea_white",
+      "figma": "icon/ic_GNBlogo · 속성1=68, 속성2=korea, 속성3=white",
+      "width": 180.02,
+      "height": 68,
+      "file": "logo/ic_GNBlogo_korea_white.svg"
+    },
+    {
+      "id": "3228:260",
+      "group": "딥리뉴어블스 로고",
+      "product": "deeprenewables",
+      "name": "ic_GNBlogo_korea_black",
+      "figma": "icon/ic_GNBlogo · 속성1=68, 속성2=korea, 속성3=black",
+      "width": 180.02,
+      "height": 68,
+      "file": "logo/ic_GNBlogo_korea_black.svg"
+    },
+    {
+      "id": "3222:91",
+      "group": "딥리뉴어블스 로고",
+      "product": "deeprenewables",
+      "name": "ic_GNBlogo_eng_color",
+      "figma": "icon/ic_GNBlogo · 속성1=68, 속성2=eng, 속성3=color",
+      "width": 384.16,
+      "height": 68,
+      "file": "logo/ic_GNBlogo_eng_color.svg"
+    },
+    {
+      "id": "3222:205",
+      "group": "딥리뉴어블스 로고",
+      "product": "deeprenewables",
+      "name": "ic_GNBlogo_eng_white",
+      "figma": "icon/ic_GNBlogo · 속성1=68, 속성2=eng, 속성3=white",
+      "width": 384.16,
+      "height": 68,
+      "file": "logo/ic_GNBlogo_eng_white.svg"
+    },
+    {
+      "id": "3228:292",
+      "group": "딥리뉴어블스 로고",
+      "product": "deeprenewables",
+      "name": "ic_GNBlogo_eng_black",
+      "figma": "icon/ic_GNBlogo · 속성1=68, 속성2=eng, 속성3=black",
+      "width": 384.16,
+      "height": 68,
+      "file": "logo/ic_GNBlogo_eng_black.svg"
+    },
+    {
+      "id": "3229:322",
+      "group": "딥리뉴어블스 로고",
+      "product": "deeprenewables",
+      "name": "ic_GNBlogo_mark_color",
+      "figma": "icon/ic_GNBlogo · 속성1=68, 속성2=mark, 속성3=color",
+      "width": 51.4,
+      "height": 68,
+      "file": "logo/ic_GNBlogo_mark_color.svg"
+    },
+    {
+      "id": "3229:385",
+      "group": "딥리뉴어블스 로고",
+      "product": "deeprenewables",
+      "name": "ic_GNBlogo_mark_white",
+      "figma": "icon/ic_GNBlogo · 속성1=68, 속성2=mark, 속성3=white",
+      "width": 51.4,
+      "height": 68,
+      "file": "logo/ic_GNBlogo_mark_white.svg"
+    },
+    {
+      "id": "1131:138",
+      "group": "왓핀 로고",
+      "product": "wattfin",
+      "name": "ic_wattfin_englishfull_color",
+      "figma": "Icon/50/ic_wattfin · 속성1=180, 속성2=englishfull, 속성3=color",
+      "width": 219,
+      "height": 50,
+      "file": "logo/ic_wattfin_englishfull_color.svg"
+    },
+    {
+      "id": "1131:140",
+      "group": "왓핀 로고",
+      "product": "wattfin",
+      "name": "ic_wattfin_englishfull_white",
+      "figma": "Icon/50/ic_wattfin · 속성1=180, 속성2=englishfull, 속성3=white",
+      "width": 219,
+      "height": 50,
+      "file": "logo/ic_wattfin_englishfull_white.svg"
+    },
+    {
+      "id": "3437:2",
+      "group": "왓핀 로고",
+      "product": "wattfin",
+      "name": "ic_wattfin_koreanfull_color",
+      "figma": "Icon/50/ic_wattfin · 속성1=180, 속성2=koreanfull, 속성3=color",
+      "width": 96,
+      "height": 50,
+      "file": "logo/ic_wattfin_koreanfull_color.svg"
+    },
+    {
+      "id": "3437:23",
+      "group": "왓핀 로고",
+      "product": "wattfin",
+      "name": "ic_wattfin_koreanfull_white",
+      "figma": "Icon/50/ic_wattfin · 속성1=180, 속성2=koreanfull, 속성3=white",
+      "width": 96,
+      "height": 50,
+      "file": "logo/ic_wattfin_koreanfull_white.svg"
+    },
+    {
+      "id": "3055:235",
+      "group": "왓핀 로고",
+      "product": "wattfin",
+      "name": "ic_wattfin_mark_color",
+      "figma": "Icon/50/ic_wattfin · 속성1=180, 속성2=mark, 속성3=color",
+      "width": 55,
+      "height": 35,
+      "file": "logo/ic_wattfin_mark_color.svg"
+    },
+    {
+      "id": "3055:251",
+      "group": "왓핀 로고",
+      "product": "wattfin",
+      "name": "ic_wattfin_mark_white",
+      "figma": "Icon/50/ic_wattfin · 속성1=180, 속성2=mark, 속성3=white",
+      "width": 55,
+      "height": 35,
+      "file": "logo/ic_wattfin_mark_white.svg"
+    },
+    {
+      "id": "3331:2",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_kdbinfra",
+      "figma": "Icon/40/ic_partnerlogo · 회사=KDB인프라",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_kdbinfra.svg"
+    },
+    {
+      "id": "3331:3",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_macquarie",
+      "figma": "Icon/40/ic_partnerlogo · 회사=맥쿼리",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_macquarie.svg"
+    },
+    {
+      "id": "3331:4",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_kginicis",
+      "figma": "Icon/40/ic_partnerlogo · 회사=KG이니시스",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_kginicis.svg"
+    },
+    {
+      "id": "3331:5",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_suhyup",
+      "figma": "Icon/40/ic_partnerlogo · 회사=수협",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_suhyup.svg"
+    },
+    {
+      "id": "3331:6",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_cncity",
+      "figma": "Icon/40/ic_partnerlogo · 회사=CNCITY에너지",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_cncity.svg"
+    },
+    {
+      "id": "3331:7",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_haeyang",
+      "figma": "Icon/40/ic_partnerlogo · 회사=해양에너지",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_haeyang.svg"
+    },
+    {
+      "id": "3331:8",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_henergy",
+      "figma": "Icon/40/ic_partnerlogo · 회사=H에너지",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_henergy.svg"
+    },
+    {
+      "id": "3331:9",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_gridwiz",
+      "figma": "Icon/40/ic_partnerlogo · 회사=그리드위즈",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_gridwiz.svg"
+    },
+    {
+      "id": "3331:10",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_solarteq",
+      "figma": "Icon/40/ic_partnerlogo · 회사=솔라테크",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_solarteq.svg"
+    },
+    {
+      "id": "3331:11",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_energyforum",
+      "figma": "Icon/40/ic_partnerlogo · 회사=에너지전환포럼",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_energyforum.svg"
+    },
+    {
+      "id": "3331:12",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_gbea",
+      "figma": "Icon/40/ic_partnerlogo · 회사=경기도기업경제인협회",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_gbea.svg"
+    },
+    {
+      "id": "3331:13",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_jinpyung",
+      "figma": "Icon/40/ic_partnerlogo · 회사=진평회계법인",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_jinpyung.svg"
+    },
+    {
+      "id": "3331:14",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_zerone",
+      "figma": "Icon/40/ic_partnerlogo · 회사=제로원특허법률사무소",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_zerone.svg"
+    },
+    {
+      "id": "3331:15",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_haebaram",
+      "figma": "Icon/40/ic_partnerlogo · 회사=해바람법률사무소",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_haebaram.svg"
+    },
+    {
+      "id": "3331:16",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_gsenc",
+      "figma": "Icon/40/ic_partnerlogo · 회사=GS건설",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_gsenc.svg"
+    },
+    {
+      "id": "3331:17",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_skinnoens",
+      "figma": "Icon/40/ic_partnerlogo · 회사=SK이노베이션 E&S",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_skinnoens.svg"
+    },
+    {
+      "id": "3331:18",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_hanwhasystems",
+      "figma": "Icon/40/ic_partnerlogo · 회사=한화시스템",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_hanwhasystems.svg"
+    },
+    {
+      "id": "3331:19",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_qcells",
+      "figma": "Icon/40/ic_partnerlogo · 회사=한화큐셀",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_qcells.svg"
+    },
+    {
+      "id": "3331:20",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_huawei",
+      "figma": "Icon/40/ic_partnerlogo · 회사=화웨이",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_huawei.svg"
+    },
+    {
+      "id": "3331:21",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_syelectric",
+      "figma": "Icon/40/ic_partnerlogo · 회사=에스와이전기",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_syelectric.svg"
+    },
+    {
+      "id": "3345:2",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_gyeonggi",
+      "figma": "Icon/40/ic_partnerlogo · 회사=경기도",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_gyeonggi.svg"
+    },
+    {
+      "id": "3345:3",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_gbsa",
+      "figma": "Icon/40/ic_partnerlogo · 회사=경기도경제과학진흥원",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_gbsa.svg"
+    },
+    {
+      "id": "3345:4",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_msit",
+      "figma": "Icon/40/ic_partnerlogo · 회사=과학기술정보통신부",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_msit.svg"
+    },
+    {
+      "id": "3345:5",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_me",
+      "figma": "Icon/40/ic_partnerlogo · 회사=기후에너지환경부",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_me.svg"
+    },
+    {
+      "id": "3345:6",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_kepco",
+      "figma": "Icon/40/ic_partnerlogo · 회사=한국전력공사",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_kepco.svg"
+    },
+    {
+      "id": "3345:7",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_kised",
+      "figma": "Icon/40/ic_partnerlogo · 회사=창업진흥원",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_kised.svg"
+    },
+    {
+      "id": "3507:66",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_keiti",
+      "figma": "Icon/40/ic_partnerlogo · 회사=한국환경산업기술원",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_keiti.svg"
+    },
+    {
+      "id": "3683:2",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_bigwave",
+      "figma": "Icon/40/ic_partnerlogo · 회사=빅웨이브",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_bigwave.svg"
+    },
+    {
+      "id": "3739:2",
+      "group": "협력사 로고",
+      "product": "common",
+      "name": "ic_partnerlogo_bigwave_white",
+      "figma": "Icon/40/ic_partnerlogo · 회사=빅웨이브 (흰색)",
+      "width": 200,
+      "height": 60,
+      "file": "logo/ic_partnerlogo_bigwave_white.svg",
+      "dark": true
+    }
+  ]
 }

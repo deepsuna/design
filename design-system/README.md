@@ -63,6 +63,16 @@ open design/gallery/index.html
 
 ## 실제 화면에 적용하는 방법
 
+**가져가는 것은 파일 4개뿐**: `dist/<프로덕트>.css`(값, 프로덕트당 1개) · `layout.css` · `components.css` · `motion.css`. 아이콘·로고는 `icons/` 에서 쓸 SVG 만. `tokens.json`(값 원본) · `guide.json`(구성표) · `build.mjs` · 갤러리는 가져가지 않는다 — 홈페이지가 쓰는 것은 JSON 이 아니라 그것으로 만든 CSS 다.
+
+Claude 에게 시키는 말(예): "`design-system` 에서 `dist/solarlease.css · layout.css · components.css · motion.css` 를 이 프로젝트에 복사해서 연결하고, 색·글자·간격은 `var(--…)` 토큰만, 부품은 `components.css` 클래스(`.btn--primary` 같은)로 맞춰 디자인을 적용해줘. 4개 파일은 고치지 말고 그대로 둬."
+
+`var(--…)` 란: 색·크기를 숫자 대신 이름으로 쓰는 방법. 예: `var(--color-text-brand)` = 브랜드 색
+
+값이 바뀌면 design 저장소에서 다시 빌드한 뒤 4개 파일을 다시 복사한다(왓핀은 빌드가 자동 복사).
+
+**버전 확인**: 4개 CSS · `guide.json` · `icons/*.json` · 갤러리 맨 위에 `피그마 기준 v1.0 · 261110 (2026.11.10)` 같은 줄이 있다. 피그마 0. Overview 표지 배지(`399:88`) → `tokens.json` 의 `$version` → 빌드가 모든 파일에 같은 줄을 적는다. 가져간 파일의 이 줄을 보면 어느 날짜의 가이드인지 알 수 있다. 가이드를 고치면 표지 배지 날짜도 함께 바꾼다.
+
 ```html
 <html lang="ko" data-theme="light">
 <head>

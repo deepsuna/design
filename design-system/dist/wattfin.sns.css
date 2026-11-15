@@ -1,0 +1,72 @@
+/* Wattfin — SNS 역할 토큰 (공통 토큰의 별칭. wattfin.css 뒤에 읽는다)
+ * 피그마 기준 v1.0 · 261112 (2026.11.12) — 딥리뉴통합디자인가이드 표지 버전
+ * 자동 생성: design/design-system/build.mjs ← design/design-system/tokens.json (피그마 변수 원본)
+ * 직접 고치지 말고 피그마 값을 바꾼 뒤 tokens.json 을 갱신하고 build.mjs 를 다시 실행하세요. */
+
+/* 3. 포맷 값 (sns) */
+:root {
+  --sns-spacing-gap-block: var(--spacing-xl);
+  --sns-spacing-gap-chip: var(--spacing-md);
+  --sns-spacing-gap-text: var(--spacing-lg);
+  --sns-spacing-margin-1080: var(--spacing-2xl-plus);
+  --sns-spacing-margin-card: var(--spacing-2xl);
+  --sns-spacing-margin-top-1080: var(--spacing-3xl);
+  --sns-spacing-pad-chip: var(--spacing-lg-plus);
+  --sns-spacing-pad-tag: var(--spacing-md-plus);
+}
+
+/* 4. 역할 색 (sns) — 기본 Light. <html data-theme="dark"> 로 전환 */
+:root,
+[data-theme="light"] {
+  --sns-color-bg: var(--color-bg-default);
+  --sns-color-chart-blue: var(--blue-400);
+  --sns-color-chart-green: var(--green-400);
+  --sns-color-chart-red: var(--red-500);
+  --sns-color-chip-bg: rgb(51 51 51 / 0.07);
+  --sns-color-chip-border: rgb(51 51 51 / 0.3);
+  --sns-color-chip-text: var(--color-text-primary);
+  --sns-color-glow: var(--brand-primary);
+  --sns-color-tag-bg: var(--brand-primary);
+  --sns-color-tag-text: var(--color-text-on-brand);
+  --sns-color-text-caption: var(--color-text-disabled);
+  --sns-color-text-headline: var(--color-text-primary);
+  --sns-color-text-highlight: var(--color-text-brand);
+  --sns-color-text-sub: var(--color-text-secondary);
+  --sns-color-point: var(--brand-primary-on-dark);
+}
+[data-theme="dark"] {
+  --sns-color-bg: var(--brand-subtle-dark);
+  --sns-color-chart-blue: var(--blue-400);
+  --sns-color-chart-green: var(--green-400);
+  --sns-color-chart-red: var(--red-500);
+  --sns-color-chip-bg: rgb(255 255 255 / 0.07);
+  --sns-color-chip-border: rgb(255 255 255 / 0.3);
+  --sns-color-chip-text: var(--color-text-inverse);
+  --sns-color-glow: var(--brand-primary);
+  --sns-color-tag-bg: var(--brand-primary);
+  --sns-color-tag-text: var(--color-text-on-brand);
+  --sns-color-text-caption: var(--color-text-tertiary);
+  --sns-color-text-headline: var(--color-text-inverse);
+  --sns-color-text-highlight: var(--brand-accent);
+  --sns-color-text-sub: var(--color-text-inverse-secondary);
+  --sns-color-point: var(--blue-400);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --sns-color-bg: var(--brand-subtle-dark);
+    --sns-color-chart-blue: var(--blue-400);
+    --sns-color-chart-green: var(--green-400);
+    --sns-color-chart-red: var(--red-500);
+    --sns-color-chip-bg: rgb(255 255 255 / 0.07);
+    --sns-color-chip-border: rgb(255 255 255 / 0.3);
+    --sns-color-chip-text: var(--color-text-inverse);
+    --sns-color-glow: var(--brand-primary);
+    --sns-color-tag-bg: var(--brand-primary);
+    --sns-color-tag-text: var(--color-text-on-brand);
+    --sns-color-text-caption: var(--color-text-tertiary);
+    --sns-color-text-headline: var(--color-text-inverse);
+    --sns-color-text-highlight: var(--brand-accent);
+    --sns-color-text-sub: var(--color-text-inverse-secondary);
+    --sns-color-point: var(--blue-400);
+  }
+}

@@ -1,4 +1,5 @@
 /* Solarlease — 디자인 토큰 (Format: Homepage)
+ * 피그마 기준 v1.0 · 261112 (2026.11.12) — 딥리뉴통합디자인가이드 표지 버전
  * 자동 생성: design/design-system/build.mjs ← design/design-system/tokens.json (피그마 변수 원본)
  * 직접 고치지 말고 피그마 값을 바꾼 뒤 tokens.json 을 갱신하고 build.mjs 를 다시 실행하세요. */
 
@@ -154,6 +155,7 @@
   --size-280: 280px;
   --size-688: 688px;
   --size-720: 720px;
+  --size-760: 760px;
   --size-1024: 1024px;
   --size-1200: 1200px;
   --size-1560: 1560px;
@@ -180,6 +182,7 @@
   --brand-text-on-card-secondary-dark: var(--gray-300);
   --brand-text-on-card-tertiary-dark: var(--gray-500);
   --brand-border-card-dark: var(--gray-700);
+  --brand-gnb-dark: var(--gray-900);
   --radius-none: var(--radius-0);
   --radius-xs: var(--radius-4);
   --radius-sm: var(--radius-8);
@@ -279,6 +282,7 @@
   --layout-margin-mobile: var(--spacing-16);
   --layout-max-width-content: var(--size-1560);
   --layout-max-width-list: var(--size-1200);
+  --layout-max-width-read: var(--size-760);
   --layout-max-width-form: var(--size-688);
   --control-height: 56px;
   --control-height-sm: 40px;
@@ -321,6 +325,7 @@
   --color-bg-dark-raised: var(--gray-800);
   --color-bg-card: var(--white);
   --color-bg-card-subtle: var(--gray-50);
+  --color-bg-gnb: var(--white);
   --color-border-default: var(--gray-175);
   --color-border-strong: var(--gray-300);
   --color-border-brand: var(--brand-primary);
@@ -378,6 +383,7 @@
   --color-bg-dark-raised: var(--gray-700);
   --color-bg-card: var(--brand-card-dark);
   --color-bg-card-subtle: var(--brand-card-subtle-dark);
+  --color-bg-gnb: var(--brand-gnb-dark);
   --color-border-default: var(--gray-800);
   --color-border-strong: var(--gray-500);
   --color-border-brand: var(--blue-400);
@@ -436,6 +442,7 @@
     --color-bg-dark-raised: var(--gray-700);
     --color-bg-card: var(--brand-card-dark);
     --color-bg-card-subtle: var(--brand-card-subtle-dark);
+    --color-bg-gnb: var(--brand-gnb-dark);
     --color-border-default: var(--gray-800);
     --color-border-strong: var(--gray-500);
     --color-border-brand: var(--blue-400);

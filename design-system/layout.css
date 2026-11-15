@@ -1,12 +1,13 @@
 /* Layout — 피그마 "0 Overview › P9 홈페이지" 규칙. 손으로 관리하는 파일.
+ * 피그마 기준 v1.0 · 261112 (2026.11.12) — 딥리뉴통합디자인가이드 표지 버전 (build.mjs 가 자동으로 적음)
  *
- * 화면 폭        | 내용 폭                 | 좌우 여백
- * ≥1600         | 1560 고정, 가운데 정렬   | 자동
- * 1200 ~ 1599   | 늘어남                  | 20px
- * 1025 ~ 1199   | (미정 — 태블릿 규칙 적용) | 16px
- * 721 ~ 1024    | 태블릿, 늘어남           | 16px
- * 280 ~ 720     | 모바일, 늘어남           | 16px (720 에서 내용 688)
- * 목록 화면 최대 1200 · 폼 화면 최대 688. GNB·푸터는 화면 전체 폭, 안쪽 내용만 셸.
+ * 화면 폭        | 구분     | 좌우 여백 | 내용 폭
+ * ≥1600         | 큰 PC    | 자동     | 1560 고정, 가운데 정렬
+ * 1200 ~ 1599   | PC       | 20px     | 늘어남 (가로 메뉴)
+ * 721 ~ 1199    | 태블릿   | 16px     | 늘어남 (삼선 메뉴) — 여백은 그대로, 콘텐츠만 늘어남
+ * 280 ~ 720     | 모바일   | 16px     | 늘어남 (720 에서 내용 688)
+ * 기준점은 721 · 1200 · 1600 세 개만 (1024 는 쓰지 않음, 2026-11-03 확정)
+ * 목록 · 게시판 최대 1200 · 긴 글 최대 760 · 폼 최대 688. GNB·푸터는 화면 전체 폭, 안쪽 내용만 셸.
  * 브레이크포인트 숫자는 CSS 변수에 넣을 수 없어 여기와 tokens.css(--layout-*)에 같은 값이 적혀 있다. */
 
 .wf-shell {
@@ -16,9 +17,10 @@
   padding-inline: var(--layout-margin-mobile);
 }
 .wf-shell--list { max-width: var(--layout-max-width-list); }
+.wf-shell--read { max-width: var(--layout-max-width-read); }   /* 긴 글 (공지 · 고객센터 · 공시 본문) 760 */
 .wf-shell--form { max-width: var(--layout-max-width-form); }
 @media (min-width: 721px)  { .wf-shell { padding-inline: var(--layout-margin-tablet); } }
-@media (min-width: 1200px) { .wf-shell { padding-inline: var(--layout-margin-desktop); } }
+@media (min-width: 1200px) { .wf-shell { padding-inline: var(--layout-margin-desktop); } }   /* 좌우 20 은 1200px 부터. 721~1199 는 16 */
 
 /* 전체 폭 띠 (GNB · 푸터 · 어두운 섹션). 안에 .wf-shell 을 넣어 내용만 가운데로 */
 .wf-band { width: 100%; background: var(--color-bg-dark); color: var(--color-text-inverse); }
